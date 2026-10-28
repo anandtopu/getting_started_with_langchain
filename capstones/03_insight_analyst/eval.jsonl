@@ -1,0 +1,4 @@
+{"id": "status", "question": "Count orders by status", "accepted": true, "total": 200, "groups": 3}
+{"id": "category", "question": "Units sold by category", "accepted": true, "total": 470, "groups": 6}
+{"id": "revenue", "question": "Revenue in cents by status", "accepted": true, "total": 7978950, "groups": 3}
+{"id": "exhausted", "question": "Count orders by status", "attempts": 1, "accepted": false}

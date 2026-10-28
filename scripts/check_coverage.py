@@ -59,7 +59,24 @@ def check(root: Path = ROOT, *, require_complete: bool = False) -> tuple[list[st
                 if cell.get("outputs") or cell.get("execution_count") is not None:
                     failures.append(f"{prefix}: notebook outputs are not cleared")
     deferred = len(known - completed)
+    capstones = set(progress["implemented_capstones"])
+    discovered = {p.name for p in (root / "capstones").glob("[0-9][0-9]_*") if p.is_dir()}
+    failures.extend(f"Unregistered capstone: {name}" for name in discovered - capstones)
+    for name in sorted(capstones):
+        folder = root / "capstones" / name
+        for required in ("README.md", "rubric.md", "starter.py", "solution.py", "eval.jsonl"):
+            if not (folder / required).is_file():
+                failures.append(f"Missing capstone file: {name}/{required}")
+        if not list((folder / "tests").glob("test_*.py")):
+            failures.append(f"Missing capstone tests: {name}")
+        if (folder / "README.md").is_file():
+            content = (folder / "README.md").read_text(encoding="utf-8")
+            for section in ("User stories", "Acceptance criteria", "Architecture", "Extend it"):
+                if f"## {section}" not in content:
+                    failures.append(f"{name}: missing {section}")
     if require_complete:
+        if len(capstones) != 5:
+            failures.append("Final course requires all five registered capstones.")
         failures.extend(f"Incomplete planned module: {slug}" for slug in sorted(known - completed))
         failures.extend(
             f"Missing final inventory file: {name}"

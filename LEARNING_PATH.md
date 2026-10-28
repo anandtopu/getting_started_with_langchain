@@ -29,9 +29,9 @@ All lessons use synthetic Brightwave Outfitters data. Module 00 starts at assist
 
 ## Setup and execution modes
 
-Recommend Python 3.12; planned support is 3.12, 3.13 and 3.14. Install dependencies once using uv; pip/venv instructions will also be supplied. Ordinary examples use your selected real provider. The smoke runner and pytest explicitly use deterministic fake models, fake embeddings and offline fixtures. Fakes verify program behavior; they do not measure real language-model quality.
+Recommend Python 3.12; the CI matrix targets 3.12, 3.13 and 3.14 (see the completion checklist for observed results). Install dependencies once using uv; pip/venv instructions are in the root README. Ordinary examples use your selected real provider. The smoke runner and pytest explicitly use deterministic fake models, fake embeddings and offline fixtures. Fakes verify program behavior; they do not measure real language-model quality.
 
-The OpenAI profile is the default. The planned .env profile system switches chat and embeddings to local Ollama by changing `LLM_PROVIDER=ollama`, with model defaults read from .env.example. Explicit LLM_MODEL and EMBEDDINGS_* overrides take precedence. Ollama must be installed and the selected models downloaded first. Multimodal lessons need a vision-capable local model in addition to the smaller text/tool model.
+The OpenAI profile is the default. The .env profile system switches chat and embeddings to local Ollama by changing `LLM_PROVIDER=ollama`, with model defaults read from .env.example. Explicit LLM_MODEL and EMBEDDINGS_* overrides take precedence. Ollama must be installed and the selected models downloaded first. Multimodal lessons need a vision-capable local model in addition to the smaller text/tool model.
 
 Optional LangSmith tracing, live web search, Studio and managed deployment are labelled opt-ins. Local examples and evaluation reports remain usable without those accounts.
 

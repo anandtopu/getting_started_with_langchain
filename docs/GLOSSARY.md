@@ -1,6 +1,6 @@
 # Course glossary
 
-This glossary covers modules 00-17; the production tier will add further terms.
+This glossary covers all 21 modules and the capstones. Repeated terms in tier-specific sections reinforce their meaning in that context.
 
 | Term | Plain-English meaning | First lesson |
 |---|---|---|

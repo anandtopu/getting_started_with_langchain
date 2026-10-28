@@ -86,7 +86,7 @@ For local multimodal input, pull the vision profile and check capabilities. A mo
 
 ## Old tutorials and future lessons
 
-Do not copy imports from older framework tutorials without checking the current official reference. Use the model factory and `invoke` interface shown in this checkout. Chroma persistence diagnostics and graph recursion-limit examples are available in the current tiers. The complete migration guide and release audit arrive in Phase 8.
+Do not copy imports from older framework tutorials without checking the current official reference. Use the model factory and `invoke` interface shown in this checkout. Chroma persistence diagnostics and graph recursion-limit examples are available in the current tiers. See the [migration guide](MIGRATING_FROM_LEGACY.md) and [release checklist](DEFINITION_OF_DONE.md).
 
 
 ## App and production checks
@@ -99,3 +99,17 @@ Do not copy imports from older framework tutorials without checking the current 
 - **LangSmith upload_results beta / ast.Str warning:** upstream runner warnings in the pinned SDK; local evaluation still executes with network denied. Cloud evaluation remains optional and unverified.
 - **Container engine not reachable:** start the chosen Docker-compatible engine. Do not change global contexts blindly. This host's Podman bridge failed; verification used direct building and VM-loopback host networking. Standard bridge launch needs a working bridge on your machine.
 - **Postgres tables/connection error:** use a disposable reachable database, install deployment extras and explicitly opt out of offline mode. setup() creates SDK tables; credentials remain runtime-only. Offline namespaces do not prove durable persistence.
+
+
+## Capstone errors
+
+| Error | Fix |
+|---|---|
+| `No extractable text; scanned PDFs need a separate OCR step.` | Use a text PDF; OCR is not silently guessed. |
+| `Use an unencrypted PDF containing 1 through 50 pages.` | Decrypt a document you own or split it into a smaller permitted PDF. |
+| `SQL budget exhausted.` | Inspect evidence.json or the returned attempts; fix the approved schema/query rather than removing limits. |
+| `An exact host-approved action is required.` | Review the owner, operation and canonical payload; a changed action needs a new approval. |
+| `MCP input schema changed; review before use.` | Compare the server version and fields with the allowlist; do not blindly expose changed tools. |
+| `Unaccepted research cannot be published as a finished report.` | Inspect critic feedback and source evidence; use the bounded revision workflow. |
+
+DocuMind stores display history, not conversational query rewriting. Include the subject in each question. A private-document session must explicitly consent before live processing. The Personal Ops servers are trusted local processes, not an Internet service with remote login.

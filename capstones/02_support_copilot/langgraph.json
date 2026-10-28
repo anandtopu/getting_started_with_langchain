@@ -1,0 +1,5 @@
+{
+  "dependencies": ["../.."],
+  "graphs": {"support_demo": "../../common/graphs.py:studio_graph"},
+  "env": "../../.env"
+}

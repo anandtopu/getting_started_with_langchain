@@ -1,6 +1,6 @@
-# Planned final repository tree
+# Repository tree
 
-Updated in Phase 7; includes future capstones and final-release files. See [progress](progress.json). Credentials, caches and runtime files are excluded.
+Final Phase 8 inventory; all listed targets exist. Credentials, caches and runtime output are excluded. See [progress](progress.json).
 
 ```text
 getting_started_with_langchain/
@@ -35,14 +35,19 @@ getting_started_with_langchain/
 │   │   ├── starter.py
 │   │   └── tests/
 │   │       ├── test_acceptance.py
-│   │       └── test_evaluation.py
+│   │       ├── test_evaluation.py
+│   │       ├── test_pdf_boundary.py
+│   │       └── test_ui.py
 │   ├── 02_support_copilot/
 │   │   ├── .dockerignore
 │   │   ├── Dockerfile
+│   │   ├── Dockerfile.dockerignore
 │   │   ├── README.md
 │   │   ├── api.py
 │   │   ├── app.py
+│   │   ├── deployment.md
 │   │   ├── eval.jsonl
+│   │   ├── evaluation_report.md
 │   │   ├── langgraph.json
 │   │   ├── rubric.md
 │   │   ├── solution.py
@@ -54,6 +59,7 @@ getting_started_with_langchain/
 │   ├── 03_insight_analyst/
 │   │   ├── README.md
 │   │   ├── eval.jsonl
+│   │   ├── evaluation_report.md
 │   │   ├── rubric.md
 │   │   ├── solution.py
 │   │   ├── starter.py
@@ -63,29 +69,37 @@ getting_started_with_langchain/
 │   ├── 04_research_crew/
 │   │   ├── README.md
 │   │   ├── eval.jsonl
+│   │   ├── evaluation_report.md
 │   │   ├── rubric.md
 │   │   ├── solution.py
 │   │   ├── starter.py
 │   │   └── tests/
 │   │       ├── test_acceptance.py
 │   │       └── test_evaluation.py
-│   └── 05_personal_ops/
-│       ├── README.md
-│       ├── eval.jsonl
-│       ├── notes_server.py
-│       ├── rubric.md
-│       ├── solution.py
-│       ├── starter.py
-│       ├── tasks_server.py
-│       └── tests/
-│           ├── test_acceptance.py
-│           └── test_evaluation.py
+│   ├── 05_personal_ops/
+│   │   ├── README.md
+│   │   ├── eval.jsonl
+│   │   ├── evaluation_report.md
+│   │   ├── notes_server.py
+│   │   ├── rubric.md
+│   │   ├── solution.py
+│   │   ├── starter.py
+│   │   ├── tasks_server.py
+│   │   └── tests/
+│   │       ├── test_acceptance.py
+│   │       └── test_evaluation.py
+│   └── conftest.py
 ├── cheatsheets/
 │   ├── tier_1_foundations.md
+│   ├── tier_1_foundations.pdf
 │   ├── tier_2_rag.md
+│   ├── tier_2_rag.pdf
 │   ├── tier_3_agents.md
+│   ├── tier_3_agents.pdf
 │   ├── tier_4_graphs.md
-│   └── tier_5_production.md
+│   ├── tier_4_graphs.pdf
+│   ├── tier_5_production.md
+│   └── tier_5_production.pdf
 ├── checkpoints/
 │   ├── 01_ticket_desk/
 │   │   ├── README.md
@@ -136,11 +150,14 @@ getting_started_with_langchain/
 │   ├── __init__.py
 │   ├── advanced_rag.py
 │   ├── agent.py
+│   ├── analyst.py
 │   ├── budget.py
 │   ├── config.py
+│   ├── copilot.py
 │   ├── data.py
 │   ├── deployment.py
 │   ├── desk.py
+│   ├── document_chat.py
 │   ├── errors.py
 │   ├── evaluation.py
 │   ├── experiments.py
@@ -154,10 +171,12 @@ getting_started_with_langchain/
 │   ├── memory.py
 │   ├── models.py
 │   ├── operations.py
+│   ├── personal_ops.py
 │   ├── pretty.py
 │   ├── rag.py
 │   ├── release.py
 │   ├── research.py
+│   ├── research_crew.py
 │   ├── resilience.py
 │   ├── retrieval.py
 │   ├── returns.py
@@ -207,6 +226,7 @@ getting_started_with_langchain/
 ├── docs/
 │   ├── CHOOSING_THE_RIGHT_TOOL.md
 │   ├── COMPLETION_CHECKLIST.md
+│   ├── DEFINITION_OF_DONE.md
 │   ├── FEATURE_MAP.md
 │   ├── GLOSSARY.md
 │   ├── MENTAL_MODEL.md
@@ -224,9 +244,14 @@ getting_started_with_langchain/
 │   ├── phase5-verification.json
 │   ├── phase6-verification.json
 │   ├── phase7-verification.json
+│   ├── phase8-verification.json
 │   ├── progress.json
 │   ├── pypi-verification-phase2.json
-│   └── pypi-verification.json
+│   ├── pypi-verification.json
+│   └── reviews/
+│       ├── phase8-action-plan.md
+│       ├── phase8-integration.md
+│       └── phase8-per-file.md
 ├── langgraph.json
 ├── modules/
 │   ├── 00_setup/

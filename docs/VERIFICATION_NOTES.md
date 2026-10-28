@@ -1,5 +1,18 @@
 # Verification notes
 
+## Phase 8 - final capstones and repository audit (2026-10-28)
+
+All 43 PyPI package records were refreshed before the capstone implementation; verified stable versions remain unchanged. The project version is 1.0.0. [Machine-readable evidence](phase8-verification.json) records results; [the completion checklist](DEFINITION_OF_DONE.md) keeps outstanding evidence visible.
+
+Official API references checked include [SQL agents](https://docs.langchain.com/oss/python/langchain/sql-agent), [MCPAdapter and its beta status](https://docs.langchain.com/oss/python/langchain/mcp), [workflow patterns](https://docs.langchain.com/oss/python/langgraph/workflows-agents), [Streamlit PDF uploads](https://docs.streamlit.io/develop/api-reference/widgets/st.file_uploader) and [v1 migration](https://docs.langchain.com/oss/python/migrate/langchain-v1). Installed signatures and executable tests confirm SDK server methods, adapter discovery, file_uploader max_upload_size and graph Send/reducers. Tests use the current MCP SDK input_schema field, avoiding its deprecated alias.
+
+The five capstones exercise actual PDF extraction/retrieval/UI, authenticated HTTP chat and refund review, engine-authorized SQL repair/charting, planner/researcher/writer/critic orchestration, and two real MCP servers. The 19-case suite passes 17 complete contracts; the same two policy relevance misses remain visible in the flagship's actual HTTP path. Its five-call reservation covers three outer calls plus two policy tool calls with one model call each, with SDK retries disabled. A dedicated test checks this nested path. Other capstone logical-call limits do not include provider retry attempts.
+
+The final review fixed raw Personal Ops tracing and added strict discovered MCP field checks. PDF limits do not isolate a malicious parser; private document consent and session-local indexes do not constitute a public identity system. SQL analytics are staff-only, while the customer copilot's SQL remains owner scoped. No model can issue its own approval receipt. See the [per-file report](reviews/phase8-per-file.md), [integration report](reviews/phase8-integration.md) and [action plan](reviews/phase8-action-plan.md).
+
+Five one-page cheatsheets were generated with deterministic PDF metadata, rendered with Poppler and visually inspected for clipping and readability. Their Markdown companions remain editable. The legacy guide is the only deliberate old-API comparison surface. Full and minimal checks, all notebook executions, container evidence and publication outcomes are recorded in the final checklist rather than inferred from implementation.
+
+
 ## Phase 7 — apps, evaluation and production (2026-10-28)
 
 Refreshed all 43 package records on PyPI before implementation; stable versions match Phase 6. Project version advances to 0.7.0 without dependency upgrades. [Machine-readable evidence](phase7-verification.json) records actual results and explicitly untested paths.

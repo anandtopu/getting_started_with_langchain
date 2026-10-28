@@ -38,7 +38,11 @@ def anchors(path: Path) -> set[str]:
 
 def check_local(root: Path = ROOT, *, allow_planned: bool = False) -> tuple[list[str], int]:
     manifest = root / "docs/course-plan.json"
-    planned = set(json.loads(manifest.read_text())["planned_files"]) if manifest.exists() else set()
+    planned = (
+        set(json.loads(manifest.read_text(encoding="utf-8"))["planned_files"])
+        if manifest.exists()
+        else set()
+    )
     failures = []
     deferred = 0
     for path in markdown_files(root):

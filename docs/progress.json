@@ -1,5 +1,5 @@
 {
-  "completed_phase": 7,
+  "completed_phase": 8,
   "implemented_modules": [
     "00_setup",
     "01_chat_models",
@@ -23,7 +23,13 @@
     "19_evaluation",
     "20_production"
   ],
-  "implemented_capstones": [],
+  "implemented_capstones": [
+    "01_documind",
+    "02_support_copilot",
+    "03_insight_analyst",
+    "04_research_crew",
+    "05_personal_ops"
+  ],
   "implemented_checkpoints": [
     "01_ticket_desk",
     "02_handbook_qa",
@@ -31,5 +37,5 @@
     "04_operations_desk",
     "05_production_release"
   ],
-  "status": "Phase 7 complete: all 21 modules and five checkpoints. Awaiting continue for Phase 8 capstones and publication. The strict scripted answer-quality gate correctly blocks the 4/6 baseline; no customer deployment readiness is claimed."
+  "status": "Phase 8 implementation complete. Final verification and publication evidence is tracked in DEFINITION_OF_DONE.md; live-provider checks remain explicitly unverified. Customer release remains blocked by the 4/6 support quality baseline."
 }

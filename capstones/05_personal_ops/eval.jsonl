@@ -1,0 +1,3 @@
+{"id": "approved", "approved": true, "expected_notes": 1, "expected_tasks": 1}
+{"id": "denied", "approved": false, "expected_notes": 0, "expected_tasks": 0}
+{"id": "stdio", "approved": true, "expected_notes": 1, "expected_tasks": 1, "transport": "stdio"}

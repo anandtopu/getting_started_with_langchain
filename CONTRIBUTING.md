@@ -1,6 +1,6 @@
 # Contributing
 
-Help a beginner make one observable improvement at a time. Use synthetic Brightwave data, current official APIs and a small reproducible example. The course is being delivered in phases; check [progress](docs/progress.json) before treating a planned link as a missing implementation.
+Help a beginner make one observable improvement at a time. Use synthetic Brightwave data, current official APIs and a small reproducible example. Check [progress](docs/progress.json) and the [completion checklist](docs/DEFINITION_OF_DONE.md) for the implemented scope and explicitly unverified service paths.
 
 ## Setup and checks
 
@@ -10,8 +10,8 @@ uv run --no-sync pytest
 uv run --no-sync ruff check .
 uv run --no-sync ruff format --check .
 uv run --no-sync python scripts/check_legacy.py
-uv run --no-sync python scripts/check_links.py --allow-planned
-uv run --no-sync python scripts/check_coverage.py
+uv run --no-sync python scripts/check_links.py
+uv run --no-sync python scripts/check_coverage.py --require-complete
 uv run --no-sync python scripts/run_all_examples.py
 uv run --no-sync pre-commit install
 ```

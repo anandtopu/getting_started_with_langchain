@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0 - 2026-10-28
+
+- Complete five capstones, independent evaluation sets, starter contracts and grading rubrics.
+- Add PDF chat UI, authenticated policy/SQL copilot, bounded SQL analyst, research team and approved MCP notes/tasks.
+- Add five printable cheatsheets, migration guide and final review reports.
+- Preserve the two known policy-quality misses and strict customer-release gate; distinguish offline checks from unverified live providers.
+
+
 ## 0.7.0 — 2026-10-28
 
 - Added modules 18–20: 20 examples, five application entry points, nine exercises with solutions, quizzes and three source-matched notebooks.

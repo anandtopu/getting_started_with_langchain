@@ -2,7 +2,7 @@
 
 A hands-on course for Python learners building the **Brightwave assistant**, an outdoor-gear support application. Learn how to choose between a model call, chain, retrieval system, agent and graph, then test the choice with synthetic business data.
 
-**Build status: Phase 7, all 21 modules and five checkpoints.** The app, evaluation and production lessons are implemented. Capstones and final publication remain Phase 8. The local container and persistence checks pass; the strict answer-quality release gate correctly blocks the scripted 4/6 baseline. See the [coverage contract](docs/FEATURE_MAP.md), [learning path](LEARNING_PATH.md) and [verification notes](docs/VERIFICATION_NOTES.md). This is not yet the completed course.
+**Course implementation: all 21 modules, five checkpoints and five capstones.** Includes 139 examples, 63 exercises with solutions, 21 notebooks and five printable cheatsheets. See the [completion checklist](docs/DEFINITION_OF_DONE.md) for measured checks and remaining live-provider/CI evidence. The scripted Support Copilot scores 4/6 complete contracts, so its customer release gate remains closed. Repository publication is not customer deployment readiness.
 
 Start with [setup and orientation](modules/00_setup/README.md), continue through [tools](modules/05_tools/README.md), then build the [Smart Ticket Desk](checkpoints/01_ticket_desk/README.md). Continue through [loaders and splitters](modules/06_loaders_splitters/README.md) to [advanced RAG](modules/09_advanced_rag/README.md), and finish [Handbook Q&A](checkpoints/02_handbook_qa/README.md). Install retrieval dependencies with `uv sync --extra rag`. The [agents tier](modules/10_agents/README.md) continues through memory, middleware and MCP, ending with [Guarded Support](checkpoints/03_guarded_support/README.md); install it with `uv sync --extra agents`. Continue through [LangGraph orchestration](modules/14_langgraph/README.md) to the [Operations Desk](checkpoints/04_operations_desk/README.md); the optional SDK example needs `uv sync --extra deep`. Continue through [apps](modules/18_apps/README.md), [evaluation](modules/19_evaluation/README.md) and [production](modules/20_production/README.md) to [Production Release](checkpoints/05_production_release/README.md), using `uv sync --extra deployment`. Each lesson includes examples, a realistic application, three runnable exercises with solutions, a quiz, tests and a notebook.
 
@@ -17,7 +17,12 @@ flowchart LR
 
 ## Five-minute quick start
 
-Know basic Python, terminal commands and git. Install Python 3.12 (recommended; 3.12–3.14 supported) and [uv](https://docs.astral.sh/uv/getting-started/installation/). Clone this repository using its GitHub **Code** button, or open your existing checkout. Remote publication is scheduled for the final phase; no invented clone URL is provided here.
+Know basic Python, terminal commands and git. Install Python 3.12 (recommended; 3.12–3.14 supported) and [uv](https://docs.astral.sh/uv/getting-started/installation/). Clone `https://github.com/anandtopu/getting_started_with_langchain.git` and enter its directory, or open your existing checkout.
+
+```text
+git clone https://github.com/anandtopu/getting_started_with_langchain.git
+cd getting_started_with_langchain
+```
 
 From the repository root, the following commands work in **Windows PowerShell, macOS and Linux**:
 
@@ -74,8 +79,8 @@ Install a tier with `python -m pip install -e ".[rag]"` using the appropriate vi
 ## Three ways to learn
 
 1. Follow the [learning path](LEARNING_PATH.md) in order and finish each checkpoint.
-2. Find a topic through the [feature map](docs/FEATURE_MAP.md); planned links are labelled until their phase is implemented.
-3. Use a capstone spec and reference solution once Phase 8 lands. The plan includes DocuMind, Support Copilot, Insight Analyst, Research Crew and optional Personal Ops.
+2. Find a topic through the [feature map](docs/FEATURE_MAP.md).
+3. Start a capstone: [DocuMind](capstones/01_documind/README.md), [Support Copilot](capstones/02_support_copilot/README.md), [Insight Analyst](capstones/03_insight_analyst/README.md), [Research Crew](capstones/04_research_crew/README.md) or optional [Personal Ops](capstones/05_personal_ops/README.md). Each includes a starter, reference solution, tests, evaluation set and rubric.
 
 | Tier | Modules | Guided time, including checkpoint |
 |---|---|---:|
@@ -89,7 +94,7 @@ Total: about 54 hours including optional Deep Agents; capstones and exhaustive e
 
 ## Data, cost and safety
 
-Everything in [data/](data/README.md) is synthetic. Read-only seed databases are kept separate from writable runtime copies. The current foundation executes no generated SQL, issues no refunds and contacts no customers. `.env` and `.runtime/` are ignored. Tracing is off unless explicitly enabled and can upload prompts; only use synthetic data for this course. A poisoned document is deliberately kept outside the normal policy corpus for a later security lesson.
+Everything in [data/](data/README.md) is synthetic. Read-only seed databases are kept separate from writable runtime copies. Later lessons execute constrained read-only SQL and record synthetic refunds only in runtime copies; they contact no real customers. `.env` and `.runtime/` are ignored. Tracing is off unless explicitly enabled and can upload prompts; only use synthetic data for this course. A poisoned document is deliberately kept outside the normal policy corpus for the security lesson.
 
 ## FAQ
 

@@ -1,0 +1,3 @@
+{"id": "returns", "question": "Unused gear may be returned within how many calendar days after delivery?", "must_contain": ["30"], "page": 2, "abstained": false}
+{"id": "shipping", "question": "How much does standard shipping cost and how many business days after dispatch?", "must_contain": ["5.95", "3", "5"], "page": 3, "abstained": false}
+{"id": "unknown", "question": "quasar treaty moonsz?", "must_contain": ["do not know"], "page": null, "abstained": true}

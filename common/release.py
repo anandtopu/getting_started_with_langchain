@@ -11,12 +11,12 @@ def headers(token: str = CUSTOMER) -> dict[str, str]:
     return {"Authorization": "Bearer " + token}
 
 
-def api_contract(directory: Path, decision: str = "approve") -> dict:
+def api_contract(directory: Path, decision: str = "approve", *, app_factory=None) -> dict:
     from fastapi.testclient import TestClient
 
     from common.web import demo_app
 
-    with TestClient(demo_app(directory)) as client:
+    with TestClient((app_factory or demo_app)(directory)) as client:
         unauthorized = client.post("/threads").status_code
         thread = client.post("/threads", headers=headers()).json()["thread_id"]
         path = f"/threads/{thread}"
