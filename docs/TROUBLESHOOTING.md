@@ -1,5 +1,21 @@
 # Troubleshooting
 
+## Orchestration lesson errors
+
+| Error or symptom | Why it happens | Fix |
+|---|---|---|
+| `InvalidUpdateError` on a parallel field | Several nodes wrote one unreduced channel | Use a reducer for collections and merge into a scalar in one node |
+| `GraphRecursionError` | A cycle did not terminate within the step ceiling | Inspect routing and enforce an attempt budget; a larger limit alone is not a fix |
+| Missing configurable keys when checkpointing | No thread ID selected the persisted run | Supply the same authorized thread ID and saver when resuming |
+| `Refund amount changed; start a new policy review.` | The database quote differs from the amount presented to the reviewer | Start a fresh review; do not reuse approval for a changed amount |
+| A return exists but its notice is absent | The process failed between two separate commits | Resume the saved run; the idempotent outbox inserts once using the return ID |
+| `Choose one to six unique categories.` | The report dispatcher received empty or duplicate work | Validate the finite plan before creating workers |
+| `Virtual paths must be canonical` | A path used traversal or alternate separators | Use the exact allowlisted virtual path, never a host path |
+| `Web search needs an explicit live run.` | `--web` was combined with offline configuration | Keep local search for tests, or deliberately opt into live search and its costs |
+| Windows CLI help raises `UnicodeEncodeError` | The terminal encoding cannot print the upstream CLI's emoji | In PowerShell set `$env:PYTHONIOENCODING="utf-8"`, then retry |
+
+`langgraph dev --no-browser --host 127.0.0.1` is a persistent local service; stop it with Ctrl+C. The read-only lesson graph and root configuration were exercised through the HTTP API. A Studio link printed by the CLI is not evidence that the Studio browser was tested. Use Mermaid output without an account.
+
 Start with `uv run python scripts/check_env.py --offline`. If that succeeds, the Python installation and fake interfaces work. Run it without `--offline` to check selected keys or the local Ollama server. This does not spend tokens validating a hosted key.
 
 | Symptom | Meaning | Fix |
@@ -70,4 +86,4 @@ For local multimodal input, pull the vision profile and check capabilities. A mo
 
 ## Old tutorials and future lessons
 
-Do not copy imports from older framework tutorials without checking the current official reference. Use the model factory and `invoke` interface shown in this checkout. The full old-to-new migration guide, Chroma persistence diagnostics and graph recursion-limit examples arrive with later tiers and are audited in Phase 8.
+Do not copy imports from older framework tutorials without checking the current official reference. Use the model factory and `invoke` interface shown in this checkout. Chroma persistence diagnostics and graph recursion-limit examples are available in the current tiers. The complete migration guide and release audit arrive in Phase 8.

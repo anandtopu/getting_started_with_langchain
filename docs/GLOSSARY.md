@@ -1,6 +1,6 @@
 # Course glossary
 
-This glossary grows with the course. These terms cover modules 00–13; later phases add orchestration and production terminology.
+This glossary covers modules 00-17; the production tier will add further terms.
 
 | Term | Plain-English meaning | First lesson |
 |---|---|---|
@@ -116,5 +116,32 @@ This glossary grows with the course. These terms cover modules 00–13; later ph
 | ASGI | The Python interface between an asynchronous web application and its server | 13 |
 | Discovery | Asking a service which capabilities and schemas it advertises | 13 |
 | Allowlist | An explicit set of accepted names, values or endpoints | 13 |
+
+| StateGraph | A builder describing nodes, state and routing before compilation | 14 |
+| Node | A graph step that reads state and returns an update | 14 |
+| Edge | A graph connection scheduling what runs next | 14 |
+| Reducer | A function combining existing state with incoming updates | 14 |
+| Superstep | One graph execution round in which several nodes may run | 14 |
+| Command | A graph result that can update state, route control or resume a pause | 14 |
+| Interrupt | A saved pause waiting for external input | 14 |
+| Replay | Execution resumed from an earlier saved graph state | 14 |
+| Fork | A new execution branch created from a checkpoint | 14 |
+| Subgraph | A smaller compiled graph used inside another graph | 14 |
+| Outbox | A durable local queue of work to deliver after a business transaction | 14 |
+| Functional API | Task and entrypoint decorators for checkpointed ordinary control flow | 14 |
+| Gate | A code check that permits or blocks the next workflow stage | 15 |
+| Fan-out | Creating independent parallel work from one input | 15 |
+| Fan-in | Joining outputs from several workers | 15 |
+| Map-reduce | Applying an analysis to pieces of data then combining their results | 15 |
+| Send | A graph instruction naming one dynamic worker and its input | 15 |
+| Orchestrator | A component that proposes and dispatches a bounded work plan | 15 |
+| Evaluator-optimizer | A feedback loop alternating assessment and revision | 15 |
+| Supervisor | An agent coordinating specialist results | 16 |
+| Handoff | An explicit transfer of control or ownership to another role | 16 |
+| Context projection | Selecting only the fields a worker needs from a larger state | 16 |
+| Token proxy | An approximation for comparison, distinct from measured provider usage | 16 |
+| Virtual filesystem | File-like storage whose paths need not refer to host files | 17 |
+| StateBackend | The Deep Agents backend that stores files in graph state | 17 |
+| Agent harness | Supporting control and context-management code around model and tool calls | 17 |
 
 Return to the [learning path](../LEARNING_PATH.md).

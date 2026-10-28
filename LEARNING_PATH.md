@@ -1,6 +1,6 @@
 # Learning path
 
-**Phase 5 progress:** foundations, retrieval and agents (modules 00–13), Smart Ticket Desk, Handbook Q&A and Guarded Support are available; later tiers remain planned. The course is for someone who knows Python functions, classes, dictionaries, pip, virtual environments, a terminal and basic git. You do not need prior knowledge of language models, agents or async programming.
+**Phase 6 progress:** modules 00–17 and the first four checkpoints, through Operations Desk, are available. The production tier and capstones remain planned. The course is for someone who knows Python functions, classes, dictionaries, pip, virtual environments, a terminal and basic git. You do not need prior knowledge of language models, agents or async programming.
 
 Allow **54 hours** for the core course and five checkpoints. This is a planning estimate, not a promise of mastery: the complete feature reference is deliberately broader than a first pass. Optional examples, full exercise sets and capstones can add substantial time. Module 17 contributes two optional hours to the 54-hour route; skip it for a 52-hour core. Capstones add roughly 4–12 hours each.
 

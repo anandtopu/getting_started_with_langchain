@@ -1,5 +1,5 @@
 {
-  "completed_phase": 5,
+  "completed_phase": 6,
   "implemented_modules": [
     "00_setup",
     "01_chat_models",
@@ -14,13 +14,18 @@
     "10_agents",
     "11_memory",
     "12_middleware",
-    "13_mcp"
+    "13_mcp",
+    "14_langgraph",
+    "15_workflows",
+    "16_multi_agent",
+    "17_deep_agents"
   ],
   "implemented_capstones": [],
   "implemented_checkpoints": [
     "01_ticket_desk",
     "02_handbook_qa",
-    "03_guarded_support"
+    "03_guarded_support",
+    "04_operations_desk"
   ],
-  "status": "Foundations, retrieval and agents tiers complete; Phase 6 awaits continue. See VERIFICATION_NOTES.md for checks and live-provider limits."
+  "status": "Foundations, retrieval, agents and orchestration tiers complete; Phase 7 awaits continue. See VERIFICATION_NOTES.md for actual checks and live-provider limits."
 }

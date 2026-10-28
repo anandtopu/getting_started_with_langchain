@@ -1,6 +1,6 @@
 # Planned final repository tree
 
-Updated during Phase 5. Includes implemented and future files; see [progress](progress.json). Runtime data, credentials, caches and the virtual environment are excluded.
+Updated during Phase 6. Includes implemented and future files; see [progress](progress.json). Runtime data, credentials, caches and the virtual environment are excluded.
 
 ```text
 getting_started_with_langchain/
@@ -114,7 +114,9 @@ getting_started_with_langchain/
 │   │       └── test_acceptance.py
 │   ├── 04_operations_desk/
 │   │   ├── README.md
+│   │   ├── design_rationale.md
 │   │   ├── eval.jsonl
+│   │   ├── evaluation_report.json
 │   │   ├── rubric.md
 │   │   ├── solution.py
 │   │   ├── starter.py
@@ -147,8 +149,10 @@ getting_started_with_langchain/
 │   ├── mcp.py
 │   ├── memory.py
 │   ├── models.py
+│   ├── operations.py
 │   ├── pretty.py
 │   ├── rag.py
+│   ├── research.py
 │   ├── resilience.py
 │   ├── retrieval.py
 │   ├── returns.py
@@ -159,7 +163,8 @@ getting_started_with_langchain/
 │   ├── tracing.py
 │   ├── triage.py
 │   ├── vector_index.py
-│   └── web.py
+│   ├── web.py
+│   └── workflows.py
 ├── conftest.py
 ├── data/
 │   ├── README.md
@@ -209,9 +214,11 @@ getting_started_with_langchain/
 │   ├── phase3-verification.json
 │   ├── phase4-verification.json
 │   ├── phase5-verification.json
+│   ├── phase6-verification.json
 │   ├── progress.json
 │   ├── pypi-verification-phase2.json
 │   └── pypi-verification.json
+├── langgraph.json
 ├── modules/
 │   ├── 00_setup/
 │   │   ├── README.md
@@ -794,6 +801,7 @@ getting_started_with_langchain/
 │   ├── test_live.py
 │   ├── test_models.py
 │   ├── test_notebooks.py
+│   ├── test_orchestration_contracts.py
 │   ├── test_pretty.py
 │   ├── test_rag_contracts.py
 │   ├── test_security.py

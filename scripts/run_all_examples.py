@@ -44,6 +44,13 @@ def main() -> None:
         if not Path(temporary).resolve().is_relative_to(runtime.resolve()):
             raise ValueError("Smoke directory escaped .runtime/.")
         for index, (path, arguments) in enumerate(selected):
+            if (
+                "Requires: deep" in path.read_text(encoding="utf-8")
+                and find_spec("deepagents") is None
+            ):
+                skipped.append(path)
+                print_text(f"SKIP: {path.relative_to(ROOT)}; install with uv sync --extra deep.")
+                continue
             if "Requires: agents" in path.read_text(encoding="utf-8") and any(
                 find_spec(package) is None
                 for package in (

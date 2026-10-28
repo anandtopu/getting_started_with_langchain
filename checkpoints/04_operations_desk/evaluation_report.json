@@ -1,0 +1,272 @@
+{
+  "mode": "scripted-contract",
+  "quality_claim": "None: fixtures test routing and access controls, not model intelligence.",
+  "passed": 8,
+  "total": 8,
+  "cases": [
+    {
+      "id": "shipping",
+      "roles": [
+        "logistics"
+      ],
+      "denied": [],
+      "passed": true,
+      "reports": [
+        {
+          "role": "logistics",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "shipment_id": "S0001",
+              "order_id": "BW1001",
+              "carrier": "Brightwave Parcel Service",
+              "tracking_number": "SYNTHETIC-000001",
+              "shipped_at": "2026-01-13",
+              "delivered_at": "2026-01-14",
+              "status": "delivered"
+            }
+          ],
+          "verified_tool_result": true
+        }
+      ],
+      "answer": "Read-only specialist evidence is attached; no action was taken."
+    },
+    {
+      "id": "billing",
+      "roles": [
+        "billing"
+      ],
+      "denied": [],
+      "passed": true,
+      "reports": [
+        {
+          "role": "billing",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "order_id": "BW1001",
+              "status": "delivered",
+              "total_cents": 19285
+            }
+          ],
+          "verified_tool_result": true
+        }
+      ],
+      "answer": "Read-only specialist evidence is attached; no action was taken."
+    },
+    {
+      "id": "product",
+      "roles": [
+        "product"
+      ],
+      "denied": [],
+      "passed": true,
+      "reports": [
+        {
+          "role": "product",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "answer": "{\"sku\": \"BW-001\", \"name\": \"Ridge Tent\", \"category\": \"tents\", \"price\": \"49.95\", \"stock\": \"87\", \"description\": \"Synthetic Brightwave tent for weekend outdoor trips.",
+              "abstained": false,
+              "citations": [
+                {
+                  "chunk_id": "b780dee7296c0a73b90c6cd4",
+                  "quote": "{\"sku\": \"BW-001\", \"name\": \"Ridge Tent\", \"category\": \"tents\", \"price\": \"49.95\", \"stock\": \"87\", \"description\": \"Synthetic Brightwave tent for weekend outdoor trips.",
+                  "source": "products.csv",
+                  "page": null
+                }
+              ],
+              "mode": "extractive-fixture"
+            }
+          ],
+          "verified_tool_result": true
+        }
+      ],
+      "answer": "Read-only specialist evidence is attached; no action was taken."
+    },
+    {
+      "id": "combined",
+      "roles": [
+        "billing",
+        "logistics",
+        "product"
+      ],
+      "denied": [],
+      "passed": true,
+      "reports": [
+        {
+          "role": "billing",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "order_id": "BW1001",
+              "status": "delivered",
+              "total_cents": 19285
+            }
+          ],
+          "verified_tool_result": true
+        },
+        {
+          "role": "logistics",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "shipment_id": "S0001",
+              "order_id": "BW1001",
+              "carrier": "Brightwave Parcel Service",
+              "tracking_number": "SYNTHETIC-000001",
+              "shipped_at": "2026-01-13",
+              "delivered_at": "2026-01-14",
+              "status": "delivered"
+            }
+          ],
+          "verified_tool_result": true
+        },
+        {
+          "role": "product",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "answer": "{\"sku\": \"BW-001\", \"name\": \"Ridge Tent\", \"category\": \"tents\", \"price\": \"49.95\", \"stock\": \"87\", \"description\": \"Synthetic Brightwave tent for weekend outdoor trips.",
+              "abstained": false,
+              "citations": [
+                {
+                  "chunk_id": "b780dee7296c0a73b90c6cd4",
+                  "quote": "{\"sku\": \"BW-001\", \"name\": \"Ridge Tent\", \"category\": \"tents\", \"price\": \"49.95\", \"stock\": \"87\", \"description\": \"Synthetic Brightwave tent for weekend outdoor trips.",
+                  "source": "products.csv",
+                  "page": null
+                }
+              ],
+              "mode": "extractive-fixture"
+            }
+          ],
+          "verified_tool_result": true
+        }
+      ],
+      "answer": "Read-only specialist evidence is attached; no action was taken."
+    },
+    {
+      "id": "wrong-customer",
+      "roles": [
+        "billing",
+        "logistics"
+      ],
+      "denied": [
+        "billing",
+        "logistics"
+      ],
+      "passed": true,
+      "reports": [
+        {
+          "role": "billing",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "error": "Order not found for this customer."
+            }
+          ],
+          "verified_tool_result": false
+        },
+        {
+          "role": "logistics",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "error": "Order not found for this customer."
+            }
+          ],
+          "verified_tool_result": false
+        }
+      ],
+      "answer": "Read-only specialist evidence is attached; no action was taken."
+    },
+    {
+      "id": "clarification",
+      "roles": [],
+      "denied": [],
+      "passed": true,
+      "reports": [],
+      "answer": "Please clarify the support request."
+    },
+    {
+      "id": "hostile-text",
+      "roles": [
+        "billing"
+      ],
+      "denied": [
+        "billing"
+      ],
+      "passed": true,
+      "reports": [
+        {
+          "role": "billing",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "error": "Order not found for this customer."
+            }
+          ],
+          "verified_tool_result": false
+        }
+      ],
+      "answer": "Read-only specialist evidence is attached; no action was taken."
+    },
+    {
+      "id": "public-and-private",
+      "roles": [
+        "billing",
+        "logistics",
+        "product"
+      ],
+      "denied": [
+        "billing",
+        "logistics"
+      ],
+      "passed": true,
+      "reports": [
+        {
+          "role": "billing",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "error": "Order not found for this customer."
+            }
+          ],
+          "verified_tool_result": false
+        },
+        {
+          "role": "logistics",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "error": "Order not found for this customer."
+            }
+          ],
+          "verified_tool_result": false
+        },
+        {
+          "role": "product",
+          "answer": "Evidence collected; inspect tool results for verified facts.",
+          "evidence": [
+            {
+              "answer": "{\"sku\": \"BW-001\", \"name\": \"Ridge Tent\", \"category\": \"tents\", \"price\": \"49.95\", \"stock\": \"87\", \"description\": \"Synthetic Brightwave tent for weekend outdoor trips.",
+              "abstained": false,
+              "citations": [
+                {
+                  "chunk_id": "b780dee7296c0a73b90c6cd4",
+                  "quote": "{\"sku\": \"BW-001\", \"name\": \"Ridge Tent\", \"category\": \"tents\", \"price\": \"49.95\", \"stock\": \"87\", \"description\": \"Synthetic Brightwave tent for weekend outdoor trips.",
+                  "source": "products.csv",
+                  "page": null
+                }
+              ],
+              "mode": "extractive-fixture"
+            }
+          ],
+          "verified_tool_result": true
+        }
+      ],
+      "answer": "Read-only specialist evidence is attached; no action was taken."
+    }
+  ]
+}

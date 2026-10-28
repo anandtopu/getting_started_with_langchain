@@ -1,6 +1,18 @@
 # Completion evidence
 
-This checklist distinguishes the implemented foundations, retrieval and agents tiers from the complete course. Final acceptance requires the entire original scope; phased checks do not waive it.
+This checklist distinguishes the implemented foundations, retrieval, agents and orchestration tiers from the complete course. Final acceptance requires the entire original scope; phased checks do not waive it.
+
+## Phase 6 scope
+
+- [x] Modules 14–17: 28 examples, four applications, 12 runnable exercises and full solutions.
+- [x] Required guides, per-example diagrams and analogies, six-question quizzes and mirrored notebooks.
+- [x] Graph state, reducers, routing, manual tool loop, interrupts, persistence, history, subgraphs, streams and Functional API.
+- [x] Review rejection, eligibility and amount changes, duplicate requests, and crash recovery between return and outbox writes.
+- [x] Dynamic workers, deterministic aggregation, bounded evaluator loops and measured coordination overhead.
+- [x] Restricted specialist tools, context projection, virtual-path and output-size controls, source provenance and optional SDK execution.
+- [x] Operations Desk starter, reference solution, eight acceptance cases, evaluation report, actual graph export and design rationale.
+- [x] Local development server health and graph invocation over localhost; server stopped afterward.
+- [ ] Live provider quality, real Tavily search, Studio browser, remote CI and production authentication remain unverified.
 
 ## Phase 5 scope
 

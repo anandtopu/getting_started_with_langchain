@@ -7,7 +7,16 @@ import pytest
 
 @pytest.fixture(autouse=True)
 def retrieval_dependencies(request, tmp_path, monkeypatch):
-    agent_modules = {"10_agents", "11_memory", "12_middleware", "13_mcp"}
+    agent_modules = {
+        "10_agents",
+        "11_memory",
+        "12_middleware",
+        "13_mcp",
+        "14_langgraph",
+        "15_workflows",
+        "16_multi_agent",
+        "17_deep_agents",
+    }
     if agent_modules.intersection(request.node.path.parts):
         if any(
             find_spec(name) is None

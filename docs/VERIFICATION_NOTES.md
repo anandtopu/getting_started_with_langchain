@@ -1,5 +1,39 @@
 # Verification notes
 
+## Phase 6 execution record — 2026-10-28
+
+Modules **14–17** add 28 examples, four applications, twelve exercise starters and solutions, four quizzes and four notebooks. **Operations Desk** adds eight contract cases, a committed evaluation report, a graph export and a written design rationale. Eighteen modules and four checkpoints are implemented; three modules and the capstones remain planned.
+
+### Versions and API checks
+
+The [43-package refresh](phase6-verification.json) found no release changes from Phase 5. Core versions remain LangChain 1.4.7, LangGraph 1.2.18 and Deep Agents 0.7.32. The latter is pre-1.0 and stays optional. Package version 0.6.0 identifies this course phase. The lockfile remains the reproducible installation reference.
+
+Official references checked: [Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api), [persistence](https://docs.langchain.com/oss/python/langgraph/persistence), [interrupts](https://docs.langchain.com/oss/python/langgraph/interrupts), [Functional API](https://docs.langchain.com/oss/python/langgraph/functional-api), [workflow patterns](https://docs.langchain.com/oss/python/langgraph/workflows-agents), [multi-agent patterns](https://docs.langchain.com/oss/python/langchain/multi-agent), [Deep Agents customization](https://docs.langchain.com/oss/python/deepagents/customization), [backends](https://docs.langchain.com/oss/python/deepagents/backends), [local development](https://docs.langchain.com/langsmith/local-dev-testing) and [Tavily](https://docs.langchain.com/oss/python/integrations/tools/tavily_search).
+
+Installed signatures and executable examples verified StateGraph schemas and routing, reducers, ToolNode, runtime context, Command, Send, interrupt, SQLite saving, history/forks, subgraphs, all four requested stream modes, get_stream_writer, entrypoint/task and sync/async execution. The manual agent uses the current ToolNode with the central model factory. The deliberately broken parallel example reproduces InvalidUpdateError; the repaired graph uses a list reducer. A bounded loop reproduces GraphRecursionError.
+
+The optional SDK example executes planning, task delegation and virtual writing through actual create_deep_agent tools. It explicitly supplies StateBackend, TodoListMiddleware, a bounded researcher and a bounded general-purpose child; no provider default or shell backend is selected. Models are still created through common.models. The SDK's state files do not have the same narrow path allowlist as the separate manual VirtualFiles helper. Neither demonstration grants host filesystem tools.
+
+TavilySearch construction was checked with its installed API wrapper and a synthetic key. A mocked response verifies opt-in dispatch, result limits and URL provenance without contacting Tavily. The wrapper import is isolated in common/research.py because the provider package exposes it under `_utilities`; that internal path may require adjustment on a future upgrade. Real search, real model decisions and Studio browser behavior remain unverified.
+
+### Local server and recovery evidence
+
+The current `langgraph dev` command was verified from its help. The root langgraph.json registers a read-only, model-free graph. A temporary loopback server passed `/ok`, exposed `/runs/wait` in its OpenAPI schema, and returned `Review required` for an actual HTTP graph invocation. The process and its children were stopped afterward. No browser or public tunnel was opened. Installed server components were langgraph-api 0.16.8 and langgraph-runtime-inmem 0.36.8. The stateless request emitted the upstream warning that durability has no effect without a checkpointer; durable SQLite behavior is tested separately. Windows CLI help needed UTF-8 output to print its upstream emoji.
+
+Return inspection is now shared between a read-only preflight and the transactional writer. Tests verify no preapproval write, rejection with no write, resumed eligibility changes, changed-amount rejection, ownership, idempotency and one outbox row per return. An injected failure after the return commit leaves one return and zero notices; resuming repairs it to one of each. This is recoverable at-least-once work across separate transactions, not an atomic distributed transaction or evidence of email delivery. The local outbox rechecks ownership and reads the recorded refund amount itself.
+
+Report tests verify all 300 reviews across six categories, deterministic aggregation, a two-attempt ceiling, rejection of duplicate/unknown work and prevention of negative initial counters. The normal fixture uses ten logical model calls; an exhausted single-attempt run remains unaccepted. These are structural and budget checks, not factuality scores. Specialist tests preserve SQL denials, validate public product citations, restrict role labels and project minimum inputs. Virtual-file tests reject traversal, source overwrites, oversized writes and unknown citations. The [Operations Desk report](../checkpoints/04_operations_desk/evaluation_report.json) records 8/8 scripted routing/access cases; no live routing-accuracy claim is made.
+
+### Execution results and limits
+
+The first full run passed 468 tests with one opt-in live skip and the expected MCP beta warning. All 18 notebooks and 121 standalone targets passed. The expanded reducer demonstration initially exposed a schema conflict: its typed nodes contributed their reduced schema to the intentionally unreduced graph. Explicit input_schema=Unreduced fixes that demonstration; it now produces the intended InvalidUpdateError and then runs the repaired graph. The changed graph notebook and both expanded standalone examples were re-executed successfully. Final suite counts and basic-installation results are recorded in [Phase 6 metadata](phase6-verification.json).
+
+The final full suite passed **469 tests**, with one opt-in live skip and the expected MCP beta warning.
+
+The basic `uv sync --locked` environment passed 216 tests, with 249 explicit optional-extra/live skips. Its standalone run passed 38/38 targets and skipped 83 missing-extra examples. The full environment was then restored. Notebook execution preserved cleared committed outputs; the upstream local-kernel transport warning remains visible rather than suppressed.
+
+All 56 teaching scripts have typed functions and are at most 96 lines. Twelve runnable exercise baselines intentionally fail their twelve target checks until completed; the supplied solutions pass. Local lint, format, legacy and coverage checks pass. Seventy links still point to explicitly planned future files. Actual hosted/Ollama quality, real Tavily search, Studio browser, production host authentication and remote cross-platform CI remain unverified.
+
 ## Phase 5 execution record — 2026-10-28
 
 Modules **10–13** and **Guarded Support** add 28 examples, four applications plus an inventory server, 12 exercise starters and solutions, four quizzes and four notebooks. Fourteen modules and three checkpoints are now implemented. Windows/Python 3.12 checks remain local; actual hosted/Ollama model decisions and remote CI are not claimed.

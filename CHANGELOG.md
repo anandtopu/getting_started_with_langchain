@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.6.0 — 2026-10-28
+
+- Added modules 14–17: 28 orchestration examples, four applications, 12 exercise starters and solutions, quizzes and four mirrored notebooks.
+- Added an explicit return graph with durable review, transactional eligibility rechecks, reviewed-amount validation, and an idempotent local notification outbox.
+- Added dynamic category workers, bounded report revision, restricted specialists and minimum-context delegation.
+- Added manual research planning, confined virtual files, source validation, opt-in Tavily integration and a verified optional Deep Agents SDK example.
+- Added Operations Desk with eight contract cases, a measured report and written design rationale.
+- Verified the local LangGraph CLI server with a real localhost graph request; Studio browser, live providers, Tavily service and remote CI remain unverified.
+- Three modules and the capstones remain planned for Phases 7–8.
+
 ## 0.5.0 — 2026-10-28
 
 - Added modules 10–13: 28 examples, four applications plus a local inventory server, 12 exercise starters and solutions, quizzes and four mirrored notebooks.

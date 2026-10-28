@@ -1,0 +1,5 @@
+{
+  "dependencies": ["."],
+  "graphs": {"brightwave_demo": "./common/graphs.py:studio_graph"},
+  "env": {"COURSE_OFFLINE": "true", "LANGSMITH_TRACING": "false"}
+}

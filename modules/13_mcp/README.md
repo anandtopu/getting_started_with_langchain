@@ -284,4 +284,4 @@ Its tool calls need the live session, and the context guarantees cleanup when th
 
 Complete [Guarded Support](../../checkpoints/03_guarded_support/README.md). You are ready when you can prove a rejected request wrote nothing, reopen a paused workflow, and explain why protocol compatibility is not permission.
 
-Continue to [LangGraph fundamentals](../14_langgraph/README.md). The next tier is planned for Phase 6.
+Continue to [LangGraph fundamentals](../14_langgraph/README.md). The orchestration tier is available with `uv sync --extra agents`.
