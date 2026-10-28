@@ -29,7 +29,9 @@ def check(root: Path = ROOT, *, require_complete: bool = False) -> tuple[list[st
     completed = set(progress["implemented_modules"])
     known = {m["slug"] for m in plan["modules"]}
     failures = [f"Unknown completed module: {name}" for name in completed - known]
-    present = {p.name for p in (root / "modules").glob("*") if p.is_dir()}
+    present = {
+        p.name for p in (root / "modules").glob("*") if p.is_dir() and p.name != "__pycache__"
+    }
     failures.extend(f"Unregistered module directory: {name}" for name in present - completed)
     for module in plan["modules"]:
         if module["slug"] not in completed:

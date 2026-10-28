@@ -1,6 +1,16 @@
 # Completion evidence
 
-This checklist distinguishes the implemented foundations tier from the complete course. Final acceptance requires the entire original scope; phased checks do not waive it.
+This checklist distinguishes the implemented foundations and retrieval tiers from the complete course. Final acceptance requires the entire original scope; phased checks do not waive it.
+
+## Phase 4 scope
+
+- [x] Modules 06–09: 27 examples, four applications, 12 runnable exercises and complete solutions.
+- [x] Four full guides, per-example diagrams, six-question quizzes and notebooks mirroring source.
+- [x] Handbook Q&A starter, solution, rubric, six regression cases and committed offline report.
+- [x] Page/source provenance, exact-quote validation, cache namespaces and stale-index rejection.
+- [x] Reproducible before/after report; smaller index with unchanged 5/7 retrieval hit rate.
+- [x] Dependency refresh and documented replacement for sunset community loaders.
+- [ ] Actual hosted/Ollama semantic quality and cross-platform remote CI (still unverified).
 
 ## Phase 3 scope
 

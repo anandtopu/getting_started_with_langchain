@@ -1,16 +1,21 @@
 {
-  "completed_phase": 3,
+  "completed_phase": 4,
   "implemented_modules": [
     "00_setup",
     "01_chat_models",
     "02_prompt_templates",
     "03_structured_output",
     "04_lcel_runnables",
-    "05_tools"
+    "05_tools",
+    "06_loaders_splitters",
+    "07_embeddings_retrievers",
+    "08_rag_fundamentals",
+    "09_advanced_rag"
   ],
   "implemented_capstones": [],
   "implemented_checkpoints": [
-    "01_ticket_desk"
+    "01_ticket_desk",
+    "02_handbook_qa"
   ],
-  "status": "Foundations tier and Smart Ticket Desk complete; Phase 4 awaits continue. See VERIFICATION_NOTES.md for checks and live-provider limits."
+  "status": "Foundations and retrieval tiers complete; Phase 5 awaits continue. See VERIFICATION_NOTES.md for checks and live-provider limits."
 }

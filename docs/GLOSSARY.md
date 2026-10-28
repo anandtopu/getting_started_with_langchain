@@ -1,6 +1,6 @@
-# Foundation glossary
+# Course glossary
 
-This glossary grows with the course. These terms cover modules 00–05; the final phase expands it to at least 60 terms.
+This glossary grows with the course. These terms cover modules 00–09; later phases add agents, orchestration and production terminology.
 
 | Term | Plain-English meaning | First lesson |
 |---|---|---|
@@ -56,5 +56,39 @@ This glossary grows with the course. These terms cover modules 00–05; the fina
 | Parameterized SQL | SQL whose values are bound separately from query syntax | 05 |
 | Authorization | Code-enforced permission to access a particular resource | 05 |
 | Prompt injection | Untrusted content attempting to redirect the model's instructions | 05 |
+| Document | Text plus metadata, with an optional identifier | 06 |
+| Metadata | Labels such as source file, page, price or category attached to a record | 06 |
+| Provenance | Information showing where evidence came from and how it was transformed | 06 |
+| Lazy loading | Yielding records as they are requested instead of first collecting every result | 06 |
+| OCR | Optical character recognition: converting images of letters into machine-readable text | 06 |
+| Chunk | A bounded piece of a larger source document | 06 |
+| Chunk overlap | Text shared between neighbouring chunks to reduce loss at boundaries | 06 |
+| Parent ID | A reference linking a chunk to its original page or section | 06 |
+| Embedding | A model-produced list of numbers representing text in a learned coordinate space | 07 |
+| Dimension | The number of coordinates in a vector | 07 |
+| Cosine similarity | A measure comparing vector directions using their normalized dot product | 07 |
+| SVD | Singular value decomposition: a matrix method that can project vectors onto fewer axes | 07 |
+| Vector store | An index storing vectors with document IDs, text and metadata | 07 |
+| Collection | A named group of records in a vector store | 07 |
+| Retriever | A component that takes a query and returns relevant Documents | 07 |
+| MMR | Maximal marginal relevance: balancing query relevance against repeated information | 07 |
+| Cache namespace | Part of a cache identity that keeps incompatible values separate | 07 |
+| Index manifest | A record of model, dimensions and corpus identity used to validate a stored index | 07 |
+| RAG | Retrieval-augmented generation: supplying retrieved evidence to a model when answering | 08 |
+| BM25 | A lexical scoring method based on matching words, their rarity and document length | 08 |
+| Grounding | Connecting an answer to evidence supplied for that request | 08 |
+| Citation | A reference to evidence, ideally resolved and validated by application code | 08 |
+| Entailment | A relationship in which the evidence logically supports an answer's claim | 08 |
+| Abstention | Explicitly declining to answer when available evidence is insufficient | 08 |
+| Query rewriting | Rephrasing a search request, optionally resolving references using supplied history | 09 |
+| Hybrid search | Combining lexical and semantic search results | 09 |
+| RRF | Reciprocal-rank fusion: combining ranked lists using inverse rank contributions | 09 |
+| Reranking | Reordering an initial shortlist using a second relevance assessment | 09 |
+| Contextual compression | Keeping the parts of retrieved evidence most useful for the current question | 09 |
+| Parent retrieval | Searching small chunks, then returning their larger source sections | 09 |
+| Retrieval hit rate | Fraction of answerable questions whose expected evidence appears in the shortlist | 09 |
+| Evaluation proxy | An easily measured signal that approximates, but does not prove, a target quality | 09 |
+| Held-out set | Examples kept separate from tuning so they can test generalisation | 09 |
+| LLM judge | A model asked to assess another answer using an explicit rubric | 09 |
 
 Return to the [learning path](../LEARNING_PATH.md).

@@ -1,0 +1,6 @@
+{"id":"approval","question":"What refund amount requires manager approval?","page":8}
+{"id":"returns","question":"What is the return window for unused gear?","page":2}
+{"id":"shipping","question":"How much is standard shipping below the free-shipping threshold?","page":3}
+{"id":"warranty","question":"What is the manufacturing-defect warranty duration?","page":4}
+{"id":"privacy","question":"How long are closed support tickets retained?","page":5}
+{"id":"unknown","question":"Who won the 2025 Brightwave design award?","page":null}

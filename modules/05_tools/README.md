@@ -319,4 +319,4 @@ No. It transports context supplied by the application; the identity source must 
 
 Complete the [Smart Ticket Desk checkpoint](../../checkpoints/01_ticket_desk/README.md) before starting retrieval. You are ready when you can explain the loop, reject wrong-customer access, and keep fixture metrics separate from model quality.
 
-Continue to [Document loaders and text splitters](../06_loaders_splitters/README.md). This next tier is planned for Phase 4 and is not implemented yet.
+Continue to [Document loaders and text splitters](../06_loaders_splitters/README.md). The retrieval tier is now available; install it with `uv sync --extra rag`.

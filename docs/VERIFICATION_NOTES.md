@@ -1,5 +1,40 @@
 # Verification notes
 
+## Phase 4 execution record — 2026-10-28
+
+Modules **06–09** and **Handbook Q&A** add 27 examples, four applications, 12 runnable exercise starters and solutions, four quizzes and four notebooks. The implemented course now contains ten modules and two checkpoints. Local validation uses Windows and Python 3.12; remote CI and actual hosted/Ollama generation remain unverified.
+
+The 42-package PyPI refresh found the same latest versions as the Phase 3 refresh. The [Phase 4 record](phase4-verification.json) records those versions, source URLs, inspected interfaces and final checks. The lock resolves 286 packages across all optional groups. The installed retrieval tier uses langchain 1.4.7, langchain-core 1.7.1, langchain-text-splitters 1.1.3, langchain-chroma 1.1.0 and pypdf 6.21.3.
+
+| Check | Result |
+|---|---|
+| Retrieval plus authoring installation | 268 passed, one opt-in live test skipped. |
+| Minimal locked installation | 179 passed, 85 explicit skips for missing retrieval/PDF dependencies and the live test. The checkpoint module skips during collection, so collected test totals differ by installation. |
+| Standalone smoke | Retrieval installation: 65/65 passed. Minimal installation: 38/38 passed, 27 missing-extra skips. |
+| Notebooks | 10/10 execute offline; source hashes and cleared outputs checked. |
+| Lint and format | Both pass across 278 Python/notebook files. |
+| Legacy scan and coverage | Zero violations; ten implemented modules, eleven future modules. |
+| Local and external links | Zero failures; 249 references explicitly deferred to planned files. |
+| Teaching scope | All 55 new example/application/exercise/solution scripts have typed functions and run; longest is 53 lines. |
+
+### Loader substitution and API verification
+
+The upstream [community sunset notice](https://github.com/langchain-ai/langchain-community/issues/674) states that the package was sunset in May 2026 and the repository archived in June. The Phase 1 loader proposal is therefore superseded: remove `langchain-community` from the retrieval extra and use `langchain_core.document_loaders.BaseLoader` with small visible pypdf/standard-library adapters. The lock consequently drops its retired chain dependency too. Learners still practice `load`, `lazy_load`, PDF pages, CSV/JSON records, text/Markdown and explicit directory ingestion. No broad directory sweep imports evaluation answers or poisoned fixtures.
+
+Official sources checked: [document loaders](https://docs.langchain.com/oss/python/integrations/document_loaders), [splitters](https://docs.langchain.com/oss/python/integrations/splitters), [embeddings](https://docs.langchain.com/oss/python/integrations/embeddings/), [Chroma](https://docs.langchain.com/oss/python/integrations/vectorstores/chroma), [retrieval](https://docs.langchain.com/oss/python/langchain/retrieval), and [evaluation](https://docs.langchain.com/langsmith/evaluate-llm-application). The retrieval URL currently redirects to a Deep Agents retrieval page; using that general explanation does not add a Deep Agents dependency. Specific old PDF integration links returned 404, so guides link to the current loader overview and implementation instead.
+
+Installed signatures and runtime behaviour were checked for Document, BaseLoader, RecursiveCharacterTextSplitter, MarkdownHeaderTextSplitter, TokenTextSplitter, Tokenizer/split_text_on_tokens, language-aware splitting, InMemoryVectorStore, Chroma persistence/update/delete/filter/MMR, Embeddings, and BM25Okapi. Current Chroma persistence is automatic. Embedding models always come from the central factory, with explicit telemetry-disabled local Chroma settings; no default embedding download is used. The offline token example uses an explicitly labelled ASCII byte fixture because a real tokenizer may download its vocabulary on first use.
+
+### Measured evidence and boundaries
+
+The committed [before/after report](../modules/09_advanced_rag/results/README.md) reproduces exactly under an offline test. The candidate reduces chunks from **138 to 44 (68.1%)**, while source/page hit rate remains **5/7** and the keyword correctness proxy remains **5/8**. Exact-extract support is 1.0 for non-abstained answers, which merely reflects copying source text. This is neither a live-model score nor proof of relevance or entailment. The eight-case set is developer-visible, not blind; labels are excluded from indexing and generation. Live mode uses actual vector ranking and generation and constitutes a separate experiment.
+
+The checkpoint's [six-case report](../checkpoints/02_handbook_qa/evaluation_report.json) records five expected-page retrieval hits and an unknown-fact abstention. Approval appears on more than one handbook page: page 8 is retrieved, while a valid quote may come from page 2. Citation validation derives page/source from retrieved metadata and checks exact quoted text. It cannot establish that every answer claim follows from that quote.
+
+Tests cover provenance-sensitive identities, chunk bounds, cache reopen/hits and query/document namespaces, incompatible embedding/corpus manifests, product eligibility, invalid citations, invented compression, parent lookup and evaluation denominators. Default tests and smoke runs block network; missing retrieval extras are explicitly skipped in a basic installation. Notebooks mirror actual scripts and keep committed outputs cleared. Both generated teaching plots were visually inspected. Final executed counts are recorded in [Phase 4 metadata](phase4-verification.json).
+
+No paid model calls, public deployment or remote CI runs were performed. Eleven modules, later checkpoints and capstones remain planned. The final-release link and coverage gates intentionally remain incomplete until those phases are built.
+
 ## Phase 3 execution record — 2026-10-28
 
 Modules **00–05** and **Smart Ticket Desk** are implemented. Local checks used **Windows / CPython 3.12.13 / uv 0.12.18**. The tier contains 36 examples (longest: 95 lines), six applications, 18 runnable exercise starters and solutions, six quizzes and six notebooks. Future tiers remain deferred.
@@ -165,7 +200,7 @@ Use a latest-verified lower bound and the next minor as the upper bound to limit
 
 1. **MCP migration:** the [old adapter repository](https://github.com/langchain-ai/langchain-mcp-adapters) was archived on September 17, 2026. PyPI 0.3.2 requires `mcp>=1.24.0,<2.0.0`, conflicting with current SDK 2.3.0. The [official migration guide](https://docs.langchain.com/oss/python/migrate/langchain-mcp-adapters) replaces MultiServerMCPClient with `langchain.mcp.MCPAdapter` and `list_tools()`. Proposed main path: `langchain[mcp]`, FastMCP 4.1.4 and official MCP SDK 2.3.0; explain the old client only in the migration guide. **MCPAdapter is explicitly beta** even though LangChain 1.4.7 is stable. Keep it behind `common/mcp.py`, pin its minor range and test both transports. If its locked behavior is unsuitable, use the official SDK client with narrowly typed LangChain inventory tools; do not silently fall back to the archived dependency. This is a visible proposed adjustment to the original client requirement.
 2. **Deep Agents:** 0.7.32 exists but is pre-1.0. The required lesson first implements planning, confined virtual files and subagents with create_agent and TodoListMiddleware. The package-specific demonstration is optional, with its exact tested APIs recorded later.
-3. **Advanced retrieval:** implement fusion, parent lookup, rewriting, compression and embedding caching with current Runnable/Document/Embeddings primitives. Do not import retired convenience chains. `langchain-community` is restricted to loaders and may itself install `langchain-classic` transitively; the course does not use those legacy chain APIs.
+3. **Advanced retrieval:** implement fusion, parent lookup, rewriting, compression and embedding caching with current Runnable/Document/Embeddings primitives. Do not import retired convenience chains. The original community-loader proposal was superseded in Phase 4 by core BaseLoader adapters after verifying the upstream sunset; the retired package is no longer installed.
 4. **Fake-model limits:** GenericFakeChatModel can supply scripted messages but is not automatically a full tool-binding/structured-output provider. Test `bind_tools` and structured-output behavior explicitly and provide a small scripted adapter in common/testing.py where required. Random fake embeddings are not evidence of semantic retrieval quality.
 5. **Parameter portability:** `temperature=0` is used for comparisons when the model accepts it. The [Haiku 5.5 specification](https://platform.claude.com/docs/en/models/haiku-5-5/overview) says to omit temperature/top_p/top_k. Document and test this exception; deterministic CI uses fakes and live evaluations use tolerances. Do not send unsupported parameters for the sake of a generic interface.
 6. **One-line provider switching:** read per-provider model defaults from .env.example, leaving LLM_MODEL blank unless explicitly overridden. With EMBEDDINGS_PROVIDER=auto, selecting Ollama also selects local embeddings; hosted chat defaults to OpenAI embeddings unless overridden. Anthropic chat is supported without inventing an Anthropic embedding model.

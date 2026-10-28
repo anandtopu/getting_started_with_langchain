@@ -1,6 +1,6 @@
 # Planned final repository tree
 
-Updated during Phase 3. This inventory includes implemented files and future teaching files; see [progress](progress.json). Runtime data, credentials, caches and the virtual environment are excluded.
+Updated during Phase 4. This inventory includes implemented files and future teaching files; see [progress](progress.json). Runtime data, credentials, caches and the virtual environment are excluded.
 
 ```text
 getting_started_with_langchain/
@@ -97,6 +97,7 @@ getting_started_with_langchain/
 │   ├── 02_handbook_qa/
 │   │   ├── README.md
 │   │   ├── eval.jsonl
+│   │   ├── evaluation_report.json
 │   │   ├── rubric.md
 │   │   ├── solution.py
 │   │   ├── starter.py
@@ -128,6 +129,7 @@ getting_started_with_langchain/
 │           └── test_acceptance.py
 ├── common/
 │   ├── __init__.py
+│   ├── advanced_rag.py
 │   ├── agent.py
 │   ├── budget.py
 │   ├── config.py
@@ -138,11 +140,14 @@ getting_started_with_langchain/
 │   ├── fixtures.py
 │   ├── graphs.py
 │   ├── guardrails.py
+│   ├── handbook.py
+│   ├── knowledge.py
 │   ├── lesson.py
 │   ├── mcp.py
 │   ├── memory.py
 │   ├── models.py
 │   ├── pretty.py
+│   ├── rag.py
 │   ├── resilience.py
 │   ├── retrieval.py
 │   ├── schemas.py
@@ -151,6 +156,7 @@ getting_started_with_langchain/
 │   ├── tools.py
 │   ├── tracing.py
 │   ├── triage.py
+│   ├── vector_index.py
 │   └── web.py
 ├── conftest.py
 ├── data/
@@ -199,6 +205,7 @@ getting_started_with_langchain/
 │   ├── dependency-candidates.in
 │   ├── dependency-resolution.txt
 │   ├── phase3-verification.json
+│   ├── phase4-verification.json
 │   ├── progress.json
 │   ├── pypi-verification-phase2.json
 │   └── pypi-verification.json
@@ -723,36 +730,37 @@ getting_started_with_langchain/
 │   │   │   └── test_use_case.py
 │   │   └── use_case/
 │   │       └── support_eval.py
-│   └── 20_production/
-│       ├── README.md
-│       ├── examples/
-│       │   ├── 01_config_resilience.py
-│       │   ├── 02_cache_budget.py
-│       │   ├── 03_structured_logging.py
-│       │   ├── 04_injection.py
-│       │   ├── 05_least_privilege.py
-│       │   ├── 06_docker.py
-│       │   ├── 07_agent_server.py
-│       │   └── 08_postgres.py
-│       ├── exercises/
-│       │   ├── 01_practice.py
-│       │   ├── 02_apply.py
-│       │   └── 03_stretch.py
-│       ├── notebook.ipynb
-│       ├── quiz.md
-│       ├── solutions/
-│       │   ├── 01_practice.py
-│       │   ├── 02_apply.py
-│       │   └── 03_stretch.py
-│       ├── tests/
-│       │   ├── test_examples.py
-│       │   ├── test_exercises.py
-│       │   └── test_use_case.py
-│       └── use_case/
-│           ├── .dockerignore
-│           ├── Dockerfile
-│           ├── langgraph.json
-│           └── production_assistant.py
+│   ├── 20_production/
+│   │   ├── README.md
+│   │   ├── examples/
+│   │   │   ├── 01_config_resilience.py
+│   │   │   ├── 02_cache_budget.py
+│   │   │   ├── 03_structured_logging.py
+│   │   │   ├── 04_injection.py
+│   │   │   ├── 05_least_privilege.py
+│   │   │   ├── 06_docker.py
+│   │   │   ├── 07_agent_server.py
+│   │   │   └── 08_postgres.py
+│   │   ├── exercises/
+│   │   │   ├── 01_practice.py
+│   │   │   ├── 02_apply.py
+│   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
+│   │   ├── solutions/
+│   │   │   ├── 01_practice.py
+│   │   │   ├── 02_apply.py
+│   │   │   └── 03_stretch.py
+│   │   ├── tests/
+│   │   │   ├── test_examples.py
+│   │   │   ├── test_exercises.py
+│   │   │   └── test_use_case.py
+│   │   └── use_case/
+│   │       ├── .dockerignore
+│   │       ├── Dockerfile
+│   │       ├── langgraph.json
+│   │       └── production_assistant.py
+│   └── conftest.py
 ├── pyproject.toml
 ├── scripts/
 │   ├── __init__.py
@@ -783,6 +791,7 @@ getting_started_with_langchain/
 │   ├── test_models.py
 │   ├── test_notebooks.py
 │   ├── test_pretty.py
+│   ├── test_rag_contracts.py
 │   ├── test_security.py
 │   └── test_tools.py
 └── uv.lock

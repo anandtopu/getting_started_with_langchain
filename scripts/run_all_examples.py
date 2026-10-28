@@ -1,7 +1,7 @@
 """Smoke-test implemented examples; fakes and network denial are the default.
 
 Run: uv run python scripts/run_all_examples.py
-Expected in Phase 3: 38 targets pass, including 36 of the 139 planned course examples.
+Expected: installed-tier examples pass; missing retrieval extras are explicitly skipped.
 --live explicitly enables selected real providers and possible API cost.
 """
 
@@ -11,6 +11,7 @@ import os
 import subprocess
 import sys
 import tempfile
+from importlib.util import find_spec
 from pathlib import Path
 
 from common.config import ROOT
@@ -38,10 +39,18 @@ def main() -> None:
     runtime = ROOT / ".runtime"
     runtime.mkdir(exist_ok=True)
     failures = []
+    skipped = []
     with tempfile.TemporaryDirectory(prefix="smoke-", dir=runtime) as temporary:
         if not Path(temporary).resolve().is_relative_to(runtime.resolve()):
             raise ValueError("Smoke directory escaped .runtime/.")
         for index, (path, arguments) in enumerate(selected):
+            if "Requires: rag" in path.read_text(encoding="utf-8") and any(
+                find_spec(package) is None
+                for package in ("pypdf", "langchain_chroma", "rank_bm25", "matplotlib")
+            ):
+                skipped.append(path)
+                print_text(f"SKIP: {path.relative_to(ROOT)}; install with uv sync --extra rag.")
+                continue
             environment = dict(os.environ)
             environment.update(
                 COURSE_OFFLINE="false" if args.live else "true", LANGSMITH_TRACING="false"
@@ -77,7 +86,11 @@ def main() -> None:
     plan = json.loads((ROOT / "docs/course-plan.json").read_text(encoding="utf-8"))
     expected = sum(len(module["examples"]) for module in plan["modules"])
     implemented = len(selected) - 2
-    print_text(f"{len(selected) - len(failures)}/{len(selected)} implemented targets passed.")
+    attempted = len(selected) - len(skipped)
+    print_text(
+        f"{attempted - len(failures)}/{attempted} targets passed; "
+        f"{len(skipped)} missing-extra skips."
+    )
     print_text(
         f"Course examples implemented: {implemented}/{expected}; remaining lessons are deferred."
     )

@@ -1,6 +1,6 @@
 """Execute committed notebooks without modifying their cleared source outputs.
 
-Run: uv run --group authoring python scripts/check_notebooks.py
+Run: uv run --extra rag --group authoring python scripts/check_notebooks.py
 Expected: each implemented notebook executes with explicit offline fixtures.
 Cost: no model calls; requires the optional authoring environment.
 """

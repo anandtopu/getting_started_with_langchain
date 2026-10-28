@@ -1,6 +1,6 @@
 {
-  "status": "Phase 3 complete: modules 00-05 and Smart Ticket Desk; 15 modules remain planned",
-  "verified_date": "2026-10-27",
+  "status": "Phase 4 complete: modules 00-09 and two checkpoints; 11 modules remain planned",
+  "verified_date": "2026-10-28",
   "timezone": "America/Chicago",
   "python": ">=3.12,<3.15",
   "modules": [
@@ -259,12 +259,12 @@
         },
         {
           "file": "02_pdf_lazy.py",
-          "features": "PyPDFLoader; lazy_load; PDF pages and citations",
+          "features": "Current BaseLoader PDF adapter with pypdf; lazy_load, one-based pages; replacement for sunset community loaders",
           "source": "https://docs.langchain.com/oss/python/integrations/document_loaders"
         },
         {
           "file": "03_file_loaders.py",
-          "features": "Markdown/text, CSV, JSON and directory loading; loader interfaces",
+          "features": "Current BaseLoader adapters for CSV, text, Markdown and JSON; explicit directory ingestion",
           "source": "https://docs.langchain.com/oss/python/integrations/document_loaders"
         },
         {
@@ -985,6 +985,7 @@
     "checkpoints/01_ticket_desk/tests/test_acceptance.py",
     "checkpoints/02_handbook_qa/README.md",
     "checkpoints/02_handbook_qa/eval.jsonl",
+    "checkpoints/02_handbook_qa/evaluation_report.json",
     "checkpoints/02_handbook_qa/rubric.md",
     "checkpoints/02_handbook_qa/solution.py",
     "checkpoints/02_handbook_qa/starter.py",
@@ -1008,6 +1009,7 @@
     "checkpoints/05_production_release/starter.py",
     "checkpoints/05_production_release/tests/test_acceptance.py",
     "common/__init__.py",
+    "common/advanced_rag.py",
     "common/agent.py",
     "common/budget.py",
     "common/config.py",
@@ -1018,11 +1020,14 @@
     "common/fixtures.py",
     "common/graphs.py",
     "common/guardrails.py",
+    "common/handbook.py",
+    "common/knowledge.py",
     "common/lesson.py",
     "common/mcp.py",
     "common/memory.py",
     "common/models.py",
     "common/pretty.py",
+    "common/rag.py",
     "common/resilience.py",
     "common/retrieval.py",
     "common/schemas.py",
@@ -1031,6 +1036,7 @@
     "common/tools.py",
     "common/tracing.py",
     "common/triage.py",
+    "common/vector_index.py",
     "common/web.py",
     "conftest.py",
     "data/README.md",
@@ -1071,6 +1077,7 @@
     "docs/dependency-candidates.in",
     "docs/dependency-resolution.txt",
     "docs/phase3-verification.json",
+    "docs/phase4-verification.json",
     "docs/progress.json",
     "docs/pypi-verification-phase2.json",
     "docs/pypi-verification.json",
@@ -1496,6 +1503,7 @@
     "modules/20_production/use_case/Dockerfile",
     "modules/20_production/use_case/langgraph.json",
     "modules/20_production/use_case/production_assistant.py",
+    "modules/conftest.py",
     "pyproject.toml",
     "scripts/__init__.py",
     "scripts/_smoke_worker.py",
@@ -1524,6 +1532,7 @@
     "tests/test_models.py",
     "tests/test_notebooks.py",
     "tests/test_pretty.py",
+    "tests/test_rag_contracts.py",
     "tests/test_security.py",
     "tests/test_tools.py",
     "uv.lock"

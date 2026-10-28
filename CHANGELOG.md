@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.0 — 2026-10-28
+
+- Added modules 06–09: 27 retrieval examples, four applications, 12 exercise starters and solutions, quizzes and four source-matched notebooks.
+- Added Handbook Q&A with page-aware retrieval, validated quotes, six evaluation cases, a committed offline report and acceptance tests.
+- Added current loader adapters, chunk provenance, embedding cache isolation, persistent Chroma manifests, hybrid ranking, exact-extract compression and bounded query rewriting.
+- Recorded a reproducible before/after benchmark: 138 to 44 chunks with unchanged source/page hit rate of 5/7. No live quality improvement is claimed.
+- Removed the sunset community integration package; PDF/CSV/JSON/text ingestion now uses the core loader interface, pypdf and standard-library readers.
+- Extended the glossary and troubleshooting guide, and made basic-installation tests explicitly skip unavailable retrieval extras.
+- Eleven modules remain planned. Live provider generation and remote CI remain unverified.
+
 ## 0.3.0 — 2026-10-28
 
 - Added six foundation modules: 36 examples, six applications, 18 exercises and solutions, quizzes, diagrams and six executable notebooks.

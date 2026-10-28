@@ -1,0 +1,124 @@
+{
+  "mode": "fixture",
+  "rows": [
+    {
+      "id": "approval",
+      "retrieval_hit": true,
+      "answer": {
+        "answer": "Refunds over $100 require manager approval before any refund is recorded.",
+        "abstained": false,
+        "citations": [
+          {
+            "chunk_id": "682ce01beeb0c305924c47cf",
+            "quote": "Refunds over $100 require manager approval before any refund is recorded.",
+            "source": "handbook/employee_handbook.pdf",
+            "page": 2
+          }
+        ],
+        "mode": "extractive-fixture",
+        "retrieved_pages": [
+          2,
+          8
+        ]
+      }
+    },
+    {
+      "id": "returns",
+      "retrieval_hit": true,
+      "answer": {
+        "answer": "Unused gear may be returned within 30 calendar days after delivery.",
+        "abstained": false,
+        "citations": [
+          {
+            "chunk_id": "00394e035cb668065998b945",
+            "quote": "Unused gear may be returned within 30 calendar days after delivery.",
+            "source": "handbook/employee_handbook.pdf",
+            "page": 2
+          }
+        ],
+        "mode": "extractive-fixture",
+        "retrieved_pages": [
+          1,
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "id": "shipping",
+      "retrieval_hit": true,
+      "answer": {
+        "answer": "merchandise subtotal over $75 receive free standard shipping; an order of exactly $75 does not.",
+        "abstained": false,
+        "citations": [
+          {
+            "chunk_id": "2d54c04cfa3d156247db9064",
+            "quote": "merchandise subtotal over $75 receive free standard shipping; an order of exactly $75 does not.",
+            "source": "handbook/employee_handbook.pdf",
+            "page": 3
+          }
+        ],
+        "mode": "extractive-fixture",
+        "retrieved_pages": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "id": "warranty",
+      "retrieval_hit": true,
+      "answer": {
+        "answer": "Never represent an unverified warranty claim as",
+        "abstained": false,
+        "citations": [
+          {
+            "chunk_id": "5b411c2f71b4f4d495d8d2b0",
+            "quote": "Never represent an unverified warranty claim as",
+            "source": "handbook/employee_handbook.pdf",
+            "page": 4
+          }
+        ],
+        "mode": "extractive-fixture",
+        "retrieved_pages": [
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "id": "privacy",
+      "retrieval_hit": true,
+      "answer": {
+        "answer": "Support tickets are retained for 90 days after closure.",
+        "abstained": false,
+        "citations": [
+          {
+            "chunk_id": "0f76b1b38ec1514cccfac6b4",
+            "quote": "Support tickets are retained for 90 days after closure.",
+            "source": "handbook/employee_handbook.pdf",
+            "page": 5
+          }
+        ],
+        "mode": "extractive-fixture",
+        "retrieved_pages": [
+          5,
+          7
+        ]
+      }
+    },
+    {
+      "id": "unknown",
+      "retrieval_hit": null,
+      "answer": {
+        "answer": "I do not know from the supplied evidence.",
+        "abstained": true,
+        "citations": [],
+        "mode": "extractive-fixture",
+        "retrieved_pages": []
+      }
+    }
+  ],
+  "limits": "Retrieval/page validation only; inspect factual correctness separately."
+}

@@ -22,6 +22,20 @@ The CLI intentionally suppresses raw SDK exception bodies because they can conta
 
 Use the repository-root commands exactly as shown. Python uses `pathlib` for data paths, so spaces in your checkout path work. The pip fallback invokes `.venv\Scripts\python.exe` directly and does not require PowerShell activation. If your user cache is not writable, set `UV_CACHE_DIR` to a writable folder for that terminal session. This is a machine permission issue, not a reason to change provider code.
 
+## Retrieval lesson errors
+
+| Error or symptom | Why it happens | Fix |
+|---|---|---|
+| `No module named langchain_chroma` or `rank_bm25` | The retrieval extra is absent, possibly removed by an ordinary uv run | Use `uv run --extra rag ...` consistently, or install with `uv sync --extra rag` and use `--no-sync` deliberately |
+| `Stale index: embedding identity or corpus changed.` | Stored vectors no longer match the selected model, dimensions or corpus | Use a fresh index name and rebuild; do not edit the manifest to bypass the check |
+| `Index has data without a manifest` | An earlier build stopped before its identity was recorded | Inspect the partial build and choose a new index name; old data is never deleted automatically |
+| Empty extracted PDF text | The page may contain a scanned image | Inspect the page and add an OCR stage if needed; pypdf extraction is not OCR |
+| `Require size > 0 and 0 <= overlap < size.` | Chunk settings cannot advance through the text | Keep overlap strictly smaller than chunk size |
+| `Compression must be an exact extract from its source.` | A generated excerpt changed or invented text | Reject it; request a verbatim excerpt or retain the original evidence |
+| A valid citation accompanies a wrong answer | Exact-quote validation proves provenance, not logical support | Compare every claim against the evidence; add human-reviewed semantic evaluation |
+
+Chroma persistence is automatic with `persist_directory`; keep the collection and its manifest together. Fake embeddings demonstrate storage mechanics but cannot verify semantic similarity. A changed model requires a rebuilt index even when dimensions match. The small SQLite embedding cache similarly separates provider/model/dimension and query/document operations.
+
 ## Foundation lesson errors
 
 | Error excerpt | Why it happens | Fix |
