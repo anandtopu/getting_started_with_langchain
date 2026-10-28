@@ -2,7 +2,9 @@
 
 A hands-on course for Python learners building the **Brightwave assistant**, an outdoor-gear support application. Learn how to choose between a model call, chain, retrieval system, agent and graph, then test the choice with synthetic business data.
 
-**Build status: Phase 2, foundation.** Setup, provider helpers, offline checks and the committed datasets are available. The 21 teaching modules and capstones are planned and will arrive in Phases 3–8. See the [coverage contract](docs/FEATURE_MAP.md), [learning path](LEARNING_PATH.md) and [verification notes](docs/VERIFICATION_NOTES.md). This is not yet the completed course.
+**Build status: Phase 3, foundations course.** Modules 00–05 and the Smart Ticket Desk checkpoint are implemented, alongside the shared setup and synthetic datasets. The remaining 15 modules and later projects are planned for Phases 4–8. See the [coverage contract](docs/FEATURE_MAP.md), [learning path](LEARNING_PATH.md) and [verification notes](docs/VERIFICATION_NOTES.md). This is not yet the completed course.
+
+Start with [setup and orientation](modules/00_setup/README.md), continue through [tools](modules/05_tools/README.md), then build the [Smart Ticket Desk](checkpoints/01_ticket_desk/README.md). Each lesson includes examples, a realistic application, three runnable exercises with solutions, a quiz, tests and a notebook.
 
 ```mermaid
 flowchart LR

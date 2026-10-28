@@ -1,34 +1,41 @@
 # Planned final repository tree
 
-Updated during Phase 2. This inventory includes both implemented foundation files and future teaching files; see [progress](progress.json). Runtime data, credentials, caches and the virtual environment are excluded.
+Updated during Phase 3. This inventory includes implemented files and future teaching files; see [progress](progress.json). Runtime data, credentials, caches and the virtual environment are excluded.
 
 ```text
 getting_started_with_langchain/
+├── .env.example
+├── .gitattributes
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   │   ├── bug.yml
 │   │   ├── content_error.yml
 │   │   └── new_example.yml
-│   ├── workflows/
-│   │   └── ci.yml
-│   └── PULL_REQUEST_TEMPLATE.md
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── workflows/
+│       └── ci.yml
+├── .gitignore
+├── .pre-commit-config.yaml
+├── .python-version
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LEARNING_PATH.md
+├── LICENSE
+├── README.md
 ├── capstones/
 │   ├── 01_documind/
-│   │   ├── tests/
-│   │   │   ├── test_acceptance.py
-│   │   │   └── test_evaluation.py
 │   │   ├── README.md
 │   │   ├── app.py
 │   │   ├── eval.jsonl
 │   │   ├── evaluation_report.md
 │   │   ├── rubric.md
 │   │   ├── solution.py
-│   │   └── starter.py
+│   │   ├── starter.py
+│   │   └── tests/
+│   │       ├── test_acceptance.py
+│   │       └── test_evaluation.py
 │   ├── 02_support_copilot/
-│   │   ├── tests/
-│   │   │   ├── test_acceptance.py
-│   │   │   ├── test_api.py
-│   │   │   └── test_evaluation.py
 │   │   ├── .dockerignore
 │   │   ├── Dockerfile
 │   │   ├── README.md
@@ -38,36 +45,40 @@ getting_started_with_langchain/
 │   │   ├── langgraph.json
 │   │   ├── rubric.md
 │   │   ├── solution.py
-│   │   └── starter.py
+│   │   ├── starter.py
+│   │   └── tests/
+│   │       ├── test_acceptance.py
+│   │       ├── test_api.py
+│   │       └── test_evaluation.py
 │   ├── 03_insight_analyst/
-│   │   ├── tests/
-│   │   │   ├── test_acceptance.py
-│   │   │   └── test_evaluation.py
 │   │   ├── README.md
 │   │   ├── eval.jsonl
 │   │   ├── rubric.md
 │   │   ├── solution.py
-│   │   └── starter.py
+│   │   ├── starter.py
+│   │   └── tests/
+│   │       ├── test_acceptance.py
+│   │       └── test_evaluation.py
 │   ├── 04_research_crew/
-│   │   ├── tests/
-│   │   │   ├── test_acceptance.py
-│   │   │   └── test_evaluation.py
 │   │   ├── README.md
 │   │   ├── eval.jsonl
 │   │   ├── rubric.md
 │   │   ├── solution.py
-│   │   └── starter.py
+│   │   ├── starter.py
+│   │   └── tests/
+│   │       ├── test_acceptance.py
+│   │       └── test_evaluation.py
 │   └── 05_personal_ops/
-│       ├── tests/
-│       │   ├── test_acceptance.py
-│       │   └── test_evaluation.py
 │       ├── README.md
 │       ├── eval.jsonl
 │       ├── notes_server.py
 │       ├── rubric.md
 │       ├── solution.py
 │       ├── starter.py
-│       └── tasks_server.py
+│       ├── tasks_server.py
+│       └── tests/
+│           ├── test_acceptance.py
+│           └── test_evaluation.py
 ├── cheatsheets/
 │   ├── tier_1_foundations.md
 │   ├── tier_2_rag.md
@@ -76,71 +87,79 @@ getting_started_with_langchain/
 │   └── tier_5_production.md
 ├── checkpoints/
 │   ├── 01_ticket_desk/
-│   │   ├── tests/
-│   │   │   └── test_acceptance.py
 │   │   ├── README.md
 │   │   ├── eval.jsonl
 │   │   ├── rubric.md
 │   │   ├── solution.py
-│   │   └── starter.py
+│   │   ├── starter.py
+│   │   └── tests/
+│   │       └── test_acceptance.py
 │   ├── 02_handbook_qa/
-│   │   ├── tests/
-│   │   │   └── test_acceptance.py
 │   │   ├── README.md
 │   │   ├── eval.jsonl
 │   │   ├── rubric.md
 │   │   ├── solution.py
-│   │   └── starter.py
+│   │   ├── starter.py
+│   │   └── tests/
+│   │       └── test_acceptance.py
 │   ├── 03_guarded_support/
-│   │   ├── tests/
-│   │   │   └── test_acceptance.py
 │   │   ├── README.md
 │   │   ├── eval.jsonl
 │   │   ├── rubric.md
 │   │   ├── solution.py
-│   │   └── starter.py
+│   │   ├── starter.py
+│   │   └── tests/
+│   │       └── test_acceptance.py
 │   ├── 04_operations_desk/
-│   │   ├── tests/
-│   │   │   └── test_acceptance.py
 │   │   ├── README.md
 │   │   ├── eval.jsonl
 │   │   ├── rubric.md
 │   │   ├── solution.py
-│   │   └── starter.py
+│   │   ├── starter.py
+│   │   └── tests/
+│   │       └── test_acceptance.py
 │   └── 05_production_release/
-│       ├── tests/
-│       │   └── test_acceptance.py
 │       ├── README.md
 │       ├── eval.jsonl
 │       ├── rubric.md
 │       ├── solution.py
-│       └── starter.py
+│       ├── starter.py
+│       └── tests/
+│           └── test_acceptance.py
 ├── common/
 │   ├── __init__.py
 │   ├── agent.py
 │   ├── budget.py
 │   ├── config.py
 │   ├── data.py
+│   ├── desk.py
 │   ├── errors.py
 │   ├── evaluation.py
+│   ├── fixtures.py
 │   ├── graphs.py
 │   ├── guardrails.py
+│   ├── lesson.py
 │   ├── mcp.py
 │   ├── memory.py
 │   ├── models.py
 │   ├── pretty.py
+│   ├── resilience.py
 │   ├── retrieval.py
 │   ├── schemas.py
 │   ├── security.py
 │   ├── testing.py
 │   ├── tools.py
 │   ├── tracing.py
+│   ├── triage.py
 │   └── web.py
+├── conftest.py
 ├── data/
+│   ├── README.md
 │   ├── eval/
 │   │   ├── agent_conversations.jsonl
 │   │   ├── rag.jsonl
 │   │   └── triage.jsonl
+│   ├── faq.json
 │   ├── fixtures/
 │   │   ├── policy.html
 │   │   ├── product.png
@@ -148,23 +167,21 @@ getting_started_with_langchain/
 │   ├── handbook/
 │   │   ├── employee_handbook.md
 │   │   └── employee_handbook.pdf
+│   ├── manifest.json
+│   ├── orders.db
 │   ├── policies/
 │   │   ├── privacy.md
 │   │   ├── returns.md
 │   │   ├── shipping.md
 │   │   └── warranty.md
+│   ├── products.csv
 │   ├── research/
 │   │   ├── customer_trends.md
 │   │   ├── market_brief.md
 │   │   └── product_trends.md
+│   ├── reviews.csv
 │   ├── security/
 │   │   └── poisoned_doc.md
-│   ├── README.md
-│   ├── faq.json
-│   ├── manifest.json
-│   ├── orders.db
-│   ├── products.csv
-│   ├── reviews.csv
 │   └── support_tickets.jsonl
 ├── docs/
 │   ├── CHOOSING_THE_RIGHT_TOOL.md
@@ -181,11 +198,13 @@ getting_started_with_langchain/
 │   ├── course-plan.json
 │   ├── dependency-candidates.in
 │   ├── dependency-resolution.txt
+│   ├── phase3-verification.json
 │   ├── progress.json
 │   ├── pypi-verification-phase2.json
 │   └── pypi-verification.json
 ├── modules/
 │   ├── 00_setup/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_llm_basics.py
 │   │   │   ├── 02_ecosystem.py
@@ -194,6 +213,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -202,12 +223,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── first_call.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── first_call.py
 │   ├── 01_chat_models/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_hello_model.py
 │   │   │   ├── 02_message_types.py
@@ -222,6 +241,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -230,12 +251,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── reply_drafter.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── reply_drafter.py
 │   ├── 02_prompt_templates/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_variables.py
 │   │   │   ├── 02_chat_history.py
@@ -245,9 +264,11 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
 │   │   ├── prompts/
 │   │   │   ├── brand_voice.txt
 │   │   │   └── tone_rewrite.txt
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -256,12 +277,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── brand_writer.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── brand_writer.py
 │   ├── 03_structured_output/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_pydantic.py
 │   │   │   ├── 02_schema_formats.py
@@ -272,6 +291,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -280,12 +301,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── ticket_triage.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── ticket_triage.py
 │   ├── 04_lcel_runnables/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_sequence.py
 │   │   │   ├── 02_parallel.py
@@ -299,6 +318,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -307,12 +328,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── review_insights.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── review_insights.py
 │   ├── 05_tools/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_tool_schema.py
 │   │   │   ├── 02_args_schema.py
@@ -325,6 +344,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -333,12 +354,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── order_status.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── order_status.py
 │   ├── 06_loaders_splitters/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_documents.py
 │   │   │   ├── 02_pdf_lazy.py
@@ -351,6 +370,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -359,12 +380,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── knowledge_ingest.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── knowledge_ingest.py
 │   ├── 07_embeddings_retrievers/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_cosine_by_hand.py
 │   │   │   ├── 02_embedding_interface.py
@@ -378,6 +397,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -386,12 +407,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── product_search.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── product_search.py
 │   ├── 08_rag_fundamentals/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_index_retrieve.py
 │   │   │   ├── 02_lcel_rag.py
@@ -401,6 +420,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -409,12 +430,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── ask_brightwave.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── ask_brightwave.py
 │   ├── 09_advanced_rag/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_query_rewrite.py
 │   │   │   ├── 02_hybrid.py
@@ -428,6 +447,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── results/
 │   │   │   ├── README.md
 │   │   │   └── before_after.json
@@ -439,12 +460,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── rag_benchmark.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── rag_benchmark.py
 │   ├── 10_agents/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_create_agent.py
 │   │   │   ├── 02_trace_stream.py
@@ -456,6 +475,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -464,12 +485,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── support_agent.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── support_agent.py
 │   ├── 11_memory/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_stateless_threads.py
 │   │   │   ├── 02_sqlite_checkpoint.py
@@ -482,6 +501,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -490,12 +511,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── remembering_agent.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── remembering_agent.py
 │   ├── 12_middleware/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_hooks.py
 │   │   │   ├── 02_custom_middleware.py
@@ -511,6 +530,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -519,12 +540,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── guarded_agent.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── guarded_agent.py
 │   ├── 13_mcp/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_official_server.py
 │   │   │   ├── 02_stdio_client.py
@@ -535,6 +554,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -543,13 +564,11 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   ├── inventory_agent.py
-│   │   │   └── inventory_server.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       ├── inventory_agent.py
+│   │       └── inventory_server.py
 │   ├── 14_langgraph/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_state_graph.py
 │   │   │   ├── 02_reducers.py
@@ -566,6 +585,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -574,12 +595,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── return_workflow.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── return_workflow.py
 │   ├── 15_workflows/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_chain_gate.py
 │   │   │   ├── 02_route.py
@@ -592,6 +611,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -600,12 +621,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── weekly_report.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── weekly_report.py
 │   ├── 16_multi_agent/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_supervisor_tools.py
 │   │   │   ├── 02_handoffs.py
@@ -616,6 +635,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -624,12 +645,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── operations_team.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── operations_team.py
 │   ├── 17_deep_agents/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_plan_by_hand.py
 │   │   │   ├── 02_virtual_files.py
@@ -640,6 +659,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -648,12 +669,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── research_report.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── research_report.py
 │   ├── 18_apps/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_async_basics.py
 │   │   │   ├── 02_sse.py
@@ -664,6 +683,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -672,14 +693,12 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   ├── api.py
-│   │   │   ├── app.py
-│   │   │   └── support_web.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       ├── api.py
+│   │       ├── app.py
+│   │       └── support_web.py
 │   ├── 19_evaluation/
+│   │   ├── README.md
 │   │   ├── examples/
 │   │   │   ├── 01_trace.py
 │   │   │   ├── 02_fake_models.py
@@ -692,6 +711,8 @@ getting_started_with_langchain/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
+│   │   ├── notebook.ipynb
+│   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
 │   │   │   ├── 02_apply.py
@@ -700,12 +721,10 @@ getting_started_with_langchain/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
 │   │   │   └── test_use_case.py
-│   │   ├── use_case/
-│   │   │   └── support_eval.py
-│   │   ├── README.md
-│   │   ├── notebook.ipynb
-│   │   └── quiz.md
+│   │   └── use_case/
+│   │       └── support_eval.py
 │   └── 20_production/
+│       ├── README.md
 │       ├── examples/
 │       │   ├── 01_config_resilience.py
 │       │   ├── 02_cache_budget.py
@@ -719,6 +738,8 @@ getting_started_with_langchain/
 │       │   ├── 01_practice.py
 │       │   ├── 02_apply.py
 │       │   └── 03_stretch.py
+│       ├── notebook.ipynb
+│       ├── quiz.md
 │       ├── solutions/
 │       │   ├── 01_practice.py
 │       │   ├── 02_apply.py
@@ -727,14 +748,12 @@ getting_started_with_langchain/
 │       │   ├── test_examples.py
 │       │   ├── test_exercises.py
 │       │   └── test_use_case.py
-│       ├── use_case/
-│       │   ├── .dockerignore
-│       │   ├── Dockerfile
-│       │   ├── langgraph.json
-│       │   └── production_assistant.py
-│       ├── README.md
-│       ├── notebook.ipynb
-│       └── quiz.md
+│       └── use_case/
+│           ├── .dockerignore
+│           ├── Dockerfile
+│           ├── langgraph.json
+│           └── production_assistant.py
+├── pyproject.toml
 ├── scripts/
 │   ├── __init__.py
 │   ├── _smoke_worker.py
@@ -743,6 +762,7 @@ getting_started_with_langchain/
 │   ├── check_env.py
 │   ├── check_legacy.py
 │   ├── check_links.py
+│   ├── check_notebooks.py
 │   ├── configure.py
 │   ├── evaluate.py
 │   ├── first_call.py
@@ -757,6 +777,7 @@ getting_started_with_langchain/
 │   ├── test_data.py
 │   ├── test_evaluation.py
 │   ├── test_examples.py
+│   ├── test_foundation_contracts.py
 │   ├── test_links.py
 │   ├── test_live.py
 │   ├── test_models.py
@@ -764,17 +785,5 @@ getting_started_with_langchain/
 │   ├── test_pretty.py
 │   ├── test_security.py
 │   └── test_tools.py
-├── .env.example
-├── .gitattributes
-├── .gitignore
-├── .pre-commit-config.yaml
-├── .python-version
-├── CHANGELOG.md
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LEARNING_PATH.md
-├── LICENSE
-├── README.md
-├── pyproject.toml
 └── uv.lock
 ```

@@ -721,6 +721,41 @@ def build_records(root: Path, products: list[dict], rng: random.Random) -> None:
     write_jsonl(root, "eval/agent_conversations.jsonl", conversations)
 
 
+def build_product_image(root: Path) -> None:
+    """Draw a synthetic tent diagram as SVG and PNG using only the standard library."""
+    import struct
+    import zlib
+
+    write_text(
+        root,
+        "fixtures/product.svg",
+        '<svg xmlns="http://www.w3.org/2000/svg" '
+        'width="320" height="240" viewBox="0 0 320 240">'
+        '<rect width="320" height="240" fill="#f4f7f4"/>'
+        '<path d="M40 200 L160 40 L280 200 Z" fill="#167d8d"/>'
+        '<path d="M130 200 L160 100 L190 200 Z" fill="#16404d"/></svg>',
+    )
+    pixels = bytearray()
+    for y in range(240):
+        pixels.append(0)  # PNG filter: none, followed by an RGB row.
+        for x in range(320):
+            color = (244, 247, 244)
+            if 40 <= y <= 200 and abs(x - 160) <= (y - 40) * 0.75:
+                color = (22, 125, 141)
+            if 100 <= y <= 200 and abs(x - 160) <= (y - 100) * 0.3:
+                color = (22, 64, 77)
+            pixels.extend(color)
+
+    def chunk(kind: bytes, body: bytes) -> bytes:
+        return (
+            struct.pack(">I", len(body)) + kind + body + struct.pack(">I", zlib.crc32(kind + body))
+        )
+
+    png = b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", 320, 240, 8, 2, 0, 0, 0))
+    png += chunk(b"IDAT", zlib.compress(bytes(pixels), level=9)) + chunk(b"IEND", b"")
+    (root / "fixtures/product.png").write_bytes(png)
+
+
 def build(output: Path) -> dict:
     """Generate owned files in staging; no broad deletion or ambient current-date values."""
     output = output.resolve()
@@ -741,6 +776,7 @@ def build(output: Path) -> dict:
         build_database(staging, products, rng)
         build_handbook(staging)
         build_records(staging, products, rng)
+        build_product_image(staging)
         write_text(
             staging,
             "security/poisoned_doc.md",

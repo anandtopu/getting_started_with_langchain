@@ -1,6 +1,16 @@
 # Completion evidence
 
-This checklist distinguishes the Phase 2 foundation from the complete course. Final acceptance requires the entire original scope; phased checks do not waive it.
+This checklist distinguishes the implemented foundations tier from the complete course. Final acceptance requires the entire original scope; phased checks do not waive it.
+
+## Phase 3 scope
+
+- [x] Modules 00–05: 36 examples, six realistic applications, 18 runnable exercises and complete solutions.
+- [x] Required README sections, per-example analogies/diagrams, quizzes and reproduced error/fix explanations.
+- [x] Six notebooks execute offline, mirror the script source and retain cleared committed outputs.
+- [x] Smart Ticket Desk starter, solution, rubric, six evaluation cases and acceptance tests.
+- [x] Structured extraction, customer-scoped reads, bounded loops, unknown-tool handling and source-parity tests.
+- [x] Dependency refresh, lint/format, legacy scan and phase-aware coverage/link checks.
+- [ ] Actual hosted and Ollama generation (explicitly deferred; fake outputs are not quality evidence).
 
 ## Phase 2 scope
 

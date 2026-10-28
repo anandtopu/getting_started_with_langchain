@@ -1,5 +1,38 @@
 # Verification notes
 
+## Phase 3 execution record — 2026-10-28
+
+Modules **00–05** and **Smart Ticket Desk** are implemented. Local checks used **Windows / CPython 3.12.13 / uv 0.12.18**. The tier contains 36 examples (longest: 95 lines), six applications, 18 runnable exercise starters and solutions, six quizzes and six notebooks. Future tiers remain deferred.
+
+| Check | Result |
+|---|---|
+| Refresh 42 PyPI packages | Complete; [metadata](phase3-verification.json). Langchain-core advanced to **1.7.1**; lower bound/lock updated. Pydantic-settings 2.16.2 was already adopted in Phase 2. |
+| Minimal `uv sync --locked` then pytest | **179 passed, 3 skipped**: two optional PDF/authoring checks and the opt-in live test. |
+| Authoring install and pytest | **181 passed, 1 skipped**: only the live test. |
+| Standalone smoke | **38/38 targets passed**: 36 lessons plus setup/first-call scripts. The updated HTTP lesson was additionally checked with both provider mock formats and its notebook. |
+| Notebooks | **6/6 executed top to bottom**; chat notebook re-executed after the HTTP update. Committed outputs/execution counts remain empty. Tests verify source-hash and body parity for every example/use case. |
+| Lint/format | Both pass, including notebooks. Notebook-only exceptions permit repeated imports/main definitions and imports after setup cells; script source is linted independently. |
+| Legacy scan/coverage | Zero violations; six complete implemented modules, 15 deferred. Strict final-release coverage remains incomplete. |
+| Local/external links | Zero failures; **335 explicitly planned references** remain deferred. |
+| Exercises | All 18 baselines and 18 solutions run offline; default target checks validate solutions. `--exercise-target exercises` checks learner edits and deliberately fails on incomplete baselines. |
+| Checkpoint | Six acceptance cases check IDs, missing orders/identifiers, ownership denial, hostile text with scoped reads, unsent drafts and unchanged seed DB. |
+| Failure behavior | Schema repair exhaustion, invalid arguments, unknown tools, turn/call limits, actual review-pipeline fallback after a synthetic timeout, and offline suppression of ambient tracing. |
+| Dataset | Deterministic SVG/PNG tent diagrams added; 21 generated files now have checksums. Count/integrity and fresh-build repeatability checks pass. |
+
+### Phase 3 API checks and choices
+
+Installed signatures were checked for prompt classes, message placeholders, few-shot templates, sequences, parallel/branch/passthrough/lambda runnables, `chain`, retries/fallbacks, `astream_events`, output parsers, `InMemoryRateLimiter`, `tool`, and `ToolRuntime`. Tests construct both `json_schema` and `function_calling` bindings for all four real provider adapters with networking denied. Construction verifies local imports/arguments, not remote capabilities.
+
+Official references checked: [models](https://docs.langchain.com/oss/python/langchain/models), [messages](https://docs.langchain.com/oss/python/langchain/messages), [tools/runtime](https://docs.langchain.com/oss/python/langchain/tools), [structured output](https://docs.langchain.com/oss/python/langchain/structured-output), [prompts](https://reference.langchain.com/python/langchain_core/prompts/), [runnables](https://reference.langchain.com/python/langchain_core/runnables/), [parsers](https://reference.langchain.com/python/langchain_core/output_parsers/), and [Pydantic models](https://docs.pydantic.dev/latest/concepts/models/). API reference Markdown that the browser extractor could not display was fetched directly and compared with installed signatures.
+
+The HTTP exercise implements OpenAI Responses and Ollama chat with explicit status checks and different response-envelope parsing. It uses mocked transport offline. Sources: [OpenAI text generation](https://developers.openai.com/api/docs/guides/text), [reasoning/output limits](https://developers.openai.com/api/docs/guides/reasoning), [Ollama chat](https://docs.ollama.com/api/chat), [Ollama model-information API](https://github.com/ollama/ollama/blob/main/docs/api.md), and [HTTPX transports](https://www.python-httpx.org/advanced/transports/). Anthropic/Gemini users select OpenAI or Ollama for this one wire-protocol comparison; remaining model lessons use the central factory.
+
+`GenericFakeChatModel` lacks tool binding. `ScriptedChatModel` subclasses it to record schemas and consume explicit `AIMessage` fixtures. LangChain's inherited tool-output parser performs actual local validation. This fake neither chooses tools nor enforces provider-native JSON constraints; both output-method demos use the tool parser offline. Guides and metric labels explicitly distinguish fixture plumbing from model quality.
+
+The runtime example supplies `ToolRuntime` through a small injection harness; its public schema excludes that argument. Full agent-managed injection belongs to module 10. Order tools use trusted closure identity, parameterized SQL and read-only connections. Fallback selects the configured low-cost profile and is cheaper only if the primary is a more expensive override; it does not solve provider-wide outages. The synthetic triage rules are fixtures, never an automatic fallback for a real-provider failure.
+
+No paid calls were made. Actual hosted/local generation, native schema enforcement, live tool selection, model accuracy, live injection resistance, LangSmith uploads, remote CI, other operating systems and Python versions remain **unverified**. Offline CLIs disable tracing and block service sockets. Notebook execution retains normal local Jupyter kernel communication without contacting a model service. Publication remains scheduled for Phase 8.
+
 ## Phase 2 execution record — 2026-10-28
 
 The foundation is implemented and verified locally on **Windows / CPython 3.12.13**. The older Phase 1 research below is preserved as history; the committed `uv.lock` is now the authoritative resolved dependency graph.

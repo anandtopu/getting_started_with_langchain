@@ -1,0 +1,223 @@
+{
+  "checked_date": "2026-10-28",
+  "pypi": [
+    {
+      "name": "langchain",
+      "version": "1.4.7",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langchain-core",
+      "version": "1.7.1",
+      "matches_phase_2": false
+    },
+    {
+      "name": "langgraph",
+      "version": "1.2.18",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langchain-text-splitters",
+      "version": "1.1.3",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langchain-openai",
+      "version": "1.7.3",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langchain-anthropic",
+      "version": "1.7.7",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langchain-google-genai",
+      "version": "4.4.2",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langchain-ollama",
+      "version": "1.1.0",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langchain-community",
+      "version": "0.4.2",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langchain-chroma",
+      "version": "1.1.0",
+      "matches_phase_2": true
+    },
+    {
+      "name": "pypdf",
+      "version": "6.21.3",
+      "matches_phase_2": true
+    },
+    {
+      "name": "rank-bm25",
+      "version": "0.2.2",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langgraph-checkpoint-sqlite",
+      "version": "3.1.2",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langchain-mcp-adapters",
+      "version": "0.3.2",
+      "matches_phase_2": true
+    },
+    {
+      "name": "mcp",
+      "version": "2.3.0",
+      "matches_phase_2": true
+    },
+    {
+      "name": "deepagents",
+      "version": "0.7.32",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langsmith",
+      "version": "0.14.14",
+      "matches_phase_2": true
+    },
+    {
+      "name": "fastapi",
+      "version": "0.162.0",
+      "matches_phase_2": true
+    },
+    {
+      "name": "uvicorn",
+      "version": "0.54.0",
+      "matches_phase_2": true
+    },
+    {
+      "name": "streamlit",
+      "version": "1.66.1",
+      "matches_phase_2": true
+    },
+    {
+      "name": "pytest",
+      "version": "9.2.0",
+      "matches_phase_2": true
+    },
+    {
+      "name": "pytest-asyncio",
+      "version": "1.4.1",
+      "matches_phase_2": true
+    },
+    {
+      "name": "ruff",
+      "version": "0.17.3",
+      "matches_phase_2": true
+    },
+    {
+      "name": "pre-commit",
+      "version": "4.7.0",
+      "matches_phase_2": true
+    },
+    {
+      "name": "nbstripout",
+      "version": "0.9.1",
+      "matches_phase_2": true
+    },
+    {
+      "name": "jupyter",
+      "version": "1.1.1",
+      "matches_phase_2": true
+    },
+    {
+      "name": "rich",
+      "version": "15.0.0",
+      "matches_phase_2": true
+    },
+    {
+      "name": "pydantic",
+      "version": "2.14.1",
+      "matches_phase_2": true
+    },
+    {
+      "name": "pydantic-settings",
+      "version": "2.16.2",
+      "matches_phase_2": false
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.4",
+      "matches_phase_2": true
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1",
+      "matches_phase_2": true
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.4",
+      "matches_phase_2": true
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.11.2",
+      "matches_phase_2": true
+    },
+    {
+      "name": "reportlab",
+      "version": "5.1.0",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langgraph-cli",
+      "version": "0.4.40",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langgraph-checkpoint-postgres",
+      "version": "3.2.0",
+      "matches_phase_2": true
+    },
+    {
+      "name": "langchain-tavily",
+      "version": "0.2.18",
+      "matches_phase_2": true
+    },
+    {
+      "name": "uv",
+      "version": "0.13.6",
+      "matches_phase_2": true
+    },
+    {
+      "name": "hatchling",
+      "version": "1.33.0",
+      "matches_phase_2": true
+    },
+    {
+      "name": "fastmcp",
+      "version": "4.1.4",
+      "matches_phase_2": true
+    },
+    {
+      "name": "fastmcp-slim",
+      "version": "4.1.4",
+      "matches_phase_2": true
+    },
+    {
+      "name": "psycopg",
+      "version": "3.3.6",
+      "matches_phase_2": true
+    }
+  ],
+  "core_locked": "1.7.1",
+  "api_checks": [
+    "Installed signatures for prompts, runnables, output parsers, tools, ToolRuntime and all four providers",
+    "Official model/tool guides and prompt/runnable/parser API references",
+    "Ollama /api/chat and /api/show; mock HTTP fixture; local vision check"
+  ],
+  "live_calls": false,
+  "note": "PyPI changed langchain-core from 1.7.0 to 1.7.1. pydantic-settings 2.16.2 was already adopted in Phase 2."
+}

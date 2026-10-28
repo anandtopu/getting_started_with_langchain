@@ -22,6 +22,22 @@ The CLI intentionally suppresses raw SDK exception bodies because they can conta
 
 Use the repository-root commands exactly as shown. Python uses `pathlib` for data paths, so spaces in your checkout path work. The pip fallback invokes `.venv\Scripts\python.exe` directly and does not require PowerShell activation. If your user cache is not writable, set `UV_CACHE_DIR` to a writable folder for that terminal session. This is a machine permission issue, not a reason to change provider code.
 
+## Foundation lesson errors
+
+| Error excerpt | Why it happens | Fix |
+|---|---|---|
+| `variable history should be a list of base messages` | A history placeholder received text | Supply a message list, or `[]` for no history |
+| `Input to PromptTemplate is missing variables` | A required blank was omitted or literal braces were interpreted as a variable | Supply the named variable; double literal template braces |
+| `Invalid json output` | Generated text was not the expected JSON | Use native structured output when supported, otherwise bounded schema repair |
+| `The input to RunnablePassthrough.assign() must be a dict.` | A string reached dictionary enrichment | Pass a dictionary and inspect the previous stage's output shape |
+| `Function must have a docstring if description not provided.` | A tool has no description | Add a meaningful docstring before applying `@tool` |
+| `Turn budget exhausted; ask a human to review the ticket.` | The model kept requesting tools | Inspect the transcript and bounded failure; do not remove the cap |
+| `'tool_call_id'` | A ToolMessage was created without its request ID | Copy the ID from the corresponding assistant tool request |
+
+In notebooks, the event loop already exists. Use `await` for async functions instead of starting a second loop in that thread. Our mirrored script cells use `await asyncio.to_thread(main)` so scripts that create their own loop can run unchanged. The notebook fixture wrapper blocks network; run the scripts without `--offline` for real-model experiments.
+
+For local multimodal input, pull the vision profile and check capabilities. A model that can generate text may lack vision or tool calling. Model-requested tools also need an application dispatcher: binding tool schemas alone performs no database query.
+
 ## Old tutorials and future lessons
 
-Do not copy imports from older framework tutorials without checking the current official reference. Use the model factory and `invoke` interface shown in this checkout. The full old-to-new migration guide, Chroma persistence diagnostics, Jupyter async guidance, tool-schema failures and recursion-limit examples will be added alongside their teaching modules and audited in Phase 8. They are not presented here as tested errors before those implementations exist.
+Do not copy imports from older framework tutorials without checking the current official reference. Use the model factory and `invoke` interface shown in this checkout. The full old-to-new migration guide, Chroma persistence diagnostics and graph recursion-limit examples arrive with later tiers and are audited in Phase 8.

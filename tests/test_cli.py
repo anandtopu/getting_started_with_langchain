@@ -73,3 +73,16 @@ def test_worker_restores_arguments():
     before = sys.argv
     execute_script(ROOT / "scripts/check_env.py", ["--offline"])
     assert sys.argv is before
+
+
+def test_offline_cli_overrides_ambient_tracing(monkeypatch):
+    import os
+
+    from common.errors import run_cli
+
+    monkeypatch.setattr(sys, "argv", ["lesson.py", "--offline"])
+    monkeypatch.setenv("LANGSMITH_TRACING", "true")
+    observed = []
+    run_cli(lambda: observed.append(os.environ["LANGSMITH_TRACING"]))
+    assert observed == ["false"]
+    assert os.environ["LANGSMITH_TRACING"] == "true"

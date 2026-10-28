@@ -1,5 +1,7 @@
 # Brightwave synthetic data
 
+The foundation image lesson uses `fixtures/product.svg` and `fixtures/product.png`, a simple synthetic tent diagram generated deterministically with the dataset. It is an illustration, not a photograph or evidence of product performance.
+
 Every person, company operation, product record and research result in this directory is invented. Brightwave Outfitters and Brightwave Parcel Service are fictional. Emails use reserved example domains. The card-like number in a few tickets is a labelled test fixture, never a real payment credential.
 
 | Dataset | Size | Purpose |

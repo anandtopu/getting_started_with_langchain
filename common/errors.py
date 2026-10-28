@@ -1,16 +1,23 @@
 """Safe command-line failures: never print provider exception bodies or credentials."""
 
+import sys
 from collections.abc import Callable
 
 from rich.console import Console
 
-from common.config import ConfigurationError
+from common.config import ConfigurationError, get_settings
+from common.testing import offline_environment
 
 
 def run_cli(main: Callable[[], None]) -> None:
     """Keep exceptions debuggable in tests while presenting safe CLI diagnostics."""
     try:
-        main()
+        if "--offline" in sys.argv or get_settings().course_offline:
+            # Offline also disables ambient tracing and accidental direct HTTP requests.
+            with offline_environment():
+                main()
+        else:
+            main()
     except KeyboardInterrupt:
         raise SystemExit(130) from None
     except Exception as exc:

@@ -8,10 +8,10 @@ from langchain.chat_models import init_chat_model
 from langchain.embeddings import init_embeddings
 from langchain_core.embeddings import DeterministicFakeEmbedding, Embeddings
 from langchain_core.language_models import BaseChatModel
-from langchain_core.language_models.fake_chat_models import GenericFakeChatModel
 from langchain_core.messages import AIMessage
 
 from common.config import Settings, get_settings
+from common.fixtures import ScriptedChatModel
 
 FIXTURE_REPLY = (
     "Brightwave Outfitters offers 30-day returns for unused gear with proof of purchase."
@@ -34,7 +34,7 @@ def get_chat_model(
     config = settings or get_settings()
     use_fake = config.course_offline if offline is None else offline
     if use_fake:
-        return GenericFakeChatModel(
+        return ScriptedChatModel(
             messages=iter(responses) if responses is not None else repeat(FIXTURE_REPLY)
         )
     provider = config.llm_provider

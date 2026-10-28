@@ -1,7 +1,7 @@
 """Smoke-test implemented examples; fakes and network denial are the default.
 
 Run: uv run python scripts/run_all_examples.py
-Expected in Phase 2: first-call and environment smoke targets pass; 139 lessons deferred.
+Expected in Phase 3: 38 targets pass, including 36 of the 139 planned course examples.
 --live explicitly enables selected real providers and possible API cost.
 """
 

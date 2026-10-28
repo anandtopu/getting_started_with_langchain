@@ -1,6 +1,16 @@
 {
-  "completed_phase": 2,
-  "implemented_modules": [],
+  "completed_phase": 3,
+  "implemented_modules": [
+    "00_setup",
+    "01_chat_models",
+    "02_prompt_templates",
+    "03_structured_output",
+    "04_lcel_runnables",
+    "05_tools"
+  ],
   "implemented_capstones": [],
-  "status": "Foundation implemented; validation results are recorded in VERIFICATION_NOTES.md."
+  "implemented_checkpoints": [
+    "01_ticket_desk"
+  ],
+  "status": "Foundations tier and Smart Ticket Desk complete; Phase 4 awaits continue. See VERIFICATION_NOTES.md for checks and live-provider limits."
 }
