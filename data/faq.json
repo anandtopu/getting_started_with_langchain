@@ -1,0 +1,242 @@
+[
+  {
+    "id": "FAQ001",
+    "question": "How long is the return window?",
+    "answer": "30 calendar days after delivery.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ002",
+    "question": "What is standard shipping?",
+    "answer": "$5.95; 3 to 5 business days after dispatch.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ003",
+    "question": "When is standard shipping free?",
+    "answer": "For a merchandise subtotal over $75.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ004",
+    "question": "How long does the warranty last?",
+    "answer": "365 calendar days from delivery.",
+    "source": "policies/warranty.md"
+  },
+  {
+    "id": "FAQ005",
+    "question": "How long are closed support tickets kept?",
+    "answer": "90 days after closure.",
+    "source": "policies/privacy.md"
+  },
+  {
+    "id": "FAQ006",
+    "question": "What does a prepaid return label cost?",
+    "answer": "$6 unless the item is wrong or defective.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ007",
+    "question": "When is manager approval needed?",
+    "answer": "For a refund over $100.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ008",
+    "question": "When will a warranty specialist reply?",
+    "answer": "Within 2 business days.",
+    "source": "policies/warranty.md"
+  },
+  {
+    "id": "FAQ009",
+    "question": "How much is expedited delivery?",
+    "answer": "$14.95; 1 to 2 business days after dispatch.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ010",
+    "question": "How fast are saved preferences deleted?",
+    "answer": "Within 7 calendar days of a request.",
+    "source": "policies/privacy.md"
+  },
+  {
+    "id": "FAQ011",
+    "question": "For my outdoor gear, How long is the return window?",
+    "answer": "30 calendar days after delivery.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ012",
+    "question": "For my outdoor gear, What is standard shipping?",
+    "answer": "$5.95; 3 to 5 business days after dispatch.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ013",
+    "question": "For my outdoor gear, When is standard shipping free?",
+    "answer": "For a merchandise subtotal over $75.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ014",
+    "question": "For my outdoor gear, How long does the warranty last?",
+    "answer": "365 calendar days from delivery.",
+    "source": "policies/warranty.md"
+  },
+  {
+    "id": "FAQ015",
+    "question": "For my outdoor gear, How long are closed support tickets kept?",
+    "answer": "90 days after closure.",
+    "source": "policies/privacy.md"
+  },
+  {
+    "id": "FAQ016",
+    "question": "For my outdoor gear, What does a prepaid return label cost?",
+    "answer": "$6 unless the item is wrong or defective.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ017",
+    "question": "For my outdoor gear, When is manager approval needed?",
+    "answer": "For a refund over $100.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ018",
+    "question": "For my outdoor gear, When will a warranty specialist reply?",
+    "answer": "Within 2 business days.",
+    "source": "policies/warranty.md"
+  },
+  {
+    "id": "FAQ019",
+    "question": "For my outdoor gear, How much is expedited delivery?",
+    "answer": "$14.95; 1 to 2 business days after dispatch.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ020",
+    "question": "For my outdoor gear, How fast are saved preferences deleted?",
+    "answer": "Within 7 calendar days of a request.",
+    "source": "policies/privacy.md"
+  },
+  {
+    "id": "FAQ021",
+    "question": "Before I order, How long is the return window?",
+    "answer": "30 calendar days after delivery.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ022",
+    "question": "Before I order, What is standard shipping?",
+    "answer": "$5.95; 3 to 5 business days after dispatch.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ023",
+    "question": "Before I order, When is standard shipping free?",
+    "answer": "For a merchandise subtotal over $75.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ024",
+    "question": "Before I order, How long does the warranty last?",
+    "answer": "365 calendar days from delivery.",
+    "source": "policies/warranty.md"
+  },
+  {
+    "id": "FAQ025",
+    "question": "Before I order, How long are closed support tickets kept?",
+    "answer": "90 days after closure.",
+    "source": "policies/privacy.md"
+  },
+  {
+    "id": "FAQ026",
+    "question": "Before I order, What does a prepaid return label cost?",
+    "answer": "$6 unless the item is wrong or defective.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ027",
+    "question": "Before I order, When is manager approval needed?",
+    "answer": "For a refund over $100.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ028",
+    "question": "Before I order, When will a warranty specialist reply?",
+    "answer": "Within 2 business days.",
+    "source": "policies/warranty.md"
+  },
+  {
+    "id": "FAQ029",
+    "question": "Before I order, How much is expedited delivery?",
+    "answer": "$14.95; 1 to 2 business days after dispatch.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ030",
+    "question": "Before I order, How fast are saved preferences deleted?",
+    "answer": "Within 7 calendar days of a request.",
+    "source": "policies/privacy.md"
+  },
+  {
+    "id": "FAQ031",
+    "question": "Please confirm: How long is the return window?",
+    "answer": "30 calendar days after delivery.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ032",
+    "question": "Please confirm: What is standard shipping?",
+    "answer": "$5.95; 3 to 5 business days after dispatch.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ033",
+    "question": "Please confirm: When is standard shipping free?",
+    "answer": "For a merchandise subtotal over $75.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ034",
+    "question": "Please confirm: How long does the warranty last?",
+    "answer": "365 calendar days from delivery.",
+    "source": "policies/warranty.md"
+  },
+  {
+    "id": "FAQ035",
+    "question": "Please confirm: How long are closed support tickets kept?",
+    "answer": "90 days after closure.",
+    "source": "policies/privacy.md"
+  },
+  {
+    "id": "FAQ036",
+    "question": "Please confirm: What does a prepaid return label cost?",
+    "answer": "$6 unless the item is wrong or defective.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ037",
+    "question": "Please confirm: When is manager approval needed?",
+    "answer": "For a refund over $100.",
+    "source": "policies/returns.md"
+  },
+  {
+    "id": "FAQ038",
+    "question": "Please confirm: When will a warranty specialist reply?",
+    "answer": "Within 2 business days.",
+    "source": "policies/warranty.md"
+  },
+  {
+    "id": "FAQ039",
+    "question": "Please confirm: How much is expedited delivery?",
+    "answer": "$14.95; 1 to 2 business days after dispatch.",
+    "source": "policies/shipping.md"
+  },
+  {
+    "id": "FAQ040",
+    "question": "Please confirm: How fast are saved preferences deleted?",
+    "answer": "Within 7 calendar days of a request.",
+    "source": "policies/privacy.md"
+  }
+]

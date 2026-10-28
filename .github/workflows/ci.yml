@@ -1,0 +1,86 @@
+name: Course checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  minimal:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.12', '3.13', '3.14']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      COURSE_OFFLINE: 'true'
+      LANGSMITH_TRACING: 'false'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.2
+        with:
+          version: '0.13.6'
+          python-version: ${{ matrix.python }}
+          enable-cache: true
+      - run: uv sync --locked
+      - run: uv run --no-sync ruff check .
+      - run: uv run --no-sync ruff format --check .
+      - run: uv run --no-sync pytest
+      - run: uv run --no-sync python scripts/check_legacy.py
+      - run: uv run --no-sync python scripts/check_links.py --allow-planned
+      - run: uv run --no-sync python scripts/check_coverage.py
+      - run: uv run --no-sync python scripts/run_all_examples.py
+
+  full:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.12', '3.13', '3.14']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    env:
+      COURSE_OFFLINE: 'true'
+      LANGSMITH_TRACING: 'false'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.2
+        with:
+          version: '0.13.6'
+          python-version: ${{ matrix.python }}
+          enable-cache: true
+      - run: uv sync --locked --all-extras --group authoring
+      - run: uv run --no-sync pytest
+      - run: uv run --no-sync python scripts/run_all_examples.py
+      - run: uv run --no-sync python scripts/check_coverage.py
+
+  macos-smoke:
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.2
+        with:
+          version: '0.13.6'
+          python-version: '3.12'
+      - run: uv sync --locked
+      - run: uv run --no-sync pytest
+      - run: uv run --no-sync python scripts/run_all_examples.py
+
+  external-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.3.2
+        with:
+          version: '0.13.6'
+          python-version: '3.12'
+      - run: uv sync --locked
+      # This separate step deliberately has network; pytest remains offline.
+      - run: uv run --no-sync python scripts/check_links.py --allow-planned --external

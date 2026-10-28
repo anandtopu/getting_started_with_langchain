@@ -1,0 +1,1523 @@
+{
+  "status": "Phase 2 foundation implemented; 21 teaching modules remain planned",
+  "verified_date": "2026-10-27",
+  "timezone": "America/Chicago",
+  "python": ">=3.12,<3.15",
+  "modules": [
+    {
+      "slug": "00_setup",
+      "title": "Setup and orientation",
+      "minutes": 60,
+      "assistant_version": 0,
+      "use_case": "first_call",
+      "outcome": "Make a first call and inspect an optional trace",
+      "examples": [
+        {
+          "file": "01_llm_basics.py",
+          "features": "LLMs, tokens, context windows, temperature, hallucinations",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "02_ecosystem.py",
+          "features": "LangChain, core, provider packages, LangGraph, LangSmith, Deep Agents; choose a building block",
+          "source": "https://docs.langchain.com/oss/python/langchain/overview"
+        },
+        {
+          "file": "03_verify_environment.py",
+          "features": "uv, pip fallback, virtual environments, .env, package and key checks, Ollama pull, optional tracing",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        }
+      ]
+    },
+    {
+      "slug": "01_chat_models",
+      "title": "Chat models and messages",
+      "minutes": 90,
+      "assistant_version": 1,
+      "use_case": "reply_drafter",
+      "outcome": "Stream a support reply and report token usage and estimated cost",
+      "examples": [
+        {
+          "file": "01_hello_model.py",
+          "features": "init_chat_model; invoke; switch OpenAI, Anthropic, Gemini, Ollama via configuration",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "02_message_types.py",
+          "features": "SystemMessage, HumanMessage, AIMessage, ToolMessage, plain-dict messages",
+          "source": "https://docs.langchain.com/oss/python/langchain/messages"
+        },
+        {
+          "file": "03_streaming.py",
+          "features": "stream; assemble content chunks; print a reply as it arrives",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "04_batch_async.py",
+          "features": "batch, ainvoke; introduce async, await and asyncio before use",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "05_parameters.py",
+          "features": "temperature, max_tokens, timeout, max_retries; provider capability differences",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "06_usage_cost.py",
+          "features": "usage_metadata; input, output and reasoning tokens; missing-usage handling; cost estimate",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "07_multimodal.py",
+          "features": "content_blocks; image input; local vision-model capability check",
+          "source": "https://docs.langchain.com/oss/python/langchain/messages"
+        },
+        {
+          "file": "08_rate_limit.py",
+          "features": "InMemoryRateLimiter; bounded requests",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "09_http_by_hand.py",
+          "features": "Build it yourself: httpx provider HTTP call; mocked transport offline; compare LangChain",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        }
+      ]
+    },
+    {
+      "slug": "02_prompt_templates",
+      "title": "Prompt templates",
+      "minutes": 75,
+      "assistant_version": 2,
+      "use_case": "brand_writer",
+      "outcome": "Write a product description and rewrite an email in Brightwave's voice",
+      "examples": [
+        {
+          "file": "01_variables.py",
+          "features": "PromptTemplate, variables, partial variables",
+          "source": "https://reference.langchain.com/python/langchain_core/prompts/"
+        },
+        {
+          "file": "02_chat_history.py",
+          "features": "ChatPromptTemplate, MessagesPlaceholder; distinguish supplied history from persistent memory",
+          "source": "https://reference.langchain.com/python/langchain_core/prompts/"
+        },
+        {
+          "file": "03_few_shot.py",
+          "features": "FewShotChatMessagePromptTemplate; example selection by hand",
+          "source": "https://reference.langchain.com/python/langchain_core/prompts/"
+        },
+        {
+          "file": "04_prompt_files.py",
+          "features": "Version-controlled prompt files; roles, constraints, examples, output format, delimiters",
+          "source": "https://reference.langchain.com/python/langchain_core/prompts/"
+        }
+      ]
+    },
+    {
+      "slug": "03_structured_output",
+      "title": "Structured output",
+      "minutes": 90,
+      "assistant_version": 3,
+      "use_case": "ticket_triage",
+      "outcome": "Extract ticket fields into CSV and measure labelled-subset accuracy",
+      "examples": [
+        {
+          "file": "01_pydantic.py",
+          "features": "Introduce Pydantic v2; with_structured_output; enums, nested models, optional fields",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "02_schema_formats.py",
+          "features": "TypedDict and JSON Schema; with_structured_output",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "03_output_methods.py",
+          "features": "Provider-native JSON schema versus tool-calling method; capability checks",
+          "source": "https://docs.langchain.com/oss/python/langchain/structured-output"
+        },
+        {
+          "file": "04_validation_retry.py",
+          "features": "ValidationError; invalid output, bounded repair and retry; deterministic fixtures",
+          "source": "https://docs.langchain.com/oss/python/langchain/structured-output"
+        },
+        {
+          "file": "05_parsers.py",
+          "features": "StrOutputParser, PydanticOutputParser; when parsers remain useful",
+          "source": "https://reference.langchain.com/python/langchain_core/runnables/"
+        }
+      ]
+    },
+    {
+      "slug": "04_lcel_runnables",
+      "title": "LCEL and Runnables",
+      "minutes": 90,
+      "assistant_version": 3,
+      "use_case": "review_insights",
+      "outcome": "Analyze sentiment, extract themes and suggest replies in parallel with a cheaper fallback",
+      "examples": [
+        {
+          "file": "01_sequence.py",
+          "features": "Runnable interface; pipe operator; RunnableSequence",
+          "source": "https://reference.langchain.com/python/langchain_core/runnables/"
+        },
+        {
+          "file": "02_parallel.py",
+          "features": "RunnableParallel; fan-out and merged results",
+          "source": "https://reference.langchain.com/python/langchain_core/runnables/"
+        },
+        {
+          "file": "03_passthrough.py",
+          "features": "RunnablePassthrough; assign; preserve original inputs",
+          "source": "https://reference.langchain.com/python/langchain_core/runnables/"
+        },
+        {
+          "file": "04_python_functions.py",
+          "features": "RunnableLambda; @chain; adapting ordinary Python",
+          "source": "https://reference.langchain.com/python/langchain_core/runnables/"
+        },
+        {
+          "file": "05_routing.py",
+          "features": "Routing and branching; plain Python versus LCEL versus LangGraph",
+          "source": "https://reference.langchain.com/python/langchain_core/runnables/"
+        },
+        {
+          "file": "06_resilience.py",
+          "features": "with_fallbacks, with_retry; failure then recovery",
+          "source": "https://reference.langchain.com/python/langchain_core/runnables/"
+        },
+        {
+          "file": "07_config_batch.py",
+          "features": "with_config tags, metadata, run_name; batch max_concurrency; async",
+          "source": "https://reference.langchain.com/python/langchain_core/runnables/"
+        },
+        {
+          "file": "08_events_diagram.py",
+          "features": "astream_events; get_graph().draw_mermaid()",
+          "source": "https://reference.langchain.com/python/langchain_core/runnables/"
+        }
+      ]
+    },
+    {
+      "slug": "05_tools",
+      "title": "Tools and tool calling",
+      "minutes": 105,
+      "assistant_version": 4,
+      "use_case": "order_status",
+      "outcome": "Answer order, shipment and stock questions through a hand-written tool loop",
+      "examples": [
+        {
+          "file": "01_tool_schema.py",
+          "features": "@tool; docstrings and type hints become JSON schema",
+          "source": "https://docs.langchain.com/oss/python/langchain/tools"
+        },
+        {
+          "file": "02_args_schema.py",
+          "features": "Pydantic args_schema; input validation; bounded tool errors",
+          "source": "https://docs.langchain.com/oss/python/langchain/tools"
+        },
+        {
+          "file": "03_dispatch.py",
+          "features": "bind_tools; AIMessage.tool_calls; ToolMessage; matching tool_call_id",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "04_parallel_choice.py",
+          "features": "Parallel tool calls; tool_choice; provider support checks",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "05_manual_agent.py",
+          "features": "Build it yourself: bounded tool-calling loop; stop condition and unknown-tool rejection",
+          "source": "https://docs.langchain.com/oss/python/langchain/tools"
+        },
+        {
+          "file": "06_runtime.py",
+          "features": "ToolRuntime; runtime state and context; preview with a minimal harness",
+          "source": "https://docs.langchain.com/oss/python/langchain/tools"
+        },
+        {
+          "file": "07_sql_safety.py",
+          "features": "Parameterized SQL; read-only database connection; customer scope; filesystem/code tool risks",
+          "source": "https://docs.langchain.com/oss/python/langchain/tools"
+        }
+      ]
+    },
+    {
+      "slug": "06_loaders_splitters",
+      "title": "Document loaders and text splitters",
+      "minutes": 120,
+      "assistant_version": 4,
+      "use_case": "knowledge_ingest",
+      "outcome": "Load policies and handbook with source/page metadata; compare three chunking strategies",
+      "examples": [
+        {
+          "file": "01_documents.py",
+          "features": "Document.page_content and metadata; source provenance",
+          "source": "https://docs.langchain.com/oss/python/integrations/document_loaders"
+        },
+        {
+          "file": "02_pdf_lazy.py",
+          "features": "PyPDFLoader; lazy_load; PDF pages and citations",
+          "source": "https://docs.langchain.com/oss/python/integrations/document_loaders"
+        },
+        {
+          "file": "03_file_loaders.py",
+          "features": "Markdown/text, CSV, JSON and directory loading; loader interfaces",
+          "source": "https://docs.langchain.com/oss/python/integrations/document_loaders"
+        },
+        {
+          "file": "04_web_loader.py",
+          "features": "Web loading; local HTML fixture and explicit network mode",
+          "source": "https://docs.langchain.com/oss/python/integrations/document_loaders"
+        },
+        {
+          "file": "05_recursive_chunks.py",
+          "features": "RecursiveCharacterTextSplitter; chunk size/overlap visualization",
+          "source": "https://docs.langchain.com/oss/python/integrations/splitters"
+        },
+        {
+          "file": "06_markdown_chunks.py",
+          "features": "MarkdownHeaderTextSplitter; heading and parent metadata",
+          "source": "https://docs.langchain.com/oss/python/integrations/splitters"
+        },
+        {
+          "file": "07_token_code_chunks.py",
+          "features": "Token-based splitting; code splitters; tokenizer limits",
+          "source": "https://docs.langchain.com/oss/python/integrations/splitters"
+        }
+      ]
+    },
+    {
+      "slug": "07_embeddings_retrievers",
+      "title": "Embeddings, vector stores and retrievers",
+      "minutes": 150,
+      "assistant_version": 4,
+      "use_case": "product_search",
+      "outcome": "Search waterproof four-person tents under $300 with category and price constraints",
+      "examples": [
+        {
+          "file": "01_cosine_by_hand.py",
+          "features": "Embedding meaning; numpy cosine similarity by hand; 2D projection with caveats",
+          "source": "https://docs.langchain.com/oss/python/integrations/embeddings/"
+        },
+        {
+          "file": "02_embedding_interface.py",
+          "features": "embed_query, embed_documents; hosted and local models; separate embedding provider",
+          "source": "https://docs.langchain.com/oss/python/integrations/embeddings/"
+        },
+        {
+          "file": "03_memory_store.py",
+          "features": "InMemoryVectorStore; add documents and similarity_search",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        },
+        {
+          "file": "04_persistent_chroma.py",
+          "features": "Chroma persistence; collection identity; model/dimension metadata",
+          "source": "https://docs.langchain.com/oss/python/integrations/vectorstores/chroma"
+        },
+        {
+          "file": "05_document_lifecycle.py",
+          "features": "Add, update and delete documents by ID; rebuild incompatible indexes",
+          "source": "https://docs.langchain.com/oss/python/integrations/vectorstores/chroma"
+        },
+        {
+          "file": "06_scores_mmr_filters.py",
+          "features": "Similarity with scores; MMR; metadata filters; distinguish scores from probabilities",
+          "source": "https://docs.langchain.com/oss/python/integrations/vectorstores/chroma"
+        },
+        {
+          "file": "07_retriever.py",
+          "features": "as_retriever; retrieval configuration",
+          "source": "https://docs.langchain.com/oss/python/integrations/vectorstores/chroma"
+        },
+        {
+          "file": "08_embedding_cache.py",
+          "features": "Build a small Embeddings wrapper cache; key by provider, model, dimensions and text",
+          "source": "https://docs.langchain.com/oss/python/integrations/embeddings/"
+        }
+      ]
+    },
+    {
+      "slug": "08_rag_fundamentals",
+      "title": "RAG fundamentals",
+      "minutes": 120,
+      "assistant_version": 5,
+      "use_case": "ask_brightwave",
+      "outcome": "Answer policy questions with file and page citations and explicit abstention",
+      "examples": [
+        {
+          "file": "01_index_retrieve.py",
+          "features": "Index, retrieve, augment, generate; inspect retrieved context",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        },
+        {
+          "file": "02_lcel_rag.py",
+          "features": "LCEL RAG chain; prompt/model/parser composition",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        },
+        {
+          "file": "03_grounding_citations.py",
+          "features": "Grounded prompts; I do not know; validate source/page citations",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        },
+        {
+          "file": "04_retrieval_tool.py",
+          "features": "Two-step versus agentic RAG using the module 05 manual loop and a retrieval tool",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        }
+      ]
+    },
+    {
+      "slug": "09_advanced_rag",
+      "title": "Advanced RAG and evaluation",
+      "minutes": 150,
+      "assistant_version": 5,
+      "use_case": "rag_benchmark",
+      "outcome": "Compare baseline and improved retrieval on a held-out golden set",
+      "examples": [
+        {
+          "file": "01_query_rewrite.py",
+          "features": "Query rewriting; multi-query retrieval; deduplication",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        },
+        {
+          "file": "02_hybrid.py",
+          "features": "BM25 plus vector search; reciprocal-rank fusion by hand",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        },
+        {
+          "file": "03_rerank_compress.py",
+          "features": "Reranking; contextual compression using model scoring and bounded extracts",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        },
+        {
+          "file": "04_parent_retrieval.py",
+          "features": "Parent-document small-to-big retrieval implemented with parent IDs",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        },
+        {
+          "file": "05_query_filters.py",
+          "features": "Structured query extraction; validated metadata filters",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        },
+        {
+          "file": "06_conversation.py",
+          "features": "History-aware rewriting of follow-up questions",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        },
+        {
+          "file": "07_evaluate.py",
+          "features": "Retrieval hit rate, faithfulness, answer correctness; local judge and optional LLM judge",
+          "source": "https://docs.langchain.com/langsmith/evaluate-llm-application"
+        },
+        {
+          "file": "08_failure_gallery.py",
+          "features": "Missing evidence, stale indexes, bad chunks, injection and citation mismatch; before/after results",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        }
+      ]
+    },
+    {
+      "slug": "10_agents",
+      "title": "Agents with create_agent",
+      "minutes": 150,
+      "assistant_version": 6,
+      "use_case": "support_agent",
+      "outcome": "Combine SQL, stock and policy tools with validated return creation",
+      "examples": [
+        {
+          "file": "01_create_agent.py",
+          "features": "create_agent(model, tools, system_prompt); compare manual loop; when not to use agents",
+          "source": "https://docs.langchain.com/oss/python/langchain/agents"
+        },
+        {
+          "file": "02_trace_stream.py",
+          "features": "Read message trace; stream_mode updates and messages",
+          "source": "https://docs.langchain.com/oss/python/langchain/streaming"
+        },
+        {
+          "file": "03_response_format.py",
+          "features": "response_format; ToolStrategy and ProviderStrategy; structured final response",
+          "source": "https://docs.langchain.com/oss/python/langchain/structured-output"
+        },
+        {
+          "file": "04_context.py",
+          "features": "context_schema; customer identity injected outside model arguments",
+          "source": "https://docs.langchain.com/oss/python/langchain/agents"
+        },
+        {
+          "file": "05_errors_limits.py",
+          "features": "Tool errors; recursion_limit; bounded recovery",
+          "source": "https://docs.langchain.com/oss/python/langchain/agents"
+        },
+        {
+          "file": "06_return_write.py",
+          "features": "SQLite return creation on a runtime copy; policy validation; idempotency key",
+          "source": "https://docs.langchain.com/oss/python/langchain/tools"
+        }
+      ]
+    },
+    {
+      "slug": "11_memory",
+      "title": "Memory and state",
+      "minutes": 150,
+      "assistant_version": 7,
+      "use_case": "remembering_agent",
+      "outcome": "Keep conversation state and customer preferences across sessions",
+      "examples": [
+        {
+          "file": "01_stateless_threads.py",
+          "features": "Stateless models; InMemorySaver; thread_id and conversation isolation",
+          "source": "https://docs.langchain.com/oss/python/langchain/short-term-memory"
+        },
+        {
+          "file": "02_sqlite_checkpoint.py",
+          "features": "SqliteSaver lifecycle; resume in a fresh process",
+          "source": "https://docs.langchain.com/oss/python/langchain/short-term-memory"
+        },
+        {
+          "file": "03_trim.py",
+          "features": "trim_messages; token budget; preserve matching tool-call/result pairs",
+          "source": "https://docs.langchain.com/oss/python/langchain/short-term-memory"
+        },
+        {
+          "file": "04_summarize.py",
+          "features": "SummarizationMiddleware; summarize older history without losing current task",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/built-in"
+        },
+        {
+          "file": "05_custom_state.py",
+          "features": "Custom AgentState; separate state from runtime context",
+          "source": "https://docs.langchain.com/oss/python/langchain/short-term-memory"
+        },
+        {
+          "file": "06_long_term_store.py",
+          "features": "Store namespaces; InMemoryStore; semantic search of preferences across threads",
+          "source": "https://docs.langchain.com/oss/python/langchain/long-term-memory"
+        },
+        {
+          "file": "07_durable_preferences.py",
+          "features": "SQLite-backed preference tool for no-service persistence; preview PostgresStore in module 20",
+          "source": "https://docs.langchain.com/oss/python/langchain/long-term-memory"
+        }
+      ]
+    },
+    {
+      "slug": "12_middleware",
+      "title": "Middleware and guardrails",
+      "minutes": 180,
+      "assistant_version": 8,
+      "use_case": "guarded_agent",
+      "outcome": "Redact PII, pause refunds over $100, add fallback and enforce limits",
+      "examples": [
+        {
+          "file": "01_hooks.py",
+          "features": "before_agent, before_model, wrap_model_call, after_model, wrap_tool_call, after_agent; hook ordering",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/custom"
+        },
+        {
+          "file": "02_custom_middleware.py",
+          "features": "Decorator and AgentMiddleware class; input/output guardrails",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/custom"
+        },
+        {
+          "file": "03_pii.py",
+          "features": "PIIMiddleware; email and card-like-number redaction; synthetic fixtures",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/built-in"
+        },
+        {
+          "file": "04_approval.py",
+          "features": "HumanInTheLoopMiddleware; route refunds over $100 to an approval-only tool; approve/reject/resume",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/built-in"
+        },
+        {
+          "file": "05_fallback.py",
+          "features": "ModelFallbackMiddleware; primary fails, backup responds",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/built-in"
+        },
+        {
+          "file": "06_call_limits.py",
+          "features": "ModelCallLimitMiddleware; ToolCallLimitMiddleware; stop runaway loops",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/built-in"
+        },
+        {
+          "file": "07_retry.py",
+          "features": "ModelRetryMiddleware; ToolRetryMiddleware; avoid repeated write side effects",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/built-in"
+        },
+        {
+          "file": "08_tool_selector.py",
+          "features": "LLMToolSelectorMiddleware; tool relevance versus extra model cost",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/built-in"
+        },
+        {
+          "file": "09_todo.py",
+          "features": "TodoListMiddleware; inspect task planning state",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/built-in"
+        },
+        {
+          "file": "10_dynamic_model.py",
+          "features": "Dynamic system prompt; runtime model selection; immutable customer scope",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/custom"
+        }
+      ]
+    },
+    {
+      "slug": "13_mcp",
+      "title": "Model Context Protocol",
+      "minutes": 120,
+      "assistant_version": 8,
+      "use_case": "inventory_agent",
+      "outcome": "Connect inventory MCP tools to create_agent",
+      "examples": [
+        {
+          "file": "01_official_server.py",
+          "features": "Official mcp SDK server; inventory tool schemas; stdio lifecycle",
+          "source": "https://github.com/modelcontextprotocol/python-sdk"
+        },
+        {
+          "file": "02_stdio_client.py",
+          "features": "Current MCPAdapter list_tools; stdio; compare replaced MultiServerMCPClient in migration notes",
+          "source": "https://docs.langchain.com/oss/python/langchain/mcp"
+        },
+        {
+          "file": "03_http_client.py",
+          "features": "Streamable HTTP; endpoint validation and session lifetime",
+          "source": "https://docs.langchain.com/oss/python/langchain/mcp"
+        },
+        {
+          "file": "04_agent_connection.py",
+          "features": "Pass discovered tools into create_agent; managed connection cleanup",
+          "source": "https://docs.langchain.com/oss/python/langchain/mcp"
+        },
+        {
+          "file": "05_trust_boundary.py",
+          "features": "Trust review; server/tool allowlist; credentials, side effects and result validation",
+          "source": "https://docs.langchain.com/oss/python/langchain/mcp"
+        }
+      ]
+    },
+    {
+      "slug": "14_langgraph",
+      "title": "LangGraph fundamentals",
+      "minutes": 210,
+      "assistant_version": 9,
+      "use_case": "return_workflow",
+      "outcome": "Classify, check policy, interrupt for approval, record refund and write a local notification outbox",
+      "examples": [
+        {
+          "file": "01_state_graph.py",
+          "features": "StateGraph; TypedDict and Pydantic state; nodes, edges, START, END; compile",
+          "source": "https://docs.langchain.com/oss/python/langgraph/graph-api"
+        },
+        {
+          "file": "02_reducers.py",
+          "features": "add_messages and operator.add reducers; concurrent writes",
+          "source": "https://docs.langchain.com/oss/python/langgraph/graph-api"
+        },
+        {
+          "file": "03_routing_command.py",
+          "features": "Conditional edges; Command update and goto",
+          "source": "https://docs.langchain.com/oss/python/langgraph/graph-api"
+        },
+        {
+          "file": "04_manual_agent_graph.py",
+          "features": "Build it yourself: model node, ToolNode, conditional edge and bounded loop",
+          "source": "https://docs.langchain.com/oss/python/langgraph/graph-api"
+        },
+        {
+          "file": "05_persistence.py",
+          "features": "Checkpointers; durable execution; idempotent side effects",
+          "source": "https://docs.langchain.com/oss/python/langgraph/persistence"
+        },
+        {
+          "file": "06_interrupt.py",
+          "features": "interrupt; Command(resume=...); approval and rejection branches",
+          "source": "https://docs.langchain.com/oss/python/langgraph/interrupts"
+        },
+        {
+          "file": "07_time_travel.py",
+          "features": "State history; replay; fork from checkpoint",
+          "source": "https://docs.langchain.com/oss/python/langgraph/persistence"
+        },
+        {
+          "file": "08_subgraphs.py",
+          "features": "Subgraphs; private/shared state; recursion limits",
+          "source": "https://docs.langchain.com/oss/python/langgraph/graph-api"
+        },
+        {
+          "file": "09_stream_modes.py",
+          "features": "values, updates, messages, custom streams; progress events",
+          "source": "https://docs.langchain.com/oss/python/langgraph/graph-api"
+        },
+        {
+          "file": "10_functional_api.py",
+          "features": "@entrypoint; @task; task-result replay; sync and async entry points",
+          "source": "https://docs.langchain.com/oss/python/langgraph/functional-api"
+        },
+        {
+          "file": "11_studio.py",
+          "features": "draw_mermaid; local LangGraph CLI dev server; Studio; account-free diagram alternative",
+          "source": "https://docs.langchain.com/langsmith/local-dev-testing"
+        }
+      ]
+    },
+    {
+      "slug": "15_workflows",
+      "title": "Workflow patterns",
+      "minutes": 150,
+      "assistant_version": 9,
+      "use_case": "weekly_report",
+      "outcome": "Map-reduce product reviews by category and improve the report with a bounded evaluator loop",
+      "examples": [
+        {
+          "file": "01_chain_gate.py",
+          "features": "Prompt chaining; validation gates",
+          "source": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+        },
+        {
+          "file": "02_route.py",
+          "features": "Routing; explicit fallback branch",
+          "source": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+        },
+        {
+          "file": "03_parallel.py",
+          "features": "Fan-out/fan-in; reducers; deterministic merge",
+          "source": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+        },
+        {
+          "file": "04_send_map_reduce.py",
+          "features": "Send API; dynamic map-reduce",
+          "source": "https://docs.langchain.com/oss/python/langgraph/graph-api"
+        },
+        {
+          "file": "05_orchestrator_workers.py",
+          "features": "Orchestrator planning; workers; result aggregation",
+          "source": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+        },
+        {
+          "file": "06_evaluator_optimizer.py",
+          "features": "Evaluator-optimizer; quality rubric; iteration/cost ceiling",
+          "source": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+        },
+        {
+          "file": "07_choose_workflow.py",
+          "features": "Fixed workflow versus autonomous agent; compare measurable outcomes",
+          "source": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+        }
+      ]
+    },
+    {
+      "slug": "16_multi_agent",
+      "title": "Multi-agent systems",
+      "minutes": 180,
+      "assistant_version": 10,
+      "use_case": "operations_team",
+      "outcome": "Route to billing, product RAG and logistics SQL specialists; supervise the combined answer",
+      "examples": [
+        {
+          "file": "01_supervisor_tools.py",
+          "features": "Subagents exposed as tools; supervisor; restricted tool sets",
+          "source": "https://docs.langchain.com/oss/python/langchain/multi-agent"
+        },
+        {
+          "file": "02_handoffs.py",
+          "features": "Command-based handoffs; explicit ownership and return routing",
+          "source": "https://docs.langchain.com/oss/python/langchain/multi-agent"
+        },
+        {
+          "file": "03_router.py",
+          "features": "Specialist router; confidence and fallback handling",
+          "source": "https://docs.langchain.com/oss/python/langchain/multi-agent"
+        },
+        {
+          "file": "04_context_boundaries.py",
+          "features": "Shared versus private state; context engineering; minimum necessary history",
+          "source": "https://docs.langchain.com/oss/python/langchain/multi-agent"
+        },
+        {
+          "file": "05_compare_single.py",
+          "features": "When multiple agents help or hurt; latency, token use and quality comparison",
+          "source": "https://docs.langchain.com/oss/python/langchain/multi-agent"
+        }
+      ]
+    },
+    {
+      "slug": "17_deep_agents",
+      "title": "Deep Agents (optional)",
+      "minutes": 120,
+      "assistant_version": 10,
+      "use_case": "research_report",
+      "outcome": "Plan, research offline documents and write a sourced outdoor-gear trends report",
+      "examples": [
+        {
+          "file": "01_plan_by_hand.py",
+          "features": "create_agent plus TodoListMiddleware; bounded plan execution",
+          "source": "https://docs.langchain.com/oss/python/langchain/middleware/built-in"
+        },
+        {
+          "file": "02_virtual_files.py",
+          "features": "Allowlisted virtual filesystem tools; path confinement; no shell",
+          "source": "https://docs.langchain.com/oss/python/deepagents/overview"
+        },
+        {
+          "file": "03_subagents.py",
+          "features": "Specialized research and critique subagents; budgets",
+          "source": "https://docs.langchain.com/oss/python/deepagents/overview"
+        },
+        {
+          "file": "04_deepagents_sdk.py",
+          "features": "create_deep_agent; planning, virtual filesystem and subagents; optional pre-1.0 SDK path",
+          "source": "https://docs.langchain.com/oss/python/deepagents/overview"
+        },
+        {
+          "file": "05_search_sources.py",
+          "features": "Tavily opt-in web search; offline synthetic research corpus fallback; provenance",
+          "source": "https://docs.langchain.com/oss/python/deepagents/overview"
+        }
+      ]
+    },
+    {
+      "slug": "18_apps",
+      "title": "Streaming, APIs and user interfaces",
+      "minutes": 180,
+      "assistant_version": 10,
+      "use_case": "support_web",
+      "outcome": "FastAPI streaming backend and Streamlit chat with per-thread memory and approval controls",
+      "examples": [
+        {
+          "file": "01_async_basics.py",
+          "features": "Coroutines, concurrency, cancellation and blocking work; token and step streaming",
+          "source": "https://docs.langchain.com/oss/python/langchain/streaming"
+        },
+        {
+          "file": "02_sse.py",
+          "features": "FastAPI StreamingResponse; server-sent-event framing; disconnects and errors",
+          "source": "https://fastapi.tiangolo.com/advanced/custom-response/"
+        },
+        {
+          "file": "03_streamlit_chat.py",
+          "features": "Streamlit chat; per-conversation thread state; new conversation reset",
+          "source": "https://docs.streamlit.io/develop/api-reference/chat"
+        },
+        {
+          "file": "04_approval_ui.py",
+          "features": "Approve/reject buttons; interrupted state; server-side authorization and safe resume",
+          "source": "https://docs.langchain.com/oss/python/langgraph/interrupts"
+        },
+        {
+          "file": "05_session_isolation.py",
+          "features": "Session identity, thread ownership and bounded concurrent requests",
+          "source": "https://docs.langchain.com/oss/python/langchain/short-term-memory"
+        }
+      ]
+    },
+    {
+      "slug": "19_evaluation",
+      "title": "Observability, testing and evaluation",
+      "minutes": 180,
+      "assistant_version": 10,
+      "use_case": "support_eval",
+      "outcome": "Gate regressions in tool trajectories, grounding and tone with a local evaluation suite",
+      "examples": [
+        {
+          "file": "01_trace.py",
+          "features": "LangSmith tracing; tags, metadata; redact before tracing; account-free JSON logs",
+          "source": "https://docs.langchain.com/langsmith/observability-quickstart"
+        },
+        {
+          "file": "02_fake_models.py",
+          "features": "GenericFakeChatModel; scripted tool-call messages; fake embeddings; tool tests",
+          "source": "https://docs.langchain.com/oss/python/langchain/test"
+        },
+        {
+          "file": "03_live_tests.py",
+          "features": "pytest live marker; opt-in integration tests; provider/model capability matrix",
+          "source": "https://docs.langchain.com/oss/python/langchain/test"
+        },
+        {
+          "file": "04_datasets_evaluate.py",
+          "features": "LangSmith datasets and evaluate; custom evaluators; optional LLM judge",
+          "source": "https://docs.langchain.com/langsmith/evaluate-llm-application"
+        },
+        {
+          "file": "05_trajectory.py",
+          "features": "Tool-call sequence, arguments, ownership and forbidden-action assertions",
+          "source": "https://docs.langchain.com/oss/python/langchain/test"
+        },
+        {
+          "file": "06_prompt_regression.py",
+          "features": "Versioned prompts; held-out inputs; semantic expectations rather than exact prose",
+          "source": "https://docs.langchain.com/oss/python/langchain/test"
+        },
+        {
+          "file": "07_local_harness.py",
+          "features": "Local JSON evaluation; faithfulness, tone, correctness; CI thresholds and reports",
+          "source": "https://docs.langchain.com/langsmith/evaluate-llm-application"
+        }
+      ]
+    },
+    {
+      "slug": "20_production",
+      "title": "Production readiness and deployment",
+      "minutes": 180,
+      "assistant_version": 11,
+      "use_case": "production_assistant",
+      "outcome": "Package the guarded assistant with logs, budgets, security checks and deployment documentation",
+      "examples": [
+        {
+          "file": "01_config_resilience.py",
+          "features": "Secrets, timeouts, retries, fallbacks, rate limits; startup validation",
+          "source": "https://docs.langchain.com/oss/python/langchain/models"
+        },
+        {
+          "file": "02_cache_budget.py",
+          "features": "set_llm_cache; cache privacy; usage tracking; per-request/session budgets",
+          "source": "https://reference.langchain.com/python/langchain_core/globals/"
+        },
+        {
+          "file": "03_structured_logging.py",
+          "features": "Structured JSON logging; correlation IDs; redact secrets and PII",
+          "source": "https://docs.langchain.com/langsmith/observability-quickstart"
+        },
+        {
+          "file": "04_injection.py",
+          "features": "Direct and indirect prompt injection; poisoned_doc.md; retrieval treated as untrusted data",
+          "source": "https://docs.langchain.com/oss/python/langchain/retrieval"
+        },
+        {
+          "file": "05_least_privilege.py",
+          "features": "Tool permissions; read-only SQL; SELECT allowlist plus SQLite authorizer; clean/validate output",
+          "source": "https://docs.langchain.com/oss/python/langchain/tools"
+        },
+        {
+          "file": "06_docker.py",
+          "features": "FastAPI container; non-root user; health endpoint; secrets at runtime; pre-launch checklist",
+          "source": "https://fastapi.tiangolo.com/advanced/custom-response/"
+        },
+        {
+          "file": "07_agent_server.py",
+          "features": "langgraph.json; LangGraph CLI; Agent Server; LangSmith Deployment naming and optional service path",
+          "source": "https://docs.langchain.com/langsmith/local-dev-testing"
+        },
+        {
+          "file": "08_postgres.py",
+          "features": "PostgresSaver and PostgresStore; persistence, user namespaces and connection lifetime",
+          "source": "https://docs.langchain.com/oss/python/langchain/long-term-memory"
+        }
+      ]
+    }
+  ],
+  "planned_files": [
+    ".env.example",
+    ".gitattributes",
+    ".github/ISSUE_TEMPLATE/bug.yml",
+    ".github/ISSUE_TEMPLATE/content_error.yml",
+    ".github/ISSUE_TEMPLATE/new_example.yml",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    ".pre-commit-config.yaml",
+    ".python-version",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LEARNING_PATH.md",
+    "LICENSE",
+    "README.md",
+    "capstones/01_documind/README.md",
+    "capstones/01_documind/app.py",
+    "capstones/01_documind/eval.jsonl",
+    "capstones/01_documind/evaluation_report.md",
+    "capstones/01_documind/rubric.md",
+    "capstones/01_documind/solution.py",
+    "capstones/01_documind/starter.py",
+    "capstones/01_documind/tests/test_acceptance.py",
+    "capstones/01_documind/tests/test_evaluation.py",
+    "capstones/02_support_copilot/.dockerignore",
+    "capstones/02_support_copilot/Dockerfile",
+    "capstones/02_support_copilot/README.md",
+    "capstones/02_support_copilot/api.py",
+    "capstones/02_support_copilot/app.py",
+    "capstones/02_support_copilot/eval.jsonl",
+    "capstones/02_support_copilot/langgraph.json",
+    "capstones/02_support_copilot/rubric.md",
+    "capstones/02_support_copilot/solution.py",
+    "capstones/02_support_copilot/starter.py",
+    "capstones/02_support_copilot/tests/test_acceptance.py",
+    "capstones/02_support_copilot/tests/test_api.py",
+    "capstones/02_support_copilot/tests/test_evaluation.py",
+    "capstones/03_insight_analyst/README.md",
+    "capstones/03_insight_analyst/eval.jsonl",
+    "capstones/03_insight_analyst/rubric.md",
+    "capstones/03_insight_analyst/solution.py",
+    "capstones/03_insight_analyst/starter.py",
+    "capstones/03_insight_analyst/tests/test_acceptance.py",
+    "capstones/03_insight_analyst/tests/test_evaluation.py",
+    "capstones/04_research_crew/README.md",
+    "capstones/04_research_crew/eval.jsonl",
+    "capstones/04_research_crew/rubric.md",
+    "capstones/04_research_crew/solution.py",
+    "capstones/04_research_crew/starter.py",
+    "capstones/04_research_crew/tests/test_acceptance.py",
+    "capstones/04_research_crew/tests/test_evaluation.py",
+    "capstones/05_personal_ops/README.md",
+    "capstones/05_personal_ops/eval.jsonl",
+    "capstones/05_personal_ops/notes_server.py",
+    "capstones/05_personal_ops/rubric.md",
+    "capstones/05_personal_ops/solution.py",
+    "capstones/05_personal_ops/starter.py",
+    "capstones/05_personal_ops/tasks_server.py",
+    "capstones/05_personal_ops/tests/test_acceptance.py",
+    "capstones/05_personal_ops/tests/test_evaluation.py",
+    "cheatsheets/tier_1_foundations.md",
+    "cheatsheets/tier_2_rag.md",
+    "cheatsheets/tier_3_agents.md",
+    "cheatsheets/tier_4_graphs.md",
+    "cheatsheets/tier_5_production.md",
+    "checkpoints/01_ticket_desk/README.md",
+    "checkpoints/01_ticket_desk/eval.jsonl",
+    "checkpoints/01_ticket_desk/rubric.md",
+    "checkpoints/01_ticket_desk/solution.py",
+    "checkpoints/01_ticket_desk/starter.py",
+    "checkpoints/01_ticket_desk/tests/test_acceptance.py",
+    "checkpoints/02_handbook_qa/README.md",
+    "checkpoints/02_handbook_qa/eval.jsonl",
+    "checkpoints/02_handbook_qa/rubric.md",
+    "checkpoints/02_handbook_qa/solution.py",
+    "checkpoints/02_handbook_qa/starter.py",
+    "checkpoints/02_handbook_qa/tests/test_acceptance.py",
+    "checkpoints/03_guarded_support/README.md",
+    "checkpoints/03_guarded_support/eval.jsonl",
+    "checkpoints/03_guarded_support/rubric.md",
+    "checkpoints/03_guarded_support/solution.py",
+    "checkpoints/03_guarded_support/starter.py",
+    "checkpoints/03_guarded_support/tests/test_acceptance.py",
+    "checkpoints/04_operations_desk/README.md",
+    "checkpoints/04_operations_desk/eval.jsonl",
+    "checkpoints/04_operations_desk/rubric.md",
+    "checkpoints/04_operations_desk/solution.py",
+    "checkpoints/04_operations_desk/starter.py",
+    "checkpoints/04_operations_desk/tests/test_acceptance.py",
+    "checkpoints/05_production_release/README.md",
+    "checkpoints/05_production_release/eval.jsonl",
+    "checkpoints/05_production_release/rubric.md",
+    "checkpoints/05_production_release/solution.py",
+    "checkpoints/05_production_release/starter.py",
+    "checkpoints/05_production_release/tests/test_acceptance.py",
+    "common/__init__.py",
+    "common/agent.py",
+    "common/budget.py",
+    "common/config.py",
+    "common/data.py",
+    "common/errors.py",
+    "common/evaluation.py",
+    "common/graphs.py",
+    "common/guardrails.py",
+    "common/mcp.py",
+    "common/memory.py",
+    "common/models.py",
+    "common/pretty.py",
+    "common/retrieval.py",
+    "common/schemas.py",
+    "common/security.py",
+    "common/testing.py",
+    "common/tools.py",
+    "common/tracing.py",
+    "common/web.py",
+    "data/README.md",
+    "data/eval/agent_conversations.jsonl",
+    "data/eval/rag.jsonl",
+    "data/eval/triage.jsonl",
+    "data/faq.json",
+    "data/fixtures/policy.html",
+    "data/fixtures/product.png",
+    "data/fixtures/product.svg",
+    "data/handbook/employee_handbook.md",
+    "data/handbook/employee_handbook.pdf",
+    "data/manifest.json",
+    "data/orders.db",
+    "data/policies/privacy.md",
+    "data/policies/returns.md",
+    "data/policies/shipping.md",
+    "data/policies/warranty.md",
+    "data/products.csv",
+    "data/research/customer_trends.md",
+    "data/research/market_brief.md",
+    "data/research/product_trends.md",
+    "data/reviews.csv",
+    "data/security/poisoned_doc.md",
+    "data/support_tickets.jsonl",
+    "docs/CHOOSING_THE_RIGHT_TOOL.md",
+    "docs/COMPLETION_CHECKLIST.md",
+    "docs/FEATURE_MAP.md",
+    "docs/GLOSSARY.md",
+    "docs/MENTAL_MODEL.md",
+    "docs/MIGRATING_FROM_LEGACY.md",
+    "docs/PHASE_1_PLAN.md",
+    "docs/PROVIDER_CAPABILITIES.md",
+    "docs/REPOSITORY_TREE.md",
+    "docs/TROUBLESHOOTING.md",
+    "docs/VERIFICATION_NOTES.md",
+    "docs/course-plan.json",
+    "docs/dependency-candidates.in",
+    "docs/dependency-resolution.txt",
+    "docs/progress.json",
+    "docs/pypi-verification-phase2.json",
+    "docs/pypi-verification.json",
+    "modules/00_setup/README.md",
+    "modules/00_setup/examples/01_llm_basics.py",
+    "modules/00_setup/examples/02_ecosystem.py",
+    "modules/00_setup/examples/03_verify_environment.py",
+    "modules/00_setup/exercises/01_practice.py",
+    "modules/00_setup/exercises/02_apply.py",
+    "modules/00_setup/exercises/03_stretch.py",
+    "modules/00_setup/notebook.ipynb",
+    "modules/00_setup/quiz.md",
+    "modules/00_setup/solutions/01_practice.py",
+    "modules/00_setup/solutions/02_apply.py",
+    "modules/00_setup/solutions/03_stretch.py",
+    "modules/00_setup/tests/test_examples.py",
+    "modules/00_setup/tests/test_exercises.py",
+    "modules/00_setup/tests/test_use_case.py",
+    "modules/00_setup/use_case/first_call.py",
+    "modules/01_chat_models/README.md",
+    "modules/01_chat_models/examples/01_hello_model.py",
+    "modules/01_chat_models/examples/02_message_types.py",
+    "modules/01_chat_models/examples/03_streaming.py",
+    "modules/01_chat_models/examples/04_batch_async.py",
+    "modules/01_chat_models/examples/05_parameters.py",
+    "modules/01_chat_models/examples/06_usage_cost.py",
+    "modules/01_chat_models/examples/07_multimodal.py",
+    "modules/01_chat_models/examples/08_rate_limit.py",
+    "modules/01_chat_models/examples/09_http_by_hand.py",
+    "modules/01_chat_models/exercises/01_practice.py",
+    "modules/01_chat_models/exercises/02_apply.py",
+    "modules/01_chat_models/exercises/03_stretch.py",
+    "modules/01_chat_models/notebook.ipynb",
+    "modules/01_chat_models/quiz.md",
+    "modules/01_chat_models/solutions/01_practice.py",
+    "modules/01_chat_models/solutions/02_apply.py",
+    "modules/01_chat_models/solutions/03_stretch.py",
+    "modules/01_chat_models/tests/test_examples.py",
+    "modules/01_chat_models/tests/test_exercises.py",
+    "modules/01_chat_models/tests/test_use_case.py",
+    "modules/01_chat_models/use_case/reply_drafter.py",
+    "modules/02_prompt_templates/README.md",
+    "modules/02_prompt_templates/examples/01_variables.py",
+    "modules/02_prompt_templates/examples/02_chat_history.py",
+    "modules/02_prompt_templates/examples/03_few_shot.py",
+    "modules/02_prompt_templates/examples/04_prompt_files.py",
+    "modules/02_prompt_templates/exercises/01_practice.py",
+    "modules/02_prompt_templates/exercises/02_apply.py",
+    "modules/02_prompt_templates/exercises/03_stretch.py",
+    "modules/02_prompt_templates/notebook.ipynb",
+    "modules/02_prompt_templates/prompts/brand_voice.txt",
+    "modules/02_prompt_templates/prompts/tone_rewrite.txt",
+    "modules/02_prompt_templates/quiz.md",
+    "modules/02_prompt_templates/solutions/01_practice.py",
+    "modules/02_prompt_templates/solutions/02_apply.py",
+    "modules/02_prompt_templates/solutions/03_stretch.py",
+    "modules/02_prompt_templates/tests/test_examples.py",
+    "modules/02_prompt_templates/tests/test_exercises.py",
+    "modules/02_prompt_templates/tests/test_use_case.py",
+    "modules/02_prompt_templates/use_case/brand_writer.py",
+    "modules/03_structured_output/README.md",
+    "modules/03_structured_output/examples/01_pydantic.py",
+    "modules/03_structured_output/examples/02_schema_formats.py",
+    "modules/03_structured_output/examples/03_output_methods.py",
+    "modules/03_structured_output/examples/04_validation_retry.py",
+    "modules/03_structured_output/examples/05_parsers.py",
+    "modules/03_structured_output/exercises/01_practice.py",
+    "modules/03_structured_output/exercises/02_apply.py",
+    "modules/03_structured_output/exercises/03_stretch.py",
+    "modules/03_structured_output/notebook.ipynb",
+    "modules/03_structured_output/quiz.md",
+    "modules/03_structured_output/solutions/01_practice.py",
+    "modules/03_structured_output/solutions/02_apply.py",
+    "modules/03_structured_output/solutions/03_stretch.py",
+    "modules/03_structured_output/tests/test_examples.py",
+    "modules/03_structured_output/tests/test_exercises.py",
+    "modules/03_structured_output/tests/test_use_case.py",
+    "modules/03_structured_output/use_case/ticket_triage.py",
+    "modules/04_lcel_runnables/README.md",
+    "modules/04_lcel_runnables/examples/01_sequence.py",
+    "modules/04_lcel_runnables/examples/02_parallel.py",
+    "modules/04_lcel_runnables/examples/03_passthrough.py",
+    "modules/04_lcel_runnables/examples/04_python_functions.py",
+    "modules/04_lcel_runnables/examples/05_routing.py",
+    "modules/04_lcel_runnables/examples/06_resilience.py",
+    "modules/04_lcel_runnables/examples/07_config_batch.py",
+    "modules/04_lcel_runnables/examples/08_events_diagram.py",
+    "modules/04_lcel_runnables/exercises/01_practice.py",
+    "modules/04_lcel_runnables/exercises/02_apply.py",
+    "modules/04_lcel_runnables/exercises/03_stretch.py",
+    "modules/04_lcel_runnables/notebook.ipynb",
+    "modules/04_lcel_runnables/quiz.md",
+    "modules/04_lcel_runnables/solutions/01_practice.py",
+    "modules/04_lcel_runnables/solutions/02_apply.py",
+    "modules/04_lcel_runnables/solutions/03_stretch.py",
+    "modules/04_lcel_runnables/tests/test_examples.py",
+    "modules/04_lcel_runnables/tests/test_exercises.py",
+    "modules/04_lcel_runnables/tests/test_use_case.py",
+    "modules/04_lcel_runnables/use_case/review_insights.py",
+    "modules/05_tools/README.md",
+    "modules/05_tools/examples/01_tool_schema.py",
+    "modules/05_tools/examples/02_args_schema.py",
+    "modules/05_tools/examples/03_dispatch.py",
+    "modules/05_tools/examples/04_parallel_choice.py",
+    "modules/05_tools/examples/05_manual_agent.py",
+    "modules/05_tools/examples/06_runtime.py",
+    "modules/05_tools/examples/07_sql_safety.py",
+    "modules/05_tools/exercises/01_practice.py",
+    "modules/05_tools/exercises/02_apply.py",
+    "modules/05_tools/exercises/03_stretch.py",
+    "modules/05_tools/notebook.ipynb",
+    "modules/05_tools/quiz.md",
+    "modules/05_tools/solutions/01_practice.py",
+    "modules/05_tools/solutions/02_apply.py",
+    "modules/05_tools/solutions/03_stretch.py",
+    "modules/05_tools/tests/test_examples.py",
+    "modules/05_tools/tests/test_exercises.py",
+    "modules/05_tools/tests/test_use_case.py",
+    "modules/05_tools/use_case/order_status.py",
+    "modules/06_loaders_splitters/README.md",
+    "modules/06_loaders_splitters/examples/01_documents.py",
+    "modules/06_loaders_splitters/examples/02_pdf_lazy.py",
+    "modules/06_loaders_splitters/examples/03_file_loaders.py",
+    "modules/06_loaders_splitters/examples/04_web_loader.py",
+    "modules/06_loaders_splitters/examples/05_recursive_chunks.py",
+    "modules/06_loaders_splitters/examples/06_markdown_chunks.py",
+    "modules/06_loaders_splitters/examples/07_token_code_chunks.py",
+    "modules/06_loaders_splitters/exercises/01_practice.py",
+    "modules/06_loaders_splitters/exercises/02_apply.py",
+    "modules/06_loaders_splitters/exercises/03_stretch.py",
+    "modules/06_loaders_splitters/notebook.ipynb",
+    "modules/06_loaders_splitters/quiz.md",
+    "modules/06_loaders_splitters/solutions/01_practice.py",
+    "modules/06_loaders_splitters/solutions/02_apply.py",
+    "modules/06_loaders_splitters/solutions/03_stretch.py",
+    "modules/06_loaders_splitters/tests/test_examples.py",
+    "modules/06_loaders_splitters/tests/test_exercises.py",
+    "modules/06_loaders_splitters/tests/test_use_case.py",
+    "modules/06_loaders_splitters/use_case/knowledge_ingest.py",
+    "modules/07_embeddings_retrievers/README.md",
+    "modules/07_embeddings_retrievers/examples/01_cosine_by_hand.py",
+    "modules/07_embeddings_retrievers/examples/02_embedding_interface.py",
+    "modules/07_embeddings_retrievers/examples/03_memory_store.py",
+    "modules/07_embeddings_retrievers/examples/04_persistent_chroma.py",
+    "modules/07_embeddings_retrievers/examples/05_document_lifecycle.py",
+    "modules/07_embeddings_retrievers/examples/06_scores_mmr_filters.py",
+    "modules/07_embeddings_retrievers/examples/07_retriever.py",
+    "modules/07_embeddings_retrievers/examples/08_embedding_cache.py",
+    "modules/07_embeddings_retrievers/exercises/01_practice.py",
+    "modules/07_embeddings_retrievers/exercises/02_apply.py",
+    "modules/07_embeddings_retrievers/exercises/03_stretch.py",
+    "modules/07_embeddings_retrievers/notebook.ipynb",
+    "modules/07_embeddings_retrievers/quiz.md",
+    "modules/07_embeddings_retrievers/solutions/01_practice.py",
+    "modules/07_embeddings_retrievers/solutions/02_apply.py",
+    "modules/07_embeddings_retrievers/solutions/03_stretch.py",
+    "modules/07_embeddings_retrievers/tests/test_examples.py",
+    "modules/07_embeddings_retrievers/tests/test_exercises.py",
+    "modules/07_embeddings_retrievers/tests/test_use_case.py",
+    "modules/07_embeddings_retrievers/use_case/product_search.py",
+    "modules/08_rag_fundamentals/README.md",
+    "modules/08_rag_fundamentals/examples/01_index_retrieve.py",
+    "modules/08_rag_fundamentals/examples/02_lcel_rag.py",
+    "modules/08_rag_fundamentals/examples/03_grounding_citations.py",
+    "modules/08_rag_fundamentals/examples/04_retrieval_tool.py",
+    "modules/08_rag_fundamentals/exercises/01_practice.py",
+    "modules/08_rag_fundamentals/exercises/02_apply.py",
+    "modules/08_rag_fundamentals/exercises/03_stretch.py",
+    "modules/08_rag_fundamentals/notebook.ipynb",
+    "modules/08_rag_fundamentals/quiz.md",
+    "modules/08_rag_fundamentals/solutions/01_practice.py",
+    "modules/08_rag_fundamentals/solutions/02_apply.py",
+    "modules/08_rag_fundamentals/solutions/03_stretch.py",
+    "modules/08_rag_fundamentals/tests/test_examples.py",
+    "modules/08_rag_fundamentals/tests/test_exercises.py",
+    "modules/08_rag_fundamentals/tests/test_use_case.py",
+    "modules/08_rag_fundamentals/use_case/ask_brightwave.py",
+    "modules/09_advanced_rag/README.md",
+    "modules/09_advanced_rag/examples/01_query_rewrite.py",
+    "modules/09_advanced_rag/examples/02_hybrid.py",
+    "modules/09_advanced_rag/examples/03_rerank_compress.py",
+    "modules/09_advanced_rag/examples/04_parent_retrieval.py",
+    "modules/09_advanced_rag/examples/05_query_filters.py",
+    "modules/09_advanced_rag/examples/06_conversation.py",
+    "modules/09_advanced_rag/examples/07_evaluate.py",
+    "modules/09_advanced_rag/examples/08_failure_gallery.py",
+    "modules/09_advanced_rag/exercises/01_practice.py",
+    "modules/09_advanced_rag/exercises/02_apply.py",
+    "modules/09_advanced_rag/exercises/03_stretch.py",
+    "modules/09_advanced_rag/notebook.ipynb",
+    "modules/09_advanced_rag/quiz.md",
+    "modules/09_advanced_rag/results/README.md",
+    "modules/09_advanced_rag/results/before_after.json",
+    "modules/09_advanced_rag/solutions/01_practice.py",
+    "modules/09_advanced_rag/solutions/02_apply.py",
+    "modules/09_advanced_rag/solutions/03_stretch.py",
+    "modules/09_advanced_rag/tests/test_examples.py",
+    "modules/09_advanced_rag/tests/test_exercises.py",
+    "modules/09_advanced_rag/tests/test_use_case.py",
+    "modules/09_advanced_rag/use_case/rag_benchmark.py",
+    "modules/10_agents/README.md",
+    "modules/10_agents/examples/01_create_agent.py",
+    "modules/10_agents/examples/02_trace_stream.py",
+    "modules/10_agents/examples/03_response_format.py",
+    "modules/10_agents/examples/04_context.py",
+    "modules/10_agents/examples/05_errors_limits.py",
+    "modules/10_agents/examples/06_return_write.py",
+    "modules/10_agents/exercises/01_practice.py",
+    "modules/10_agents/exercises/02_apply.py",
+    "modules/10_agents/exercises/03_stretch.py",
+    "modules/10_agents/notebook.ipynb",
+    "modules/10_agents/quiz.md",
+    "modules/10_agents/solutions/01_practice.py",
+    "modules/10_agents/solutions/02_apply.py",
+    "modules/10_agents/solutions/03_stretch.py",
+    "modules/10_agents/tests/test_examples.py",
+    "modules/10_agents/tests/test_exercises.py",
+    "modules/10_agents/tests/test_use_case.py",
+    "modules/10_agents/use_case/support_agent.py",
+    "modules/11_memory/README.md",
+    "modules/11_memory/examples/01_stateless_threads.py",
+    "modules/11_memory/examples/02_sqlite_checkpoint.py",
+    "modules/11_memory/examples/03_trim.py",
+    "modules/11_memory/examples/04_summarize.py",
+    "modules/11_memory/examples/05_custom_state.py",
+    "modules/11_memory/examples/06_long_term_store.py",
+    "modules/11_memory/examples/07_durable_preferences.py",
+    "modules/11_memory/exercises/01_practice.py",
+    "modules/11_memory/exercises/02_apply.py",
+    "modules/11_memory/exercises/03_stretch.py",
+    "modules/11_memory/notebook.ipynb",
+    "modules/11_memory/quiz.md",
+    "modules/11_memory/solutions/01_practice.py",
+    "modules/11_memory/solutions/02_apply.py",
+    "modules/11_memory/solutions/03_stretch.py",
+    "modules/11_memory/tests/test_examples.py",
+    "modules/11_memory/tests/test_exercises.py",
+    "modules/11_memory/tests/test_use_case.py",
+    "modules/11_memory/use_case/remembering_agent.py",
+    "modules/12_middleware/README.md",
+    "modules/12_middleware/examples/01_hooks.py",
+    "modules/12_middleware/examples/02_custom_middleware.py",
+    "modules/12_middleware/examples/03_pii.py",
+    "modules/12_middleware/examples/04_approval.py",
+    "modules/12_middleware/examples/05_fallback.py",
+    "modules/12_middleware/examples/06_call_limits.py",
+    "modules/12_middleware/examples/07_retry.py",
+    "modules/12_middleware/examples/08_tool_selector.py",
+    "modules/12_middleware/examples/09_todo.py",
+    "modules/12_middleware/examples/10_dynamic_model.py",
+    "modules/12_middleware/exercises/01_practice.py",
+    "modules/12_middleware/exercises/02_apply.py",
+    "modules/12_middleware/exercises/03_stretch.py",
+    "modules/12_middleware/notebook.ipynb",
+    "modules/12_middleware/quiz.md",
+    "modules/12_middleware/solutions/01_practice.py",
+    "modules/12_middleware/solutions/02_apply.py",
+    "modules/12_middleware/solutions/03_stretch.py",
+    "modules/12_middleware/tests/test_examples.py",
+    "modules/12_middleware/tests/test_exercises.py",
+    "modules/12_middleware/tests/test_use_case.py",
+    "modules/12_middleware/use_case/guarded_agent.py",
+    "modules/13_mcp/README.md",
+    "modules/13_mcp/examples/01_official_server.py",
+    "modules/13_mcp/examples/02_stdio_client.py",
+    "modules/13_mcp/examples/03_http_client.py",
+    "modules/13_mcp/examples/04_agent_connection.py",
+    "modules/13_mcp/examples/05_trust_boundary.py",
+    "modules/13_mcp/exercises/01_practice.py",
+    "modules/13_mcp/exercises/02_apply.py",
+    "modules/13_mcp/exercises/03_stretch.py",
+    "modules/13_mcp/notebook.ipynb",
+    "modules/13_mcp/quiz.md",
+    "modules/13_mcp/solutions/01_practice.py",
+    "modules/13_mcp/solutions/02_apply.py",
+    "modules/13_mcp/solutions/03_stretch.py",
+    "modules/13_mcp/tests/test_examples.py",
+    "modules/13_mcp/tests/test_exercises.py",
+    "modules/13_mcp/tests/test_use_case.py",
+    "modules/13_mcp/use_case/inventory_agent.py",
+    "modules/13_mcp/use_case/inventory_server.py",
+    "modules/14_langgraph/README.md",
+    "modules/14_langgraph/examples/01_state_graph.py",
+    "modules/14_langgraph/examples/02_reducers.py",
+    "modules/14_langgraph/examples/03_routing_command.py",
+    "modules/14_langgraph/examples/04_manual_agent_graph.py",
+    "modules/14_langgraph/examples/05_persistence.py",
+    "modules/14_langgraph/examples/06_interrupt.py",
+    "modules/14_langgraph/examples/07_time_travel.py",
+    "modules/14_langgraph/examples/08_subgraphs.py",
+    "modules/14_langgraph/examples/09_stream_modes.py",
+    "modules/14_langgraph/examples/10_functional_api.py",
+    "modules/14_langgraph/examples/11_studio.py",
+    "modules/14_langgraph/exercises/01_practice.py",
+    "modules/14_langgraph/exercises/02_apply.py",
+    "modules/14_langgraph/exercises/03_stretch.py",
+    "modules/14_langgraph/notebook.ipynb",
+    "modules/14_langgraph/quiz.md",
+    "modules/14_langgraph/solutions/01_practice.py",
+    "modules/14_langgraph/solutions/02_apply.py",
+    "modules/14_langgraph/solutions/03_stretch.py",
+    "modules/14_langgraph/tests/test_examples.py",
+    "modules/14_langgraph/tests/test_exercises.py",
+    "modules/14_langgraph/tests/test_use_case.py",
+    "modules/14_langgraph/use_case/return_workflow.py",
+    "modules/15_workflows/README.md",
+    "modules/15_workflows/examples/01_chain_gate.py",
+    "modules/15_workflows/examples/02_route.py",
+    "modules/15_workflows/examples/03_parallel.py",
+    "modules/15_workflows/examples/04_send_map_reduce.py",
+    "modules/15_workflows/examples/05_orchestrator_workers.py",
+    "modules/15_workflows/examples/06_evaluator_optimizer.py",
+    "modules/15_workflows/examples/07_choose_workflow.py",
+    "modules/15_workflows/exercises/01_practice.py",
+    "modules/15_workflows/exercises/02_apply.py",
+    "modules/15_workflows/exercises/03_stretch.py",
+    "modules/15_workflows/notebook.ipynb",
+    "modules/15_workflows/quiz.md",
+    "modules/15_workflows/solutions/01_practice.py",
+    "modules/15_workflows/solutions/02_apply.py",
+    "modules/15_workflows/solutions/03_stretch.py",
+    "modules/15_workflows/tests/test_examples.py",
+    "modules/15_workflows/tests/test_exercises.py",
+    "modules/15_workflows/tests/test_use_case.py",
+    "modules/15_workflows/use_case/weekly_report.py",
+    "modules/16_multi_agent/README.md",
+    "modules/16_multi_agent/examples/01_supervisor_tools.py",
+    "modules/16_multi_agent/examples/02_handoffs.py",
+    "modules/16_multi_agent/examples/03_router.py",
+    "modules/16_multi_agent/examples/04_context_boundaries.py",
+    "modules/16_multi_agent/examples/05_compare_single.py",
+    "modules/16_multi_agent/exercises/01_practice.py",
+    "modules/16_multi_agent/exercises/02_apply.py",
+    "modules/16_multi_agent/exercises/03_stretch.py",
+    "modules/16_multi_agent/notebook.ipynb",
+    "modules/16_multi_agent/quiz.md",
+    "modules/16_multi_agent/solutions/01_practice.py",
+    "modules/16_multi_agent/solutions/02_apply.py",
+    "modules/16_multi_agent/solutions/03_stretch.py",
+    "modules/16_multi_agent/tests/test_examples.py",
+    "modules/16_multi_agent/tests/test_exercises.py",
+    "modules/16_multi_agent/tests/test_use_case.py",
+    "modules/16_multi_agent/use_case/operations_team.py",
+    "modules/17_deep_agents/README.md",
+    "modules/17_deep_agents/examples/01_plan_by_hand.py",
+    "modules/17_deep_agents/examples/02_virtual_files.py",
+    "modules/17_deep_agents/examples/03_subagents.py",
+    "modules/17_deep_agents/examples/04_deepagents_sdk.py",
+    "modules/17_deep_agents/examples/05_search_sources.py",
+    "modules/17_deep_agents/exercises/01_practice.py",
+    "modules/17_deep_agents/exercises/02_apply.py",
+    "modules/17_deep_agents/exercises/03_stretch.py",
+    "modules/17_deep_agents/notebook.ipynb",
+    "modules/17_deep_agents/quiz.md",
+    "modules/17_deep_agents/solutions/01_practice.py",
+    "modules/17_deep_agents/solutions/02_apply.py",
+    "modules/17_deep_agents/solutions/03_stretch.py",
+    "modules/17_deep_agents/tests/test_examples.py",
+    "modules/17_deep_agents/tests/test_exercises.py",
+    "modules/17_deep_agents/tests/test_use_case.py",
+    "modules/17_deep_agents/use_case/research_report.py",
+    "modules/18_apps/README.md",
+    "modules/18_apps/examples/01_async_basics.py",
+    "modules/18_apps/examples/02_sse.py",
+    "modules/18_apps/examples/03_streamlit_chat.py",
+    "modules/18_apps/examples/04_approval_ui.py",
+    "modules/18_apps/examples/05_session_isolation.py",
+    "modules/18_apps/exercises/01_practice.py",
+    "modules/18_apps/exercises/02_apply.py",
+    "modules/18_apps/exercises/03_stretch.py",
+    "modules/18_apps/notebook.ipynb",
+    "modules/18_apps/quiz.md",
+    "modules/18_apps/solutions/01_practice.py",
+    "modules/18_apps/solutions/02_apply.py",
+    "modules/18_apps/solutions/03_stretch.py",
+    "modules/18_apps/tests/test_examples.py",
+    "modules/18_apps/tests/test_exercises.py",
+    "modules/18_apps/tests/test_use_case.py",
+    "modules/18_apps/use_case/api.py",
+    "modules/18_apps/use_case/app.py",
+    "modules/18_apps/use_case/support_web.py",
+    "modules/19_evaluation/README.md",
+    "modules/19_evaluation/examples/01_trace.py",
+    "modules/19_evaluation/examples/02_fake_models.py",
+    "modules/19_evaluation/examples/03_live_tests.py",
+    "modules/19_evaluation/examples/04_datasets_evaluate.py",
+    "modules/19_evaluation/examples/05_trajectory.py",
+    "modules/19_evaluation/examples/06_prompt_regression.py",
+    "modules/19_evaluation/examples/07_local_harness.py",
+    "modules/19_evaluation/exercises/01_practice.py",
+    "modules/19_evaluation/exercises/02_apply.py",
+    "modules/19_evaluation/exercises/03_stretch.py",
+    "modules/19_evaluation/notebook.ipynb",
+    "modules/19_evaluation/quiz.md",
+    "modules/19_evaluation/solutions/01_practice.py",
+    "modules/19_evaluation/solutions/02_apply.py",
+    "modules/19_evaluation/solutions/03_stretch.py",
+    "modules/19_evaluation/tests/test_examples.py",
+    "modules/19_evaluation/tests/test_exercises.py",
+    "modules/19_evaluation/tests/test_use_case.py",
+    "modules/19_evaluation/use_case/support_eval.py",
+    "modules/20_production/README.md",
+    "modules/20_production/examples/01_config_resilience.py",
+    "modules/20_production/examples/02_cache_budget.py",
+    "modules/20_production/examples/03_structured_logging.py",
+    "modules/20_production/examples/04_injection.py",
+    "modules/20_production/examples/05_least_privilege.py",
+    "modules/20_production/examples/06_docker.py",
+    "modules/20_production/examples/07_agent_server.py",
+    "modules/20_production/examples/08_postgres.py",
+    "modules/20_production/exercises/01_practice.py",
+    "modules/20_production/exercises/02_apply.py",
+    "modules/20_production/exercises/03_stretch.py",
+    "modules/20_production/notebook.ipynb",
+    "modules/20_production/quiz.md",
+    "modules/20_production/solutions/01_practice.py",
+    "modules/20_production/solutions/02_apply.py",
+    "modules/20_production/solutions/03_stretch.py",
+    "modules/20_production/tests/test_examples.py",
+    "modules/20_production/tests/test_exercises.py",
+    "modules/20_production/tests/test_use_case.py",
+    "modules/20_production/use_case/.dockerignore",
+    "modules/20_production/use_case/Dockerfile",
+    "modules/20_production/use_case/langgraph.json",
+    "modules/20_production/use_case/production_assistant.py",
+    "pyproject.toml",
+    "scripts/__init__.py",
+    "scripts/_smoke_worker.py",
+    "scripts/build_data.py",
+    "scripts/check_coverage.py",
+    "scripts/check_env.py",
+    "scripts/check_legacy.py",
+    "scripts/check_links.py",
+    "scripts/configure.py",
+    "scripts/evaluate.py",
+    "scripts/first_call.py",
+    "scripts/run_all_examples.py",
+    "tests/conftest.py",
+    "tests/test_banned_apis.py",
+    "tests/test_budget.py",
+    "tests/test_cli.py",
+    "tests/test_config.py",
+    "tests/test_course_structure.py",
+    "tests/test_data.py",
+    "tests/test_evaluation.py",
+    "tests/test_examples.py",
+    "tests/test_links.py",
+    "tests/test_live.py",
+    "tests/test_models.py",
+    "tests/test_notebooks.py",
+    "tests/test_pretty.py",
+    "tests/test_security.py",
+    "tests/test_tools.py",
+    "uv.lock"
+  ],
+  "last_updated": "2026-10-28"
+}

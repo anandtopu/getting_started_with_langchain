@@ -1,0 +1,35 @@
+{
+  "counts": {
+    "faq": 40,
+    "handbook_pages": 10,
+    "orders": 200,
+    "products": 60,
+    "reviews": 300,
+    "tickets": 100
+  },
+  "files": {
+    "eval/agent_conversations.jsonl": "77ccfe69aba625a558e5b25df5bda1ae83abf5812f27e826951c656d720a7bc7",
+    "eval/rag.jsonl": "a55899aac3524371cb18466d514c01986004931920a14acbe226d3280adf8660",
+    "eval/triage.jsonl": "38483ae80d1b47f3f826bc4f92aa45b552dcf5dad3ccf3815836e7e57bed0d10",
+    "faq.json": "a3b7028912f0bd63db8f591f5d3592500b0145f7561fc1db4e80d395804f83d0",
+    "fixtures/policy.html": "87d44392476b8a2d670987323578e8f3d93ad3de0c61d44910eb28919c4869c5",
+    "handbook/employee_handbook.md": "4a48d9e68ea5a178f4e6dfb7117bade1e6ee59314af072cc4220f512cb05f4eb",
+    "handbook/employee_handbook.pdf": "a8471b7239a53f362cc58da97c4567d45e4317d23606c8cf40ab3db283ba751f",
+    "orders.db": "ba168e96a58d32472d17fcfe797e6aae336be625a37fc3a96259df55578f655a",
+    "policies/privacy.md": "f938e252058eb0707ae14c6ec957a1b0c805ef809d63cfa3f598e6354adfec98",
+    "policies/returns.md": "b35610aa33ec20a75c8e0e83cb3705951d9c48a947ae121b6c6d796472c2fed1",
+    "policies/shipping.md": "086c7d2fd589dced356a1d84d5602a670867daeb476eb2375a205e8210840465",
+    "policies/warranty.md": "6458f3f802981c1bd2eda31c749d7cccd4844703e4b297a18d41dd1f3c84d30e",
+    "products.csv": "daf89a7ecbc3af3662f6ab21fd70f4280fbcc427f4876de2cbef53f0141cd011",
+    "research/customer_trends.md": "69a71df38a6a1b0cd8354351b704fa1f62a480d08c59178fbc6ae57367ce44b9",
+    "research/market_brief.md": "4a50fbb45797163f88937366f9e2a6841f8c1a31fce147a4f634bf036577a11d",
+    "research/product_trends.md": "223d413b4e5a040709d0469f81e228419949cf43470ba854b58c69f886d1e449",
+    "reviews.csv": "d838df77ac2c0544253b3c7d1c7e7a8adefab026b89203de2595f19345998c55",
+    "security/poisoned_doc.md": "577be0f9eadb33a4975dad466545d9743a908a79e84ade342c4a786715980b4c",
+    "support_tickets.jsonl": "26515c2aaefd87c0437ce12b4ba11521f13b34ce20ad3ec53a8ef2e870b461bf"
+  },
+  "reference_date": "2026-01-15",
+  "schema_version": 1,
+  "seed": 271828,
+  "synthetic": true
+}

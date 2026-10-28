@@ -1,0 +1,17 @@
+name: Content correction
+description: An explanation, exercise or citation is wrong or unclear.
+title: '[Content] '
+body:
+  - type: input
+    id: location
+    attributes:
+      label: File and section
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What is confusing or incorrect?
+      description: Include a proposed correction and an official source if available.
+    validations:
+      required: true

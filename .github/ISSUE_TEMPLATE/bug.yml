@@ -1,0 +1,18 @@
+name: Bug report
+description: A documented command fails or produces incorrect behavior.
+title: '[Bug] '
+body:
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include the command, Python version, OS and provider name. Never include keys.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+      description: Remove secrets and personal information from any output.
+    validations:
+      required: true

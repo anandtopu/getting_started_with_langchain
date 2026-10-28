@@ -1,0 +1,11 @@
+name: Example request
+description: Propose a missing concept or a realistic Brightwave use case.
+title: '[Example] '
+body:
+  - type: textarea
+    id: learning
+    attributes:
+      label: What should a learner be able to do?
+      description: Explain the use case, prerequisites and an offline test approach.
+    validations:
+      required: true

@@ -1,0 +1,28 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: Ruff lint
+        entry: uv run ruff check
+        language: system
+        types: [python]
+      - id: ruff-format
+        name: Ruff formatting
+        entry: uv run ruff format --check
+        language: system
+        types: [python]
+      - id: nbstripout
+        name: Remove notebook outputs
+        entry: uv run --group authoring nbstripout
+        language: system
+        files: '\.ipynb$'
+      - id: current-apis
+        name: Current API scan
+        entry: uv run python scripts/check_legacy.py
+        language: system
+        pass_filenames: false
+      - id: local-links
+        name: Local links and declared future targets
+        entry: uv run python scripts/check_links.py --allow-planned
+        language: system
+        pass_filenames: false

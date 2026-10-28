@@ -1,0 +1,22 @@
+# Credentials: only the commented template belongs in git.
+.env
+.env.*
+!.env.example
+*.pem
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+.runtime/
+tmp/
+.langgraph_api/
+.DS_Store
+Thumbs.db
+# Seed data/orders.db is deliberately tracked; runtime databases are above.

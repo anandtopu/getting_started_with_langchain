@@ -1,0 +1,301 @@
+review_id,sku,category,rating,text
+V0001,BW-001,tents,4,Comfortable and easy to use.
+V0002,BW-002,tents,3,"Good quality, but the instructions could be clearer."
+V0003,BW-003,tents,2,The fit did not match my expectations.
+V0004,BW-004,tents,5,Light enough for a weekend trip.
+V0005,BW-005,tents,2,The packaging arrived damaged; the gear itself works.
+V0006,BW-006,tents,5,Comfortable and easy to use.
+V0007,BW-007,tents,4,"Good quality, but the instructions could be clearer."
+V0008,BW-008,tents,1,The fit did not match my expectations.
+V0009,BW-009,tents,5,Light enough for a weekend trip.
+V0010,BW-010,tents,3,The packaging arrived damaged; the gear itself works.
+V0011,BW-011,packs,4,Comfortable and easy to use.
+V0012,BW-012,packs,4,"Good quality, but the instructions could be clearer."
+V0013,BW-013,packs,2,The fit did not match my expectations.
+V0014,BW-014,packs,5,Light enough for a weekend trip.
+V0015,BW-015,packs,3,The packaging arrived damaged; the gear itself works.
+V0016,BW-016,packs,4,Comfortable and easy to use.
+V0017,BW-017,packs,3,"Good quality, but the instructions could be clearer."
+V0018,BW-018,packs,1,The fit did not match my expectations.
+V0019,BW-019,packs,5,Light enough for a weekend trip.
+V0020,BW-020,packs,3,The packaging arrived damaged; the gear itself works.
+V0021,BW-021,sleeping,4,Comfortable and easy to use.
+V0022,BW-022,sleeping,3,"Good quality, but the instructions could be clearer."
+V0023,BW-023,sleeping,2,The fit did not match my expectations.
+V0024,BW-024,sleeping,4,Light enough for a weekend trip.
+V0025,BW-025,sleeping,2,The packaging arrived damaged; the gear itself works.
+V0026,BW-026,sleeping,4,Comfortable and easy to use.
+V0027,BW-027,sleeping,3,"Good quality, but the instructions could be clearer."
+V0028,BW-028,sleeping,2,The fit did not match my expectations.
+V0029,BW-029,sleeping,5,Light enough for a weekend trip.
+V0030,BW-030,sleeping,3,The packaging arrived damaged; the gear itself works.
+V0031,BW-031,apparel,5,Comfortable and easy to use.
+V0032,BW-032,apparel,4,"Good quality, but the instructions could be clearer."
+V0033,BW-033,apparel,1,The fit did not match my expectations.
+V0034,BW-034,apparel,4,Light enough for a weekend trip.
+V0035,BW-035,apparel,2,The packaging arrived damaged; the gear itself works.
+V0036,BW-036,apparel,4,Comfortable and easy to use.
+V0037,BW-037,apparel,3,"Good quality, but the instructions could be clearer."
+V0038,BW-038,apparel,1,The fit did not match my expectations.
+V0039,BW-039,apparel,5,Light enough for a weekend trip.
+V0040,BW-040,apparel,2,The packaging arrived damaged; the gear itself works.
+V0041,BW-041,footwear,4,Comfortable and easy to use.
+V0042,BW-042,footwear,4,"Good quality, but the instructions could be clearer."
+V0043,BW-043,footwear,1,The fit did not match my expectations.
+V0044,BW-044,footwear,5,Light enough for a weekend trip.
+V0045,BW-045,footwear,2,The packaging arrived damaged; the gear itself works.
+V0046,BW-046,footwear,4,Comfortable and easy to use.
+V0047,BW-047,footwear,4,"Good quality, but the instructions could be clearer."
+V0048,BW-048,footwear,2,The fit did not match my expectations.
+V0049,BW-049,footwear,4,Light enough for a weekend trip.
+V0050,BW-050,footwear,3,The packaging arrived damaged; the gear itself works.
+V0051,BW-051,accessories,5,Comfortable and easy to use.
+V0052,BW-052,accessories,4,"Good quality, but the instructions could be clearer."
+V0053,BW-053,accessories,2,The fit did not match my expectations.
+V0054,BW-054,accessories,5,Light enough for a weekend trip.
+V0055,BW-055,accessories,2,The packaging arrived damaged; the gear itself works.
+V0056,BW-056,accessories,5,Comfortable and easy to use.
+V0057,BW-057,accessories,4,"Good quality, but the instructions could be clearer."
+V0058,BW-058,accessories,1,The fit did not match my expectations.
+V0059,BW-059,accessories,5,Light enough for a weekend trip.
+V0060,BW-060,accessories,2,The packaging arrived damaged; the gear itself works.
+V0061,BW-001,tents,5,Comfortable and easy to use.
+V0062,BW-002,tents,3,"Good quality, but the instructions could be clearer."
+V0063,BW-003,tents,1,The fit did not match my expectations.
+V0064,BW-004,tents,5,Light enough for a weekend trip.
+V0065,BW-005,tents,2,The packaging arrived damaged; the gear itself works.
+V0066,BW-006,tents,5,Comfortable and easy to use.
+V0067,BW-007,tents,3,"Good quality, but the instructions could be clearer."
+V0068,BW-008,tents,1,The fit did not match my expectations.
+V0069,BW-009,tents,4,Light enough for a weekend trip.
+V0070,BW-010,tents,2,The packaging arrived damaged; the gear itself works.
+V0071,BW-011,packs,4,Comfortable and easy to use.
+V0072,BW-012,packs,4,"Good quality, but the instructions could be clearer."
+V0073,BW-013,packs,2,The fit did not match my expectations.
+V0074,BW-014,packs,5,Light enough for a weekend trip.
+V0075,BW-015,packs,2,The packaging arrived damaged; the gear itself works.
+V0076,BW-016,packs,5,Comfortable and easy to use.
+V0077,BW-017,packs,4,"Good quality, but the instructions could be clearer."
+V0078,BW-018,packs,2,The fit did not match my expectations.
+V0079,BW-019,packs,4,Light enough for a weekend trip.
+V0080,BW-020,packs,2,The packaging arrived damaged; the gear itself works.
+V0081,BW-021,sleeping,5,Comfortable and easy to use.
+V0082,BW-022,sleeping,3,"Good quality, but the instructions could be clearer."
+V0083,BW-023,sleeping,1,The fit did not match my expectations.
+V0084,BW-024,sleeping,5,Light enough for a weekend trip.
+V0085,BW-025,sleeping,2,The packaging arrived damaged; the gear itself works.
+V0086,BW-026,sleeping,5,Comfortable and easy to use.
+V0087,BW-027,sleeping,3,"Good quality, but the instructions could be clearer."
+V0088,BW-028,sleeping,1,The fit did not match my expectations.
+V0089,BW-029,sleeping,5,Light enough for a weekend trip.
+V0090,BW-030,sleeping,2,The packaging arrived damaged; the gear itself works.
+V0091,BW-031,apparel,5,Comfortable and easy to use.
+V0092,BW-032,apparel,4,"Good quality, but the instructions could be clearer."
+V0093,BW-033,apparel,1,The fit did not match my expectations.
+V0094,BW-034,apparel,4,Light enough for a weekend trip.
+V0095,BW-035,apparel,3,The packaging arrived damaged; the gear itself works.
+V0096,BW-036,apparel,4,Comfortable and easy to use.
+V0097,BW-037,apparel,3,"Good quality, but the instructions could be clearer."
+V0098,BW-038,apparel,2,The fit did not match my expectations.
+V0099,BW-039,apparel,5,Light enough for a weekend trip.
+V0100,BW-040,apparel,3,The packaging arrived damaged; the gear itself works.
+V0101,BW-041,footwear,4,Comfortable and easy to use.
+V0102,BW-042,footwear,4,"Good quality, but the instructions could be clearer."
+V0103,BW-043,footwear,1,The fit did not match my expectations.
+V0104,BW-044,footwear,5,Light enough for a weekend trip.
+V0105,BW-045,footwear,3,The packaging arrived damaged; the gear itself works.
+V0106,BW-046,footwear,5,Comfortable and easy to use.
+V0107,BW-047,footwear,4,"Good quality, but the instructions could be clearer."
+V0108,BW-048,footwear,2,The fit did not match my expectations.
+V0109,BW-049,footwear,5,Light enough for a weekend trip.
+V0110,BW-050,footwear,2,The packaging arrived damaged; the gear itself works.
+V0111,BW-051,accessories,5,Comfortable and easy to use.
+V0112,BW-052,accessories,4,"Good quality, but the instructions could be clearer."
+V0113,BW-053,accessories,1,The fit did not match my expectations.
+V0114,BW-054,accessories,4,Light enough for a weekend trip.
+V0115,BW-055,accessories,3,The packaging arrived damaged; the gear itself works.
+V0116,BW-056,accessories,5,Comfortable and easy to use.
+V0117,BW-057,accessories,3,"Good quality, but the instructions could be clearer."
+V0118,BW-058,accessories,1,The fit did not match my expectations.
+V0119,BW-059,accessories,5,Light enough for a weekend trip.
+V0120,BW-060,accessories,3,The packaging arrived damaged; the gear itself works.
+V0121,BW-001,tents,5,Comfortable and easy to use.
+V0122,BW-002,tents,4,"Good quality, but the instructions could be clearer."
+V0123,BW-003,tents,2,The fit did not match my expectations.
+V0124,BW-004,tents,5,Light enough for a weekend trip.
+V0125,BW-005,tents,2,The packaging arrived damaged; the gear itself works.
+V0126,BW-006,tents,4,Comfortable and easy to use.
+V0127,BW-007,tents,3,"Good quality, but the instructions could be clearer."
+V0128,BW-008,tents,2,The fit did not match my expectations.
+V0129,BW-009,tents,5,Light enough for a weekend trip.
+V0130,BW-010,tents,2,The packaging arrived damaged; the gear itself works.
+V0131,BW-011,packs,5,Comfortable and easy to use.
+V0132,BW-012,packs,4,"Good quality, but the instructions could be clearer."
+V0133,BW-013,packs,1,The fit did not match my expectations.
+V0134,BW-014,packs,5,Light enough for a weekend trip.
+V0135,BW-015,packs,3,The packaging arrived damaged; the gear itself works.
+V0136,BW-016,packs,5,Comfortable and easy to use.
+V0137,BW-017,packs,4,"Good quality, but the instructions could be clearer."
+V0138,BW-018,packs,2,The fit did not match my expectations.
+V0139,BW-019,packs,5,Light enough for a weekend trip.
+V0140,BW-020,packs,3,The packaging arrived damaged; the gear itself works.
+V0141,BW-021,sleeping,4,Comfortable and easy to use.
+V0142,BW-022,sleeping,3,"Good quality, but the instructions could be clearer."
+V0143,BW-023,sleeping,1,The fit did not match my expectations.
+V0144,BW-024,sleeping,4,Light enough for a weekend trip.
+V0145,BW-025,sleeping,2,The packaging arrived damaged; the gear itself works.
+V0146,BW-026,sleeping,5,Comfortable and easy to use.
+V0147,BW-027,sleeping,4,"Good quality, but the instructions could be clearer."
+V0148,BW-028,sleeping,2,The fit did not match my expectations.
+V0149,BW-029,sleeping,5,Light enough for a weekend trip.
+V0150,BW-030,sleeping,2,The packaging arrived damaged; the gear itself works.
+V0151,BW-031,apparel,4,Comfortable and easy to use.
+V0152,BW-032,apparel,3,"Good quality, but the instructions could be clearer."
+V0153,BW-033,apparel,1,The fit did not match my expectations.
+V0154,BW-034,apparel,5,Light enough for a weekend trip.
+V0155,BW-035,apparel,3,The packaging arrived damaged; the gear itself works.
+V0156,BW-036,apparel,5,Comfortable and easy to use.
+V0157,BW-037,apparel,3,"Good quality, but the instructions could be clearer."
+V0158,BW-038,apparel,1,The fit did not match my expectations.
+V0159,BW-039,apparel,4,Light enough for a weekend trip.
+V0160,BW-040,apparel,2,The packaging arrived damaged; the gear itself works.
+V0161,BW-041,footwear,4,Comfortable and easy to use.
+V0162,BW-042,footwear,4,"Good quality, but the instructions could be clearer."
+V0163,BW-043,footwear,2,The fit did not match my expectations.
+V0164,BW-044,footwear,4,Light enough for a weekend trip.
+V0165,BW-045,footwear,3,The packaging arrived damaged; the gear itself works.
+V0166,BW-046,footwear,5,Comfortable and easy to use.
+V0167,BW-047,footwear,3,"Good quality, but the instructions could be clearer."
+V0168,BW-048,footwear,1,The fit did not match my expectations.
+V0169,BW-049,footwear,5,Light enough for a weekend trip.
+V0170,BW-050,footwear,3,The packaging arrived damaged; the gear itself works.
+V0171,BW-051,accessories,5,Comfortable and easy to use.
+V0172,BW-052,accessories,4,"Good quality, but the instructions could be clearer."
+V0173,BW-053,accessories,2,The fit did not match my expectations.
+V0174,BW-054,accessories,5,Light enough for a weekend trip.
+V0175,BW-055,accessories,3,The packaging arrived damaged; the gear itself works.
+V0176,BW-056,accessories,4,Comfortable and easy to use.
+V0177,BW-057,accessories,4,"Good quality, but the instructions could be clearer."
+V0178,BW-058,accessories,1,The fit did not match my expectations.
+V0179,BW-059,accessories,4,Light enough for a weekend trip.
+V0180,BW-060,accessories,2,The packaging arrived damaged; the gear itself works.
+V0181,BW-001,tents,4,Comfortable and easy to use.
+V0182,BW-002,tents,4,"Good quality, but the instructions could be clearer."
+V0183,BW-003,tents,1,The fit did not match my expectations.
+V0184,BW-004,tents,5,Light enough for a weekend trip.
+V0185,BW-005,tents,3,The packaging arrived damaged; the gear itself works.
+V0186,BW-006,tents,5,Comfortable and easy to use.
+V0187,BW-007,tents,3,"Good quality, but the instructions could be clearer."
+V0188,BW-008,tents,1,The fit did not match my expectations.
+V0189,BW-009,tents,4,Light enough for a weekend trip.
+V0190,BW-010,tents,2,The packaging arrived damaged; the gear itself works.
+V0191,BW-011,packs,4,Comfortable and easy to use.
+V0192,BW-012,packs,4,"Good quality, but the instructions could be clearer."
+V0193,BW-013,packs,2,The fit did not match my expectations.
+V0194,BW-014,packs,4,Light enough for a weekend trip.
+V0195,BW-015,packs,3,The packaging arrived damaged; the gear itself works.
+V0196,BW-016,packs,4,Comfortable and easy to use.
+V0197,BW-017,packs,4,"Good quality, but the instructions could be clearer."
+V0198,BW-018,packs,2,The fit did not match my expectations.
+V0199,BW-019,packs,5,Light enough for a weekend trip.
+V0200,BW-020,packs,2,The packaging arrived damaged; the gear itself works.
+V0201,BW-021,sleeping,5,Comfortable and easy to use.
+V0202,BW-022,sleeping,3,"Good quality, but the instructions could be clearer."
+V0203,BW-023,sleeping,1,The fit did not match my expectations.
+V0204,BW-024,sleeping,4,Light enough for a weekend trip.
+V0205,BW-025,sleeping,3,The packaging arrived damaged; the gear itself works.
+V0206,BW-026,sleeping,4,Comfortable and easy to use.
+V0207,BW-027,sleeping,3,"Good quality, but the instructions could be clearer."
+V0208,BW-028,sleeping,2,The fit did not match my expectations.
+V0209,BW-029,sleeping,5,Light enough for a weekend trip.
+V0210,BW-030,sleeping,2,The packaging arrived damaged; the gear itself works.
+V0211,BW-031,apparel,4,Comfortable and easy to use.
+V0212,BW-032,apparel,4,"Good quality, but the instructions could be clearer."
+V0213,BW-033,apparel,2,The fit did not match my expectations.
+V0214,BW-034,apparel,5,Light enough for a weekend trip.
+V0215,BW-035,apparel,2,The packaging arrived damaged; the gear itself works.
+V0216,BW-036,apparel,4,Comfortable and easy to use.
+V0217,BW-037,apparel,3,"Good quality, but the instructions could be clearer."
+V0218,BW-038,apparel,2,The fit did not match my expectations.
+V0219,BW-039,apparel,5,Light enough for a weekend trip.
+V0220,BW-040,apparel,3,The packaging arrived damaged; the gear itself works.
+V0221,BW-041,footwear,5,Comfortable and easy to use.
+V0222,BW-042,footwear,4,"Good quality, but the instructions could be clearer."
+V0223,BW-043,footwear,2,The fit did not match my expectations.
+V0224,BW-044,footwear,5,Light enough for a weekend trip.
+V0225,BW-045,footwear,2,The packaging arrived damaged; the gear itself works.
+V0226,BW-046,footwear,4,Comfortable and easy to use.
+V0227,BW-047,footwear,4,"Good quality, but the instructions could be clearer."
+V0228,BW-048,footwear,2,The fit did not match my expectations.
+V0229,BW-049,footwear,4,Light enough for a weekend trip.
+V0230,BW-050,footwear,3,The packaging arrived damaged; the gear itself works.
+V0231,BW-051,accessories,4,Comfortable and easy to use.
+V0232,BW-052,accessories,4,"Good quality, but the instructions could be clearer."
+V0233,BW-053,accessories,1,The fit did not match my expectations.
+V0234,BW-054,accessories,4,Light enough for a weekend trip.
+V0235,BW-055,accessories,3,The packaging arrived damaged; the gear itself works.
+V0236,BW-056,accessories,5,Comfortable and easy to use.
+V0237,BW-057,accessories,4,"Good quality, but the instructions could be clearer."
+V0238,BW-058,accessories,1,The fit did not match my expectations.
+V0239,BW-059,accessories,4,Light enough for a weekend trip.
+V0240,BW-060,accessories,3,The packaging arrived damaged; the gear itself works.
+V0241,BW-001,tents,5,Comfortable and easy to use.
+V0242,BW-002,tents,3,"Good quality, but the instructions could be clearer."
+V0243,BW-003,tents,1,The fit did not match my expectations.
+V0244,BW-004,tents,4,Light enough for a weekend trip.
+V0245,BW-005,tents,3,The packaging arrived damaged; the gear itself works.
+V0246,BW-006,tents,5,Comfortable and easy to use.
+V0247,BW-007,tents,4,"Good quality, but the instructions could be clearer."
+V0248,BW-008,tents,1,The fit did not match my expectations.
+V0249,BW-009,tents,5,Light enough for a weekend trip.
+V0250,BW-010,tents,3,The packaging arrived damaged; the gear itself works.
+V0251,BW-011,packs,5,Comfortable and easy to use.
+V0252,BW-012,packs,3,"Good quality, but the instructions could be clearer."
+V0253,BW-013,packs,2,The fit did not match my expectations.
+V0254,BW-014,packs,5,Light enough for a weekend trip.
+V0255,BW-015,packs,3,The packaging arrived damaged; the gear itself works.
+V0256,BW-016,packs,5,Comfortable and easy to use.
+V0257,BW-017,packs,3,"Good quality, but the instructions could be clearer."
+V0258,BW-018,packs,2,The fit did not match my expectations.
+V0259,BW-019,packs,5,Light enough for a weekend trip.
+V0260,BW-020,packs,2,The packaging arrived damaged; the gear itself works.
+V0261,BW-021,sleeping,4,Comfortable and easy to use.
+V0262,BW-022,sleeping,3,"Good quality, but the instructions could be clearer."
+V0263,BW-023,sleeping,2,The fit did not match my expectations.
+V0264,BW-024,sleeping,5,Light enough for a weekend trip.
+V0265,BW-025,sleeping,3,The packaging arrived damaged; the gear itself works.
+V0266,BW-026,sleeping,5,Comfortable and easy to use.
+V0267,BW-027,sleeping,3,"Good quality, but the instructions could be clearer."
+V0268,BW-028,sleeping,2,The fit did not match my expectations.
+V0269,BW-029,sleeping,5,Light enough for a weekend trip.
+V0270,BW-030,sleeping,2,The packaging arrived damaged; the gear itself works.
+V0271,BW-031,apparel,5,Comfortable and easy to use.
+V0272,BW-032,apparel,4,"Good quality, but the instructions could be clearer."
+V0273,BW-033,apparel,2,The fit did not match my expectations.
+V0274,BW-034,apparel,4,Light enough for a weekend trip.
+V0275,BW-035,apparel,3,The packaging arrived damaged; the gear itself works.
+V0276,BW-036,apparel,4,Comfortable and easy to use.
+V0277,BW-037,apparel,3,"Good quality, but the instructions could be clearer."
+V0278,BW-038,apparel,1,The fit did not match my expectations.
+V0279,BW-039,apparel,5,Light enough for a weekend trip.
+V0280,BW-040,apparel,3,The packaging arrived damaged; the gear itself works.
+V0281,BW-041,footwear,4,Comfortable and easy to use.
+V0282,BW-042,footwear,4,"Good quality, but the instructions could be clearer."
+V0283,BW-043,footwear,1,The fit did not match my expectations.
+V0284,BW-044,footwear,4,Light enough for a weekend trip.
+V0285,BW-045,footwear,3,The packaging arrived damaged; the gear itself works.
+V0286,BW-046,footwear,5,Comfortable and easy to use.
+V0287,BW-047,footwear,3,"Good quality, but the instructions could be clearer."
+V0288,BW-048,footwear,1,The fit did not match my expectations.
+V0289,BW-049,footwear,4,Light enough for a weekend trip.
+V0290,BW-050,footwear,3,The packaging arrived damaged; the gear itself works.
+V0291,BW-051,accessories,5,Comfortable and easy to use.
+V0292,BW-052,accessories,3,"Good quality, but the instructions could be clearer."
+V0293,BW-053,accessories,2,The fit did not match my expectations.
+V0294,BW-054,accessories,4,Light enough for a weekend trip.
+V0295,BW-055,accessories,3,The packaging arrived damaged; the gear itself works.
+V0296,BW-056,accessories,4,Comfortable and easy to use.
+V0297,BW-057,accessories,3,"Good quality, but the instructions could be clearer."
+V0298,BW-058,accessories,2,The fit did not match my expectations.
+V0299,BW-059,accessories,5,Light enough for a weekend trip.
+V0300,BW-060,accessories,2,The packaging arrived damaged; the gear itself works.
