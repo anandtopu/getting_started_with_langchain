@@ -84,7 +84,7 @@ In notebooks, the event loop already exists. Use `await` for async functions ins
 
 For local multimodal input, pull the vision profile and check capabilities. A model that can generate text may lack vision or tool calling. Model-requested tools also need an application dispatcher: binding tool schemas alone performs no database query.
 
-## Old tutorials and future lessons
+## Old tutorials
 
 Do not copy imports from older framework tutorials without checking the current official reference. Use the model factory and `invoke` interface shown in this checkout. Chroma persistence diagnostics and graph recursion-limit examples are available in the current tiers. See the [migration guide](MIGRATING_FROM_LEGACY.md) and [release checklist](DEFINITION_OF_DONE.md).
 

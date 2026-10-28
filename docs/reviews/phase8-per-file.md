@@ -14,6 +14,8 @@ Review against Phase 7 commit a4aaf9a: five capstones, five new shared helpers, 
 | R4 | P2 | docs/DEFINITION_OF_DONE.md | 1 | Live model and cross-platform evidence must not be inferred from offline tests. | Overstated readiness. | Keep unchecked evidence explicit and update only from observed runs. |
 | R5 | P1 for customer launch | capstones/02_support_copilot/eval.jsonl | 3 | Returns/shipping miss independently required facts. | Customers could receive an unhelpful policy answer despite valid quotes. | Open: improve retrieval/answer relevance and obtain live/human evidence; strict release remains blocked. |
 
+The final documentation pass also removed stale Phase 2 completion wording from the root FAQ and redirected the older completion page to the current evidence checklist. Capstone time estimates now match the learning-path table.
+
 The nested-call review initially overestimated each policy search as two model calls. Reading common/rag.py confirmed one call per search and retries disabled by the copilot. The five-call reservation is correct (three agent calls plus two nested calls); a two-policy-tool regression test verifies it. No budget defect is claimed.
 
 ## File-level observations

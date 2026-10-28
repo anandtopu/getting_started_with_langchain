@@ -1,6 +1,6 @@
 # Brightwave Support Copilot
 
-**Prerequisites:** Tier 5: production. **Time:** 3–6 hours, plus extensions. **Cost:** At most five logical calls per chat and 30 across six evaluation cases; retries are disabled in this chat path. Small requests should be cents, not a guaranteed budget. Offline costs $0; Ollama has no API fee.
+**Prerequisites:** Tier 5: production. **Time:** 8–12 hours, plus extensions. **Cost:** At most five logical calls per chat and 30 across six evaluation cases; retries are disabled in this chat path. Small requests should be cents, not a guaranteed budget. Offline costs $0; Ollama has no API fee.
 
 ## The big idea
 

@@ -266,7 +266,11 @@
     "Ten-minute real model onboarding",
     "Cloud tracing and Studio/deployment"
   ],
-  "publication": "pending",
+  "publication": {
+    "url": "https://github.com/anandtopu/getting_started_with_langchain",
+    "visibility": "public",
+    "source_commit": "cb06cc07ad12b71a355313dfdbc737e03cc79ff4"
+  },
   "strict_checks": {
     "ruff": "pass",
     "format": "pass",
@@ -278,5 +282,52 @@
   },
   "starter_targets": {
     "expected_assertion_failures": 5
+  },
+  "clean_clone": {
+    "commit": "cb06cc07ad12b71a355313dfdbc737e03cc79ff4",
+    "total_seconds": 39.64,
+    "cache": "warm uv package cache; new clone and new venv",
+    "mode": "offline only; not a timed real provider call",
+    "steps": [
+      {
+        "command": "uv sync --locked",
+        "exit_code": 0,
+        "seconds": 8.19
+      },
+      {
+        "command": "uv run --no-sync python scripts/configure.py",
+        "exit_code": 0,
+        "seconds": 0.62
+      },
+      {
+        "command": "uv run --no-sync python scripts/check_env.py --offline",
+        "exit_code": 0,
+        "seconds": 5.39
+      },
+      {
+        "command": "uv run --no-sync python scripts/first_call.py --offline",
+        "exit_code": 0,
+        "seconds": 1.34
+      },
+      {
+        "command": "uv run --no-sync pytest -q",
+        "exit_code": 0,
+        "seconds": 22.05
+      }
+    ]
+  },
+  "strict_release_command": {
+    "exit_code": 1,
+    "reason": "Two known policy fact misses; release correctly blocked"
+  },
+  "ci": {
+    "run_id": 40762722938,
+    "url": "https://github.com/anandtopu/getting_started_with_langchain/actions/runs/40762722938",
+    "source_commit": "cb06cc07ad12b71a355313dfdbc737e03cc79ff4",
+    "conclusion": "success",
+    "jobs_passed": 14,
+    "jobs_total": 14,
+    "matrix": "Ubuntu and Windows: Python 3.12, 3.13, 3.14, minimal and full; macOS 3.12 smoke; external links",
+    "note": "The evidence-recording follow-up changes documentation only; executable sources match this validated commit."
   }
 }

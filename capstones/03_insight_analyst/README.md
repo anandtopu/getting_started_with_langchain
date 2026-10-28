@@ -1,6 +1,6 @@
 # Insight Analyst
 
-**Prerequisites:** Tier 3: tools and guardrails. **Time:** 3–6 hours, plus extensions. **Cost:** Up to three SQL proposal calls plus one summary call. SDK retries can add attempts. Short hosted runs typically cost cents; offline costs $0 and local Ollama has no API fee.
+**Prerequisites:** Tier 3: tools and guardrails. **Time:** 6–8 hours, plus extensions. **Cost:** Up to three SQL proposal calls plus one summary call. SDK retries can add attempts. Short hosted runs typically cost cents; offline costs $0 and local Ollama has no API fee.
 
 ## The big idea
 

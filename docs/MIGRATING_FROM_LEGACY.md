@@ -6,9 +6,9 @@ This is the only course file that deliberately shows legacy APIs. These are comp
 |---|---|---|
 | `from langchain.llms import OpenAI` | `from common.models import get_chat_model` | Central provider configuration and the chat interface. |
 | `from langchain.chat_models import ChatOpenAI` | `from langchain.chat_models import init_chat_model` through the shared factory | Provider adapters are separate packages; avoid provider-specific construction in lessons. |
-| `LLMChain(llm=model, prompt=prompt)` | `prompt | model | StrOutputParser()` | A visible Runnable pipeline with explicit inputs and outputs. |
+| `LLMChain(llm=model, prompt=prompt)` | `prompt \| model \| StrOutputParser()` | A visible Runnable pipeline with explicit inputs and outputs. |
 | `ConversationChain(llm=model)` | `create_agent(model=model, tools=[], checkpointer=saver)` | Conversation state is explicit and scoped by thread. |
-| `SequentialChain(chains=steps)` | `step_one | step_two` or ordinary Python | Use a fixed pipeline for known steps. Use StateGraph when routing or durable state is necessary. |
+| `SequentialChain(chains=steps)` | `step_one \| step_two` or ordinary Python | Use a fixed pipeline for known steps. Use StateGraph when routing or durable state is necessary. |
 | `RetrievalQA.from_chain_type(llm=model, retriever=retriever)` | Retrieve documents, format evidence, call the model and validate citations | See the complete current RAG pipeline instead of relying on a hidden chain contract. |
 | `initialize_agent(tools, model)` | `create_agent(model=model, tools=tools)` | Current LangChain agent factory. |
 | `AgentExecutor(agent=agent, tools=tools)` | `agent = create_agent(model, tools)` followed by `agent.invoke({"messages": messages})` | The current agent already manages the tool loop. |

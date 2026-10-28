@@ -1,6 +1,6 @@
 # Personal Ops Agent
 
-**Prerequisites:** Optional after Tier 3: MCP. **Time:** 3–6 hours, plus extensions. **Cost:** At most five logical model calls and four tool calls per run, plus possible SDK retries. Offline costs $0; short hosted runs normally cost cents, and Ollama has no API fee.
+**Prerequisites:** Optional after Tier 3: MCP. **Time:** 4–6 hours, plus extensions. **Cost:** At most five logical model calls and four tool calls per run, plus possible SDK retries. Offline costs $0; short hosted runs normally cost cents, and Ollama has no API fee.
 
 ## The big idea
 

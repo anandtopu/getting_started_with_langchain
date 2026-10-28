@@ -1,6 +1,6 @@
 # DocuMind
 
-**Prerequisites:** Tier 2: retrieval. **Time:** 3–6 hours, plus extensions. **Cost:** One embedding batch, one query embedding and one answer call per question; usually cents for a small PDF, depending on document length. Offline costs $0; local Ollama has no API fee.
+**Prerequisites:** Tier 2: retrieval. **Time:** 6–8 hours, plus extensions. **Cost:** One embedding batch, one query embedding and one answer call per question; usually cents for a small PDF, depending on document length. Offline costs $0; local Ollama has no API fee.
 
 ## The big idea
 

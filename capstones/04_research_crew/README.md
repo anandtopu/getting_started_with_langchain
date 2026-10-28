@@ -1,6 +1,6 @@
 # Research Crew
 
-**Prerequisites:** Tier 4: orchestration. **Time:** 3–6 hours, plus extensions. **Cost:** Up to 13 logical model calls for the maximum three draft attempts; short-context hosted runs typically cost a few cents but vary by provider. Offline costs $0; Ollama has no API fee.
+**Prerequisites:** Tier 4: orchestration. **Time:** 6–8 hours, plus extensions. **Cost:** Up to 13 logical model calls for the maximum three draft attempts; short-context hosted runs typically cost a few cents but vary by provider. Offline costs $0; Ollama has no API fee.
 
 ## The big idea
 
