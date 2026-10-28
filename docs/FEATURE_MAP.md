@@ -1,6 +1,6 @@
 # Feature map — course coverage contract
 
-**Status: Phase 8, 2026-10-28 (America/Chicago).** All modules are implemented with offline checks. Container and real Postgres probes passed locally. Live model quality and hosted deployment remain unverified; the scripted quality gate blocks release.
+**Status: Phase 8, 2026-10-28 (America/Chicago).** All modules are implemented with offline checks. Container and real Postgres probes passed locally. Live model quality and hosted deployment remain unverified; the corrected scripted support gate passes; live/customer readiness remains unverified.
 
 The full inventory is [course-plan.json](course-plan.json); the [final tree](REPOSITORY_TREE.md) contains every planned target. Each module has three separately runnable exercises and solutions, a use case, a cleared notebook and tests. Closely related features share a small example; a lesson exceeding about 120 lines will be split and this contract updated.
 

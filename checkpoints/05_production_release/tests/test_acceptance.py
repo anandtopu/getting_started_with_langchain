@@ -24,17 +24,23 @@ def test_case(case, request, tmp_path):
     assert result["passed"] and result["checks"]
 
 
-def test_rehearsal_keeps_known_quality_failures_visible():
+def test_rehearsal_passes_engineering_and_answer_quality():
     report = runpy.run_path(str(ROOT / "solution.py"))["rehearse"](Settings(course_offline=True))
     assert report["engineering_passed"]
-    assert report["quality"]["passed"] == 4
-    assert not report["release_allowed"]
+    assert report["quality"]["passed"] == 6
+    assert report["release_allowed"]
 
 
-def test_release_command_exits_unsuccessfully(tmp_path, monkeypatch):
+@pytest.mark.parametrize("reject", [False, True])
+def test_release_command_enforces_the_gate(tmp_path, monkeypatch, reject):
+    from common import release
     from common.testing import execute_script
 
     monkeypatch.setenv("RUNTIME_DIR", str(tmp_path))
-    with pytest.raises(SystemExit) as stopped:
+    if reject:
+        monkeypatch.setattr(release, "evaluation_gate", lambda report: False)
+        with pytest.raises(SystemExit) as stopped:
+            execute_script(ROOT / "solution.py", ["--offline", "--release"])
+        assert stopped.value.code == 1
+    else:
         execute_script(ROOT / "solution.py", ["--offline", "--release"])
-    assert stopped.value.code == 1

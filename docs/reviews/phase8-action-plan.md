@@ -2,7 +2,7 @@
 
 ## Release gate
 
-The educational repository can be published with transparent evidence and limitations. The customer-support application cannot be released to customers while the strict answer-quality gate fails. Infrastructure tests do not override that decision.
+The educational repository can be published with transparent evidence and limitations. Follow-up: the corrected offline answer-quality gate now passes all six cases; live/human validation is still required before customer use. Infrastructure tests do not override that decision.
 
 ## Fix queue
 
@@ -12,7 +12,7 @@ The educational repository can be published with transparent evidence and limita
 | R2 | P2 | Course maintainer | Validate exact MCP discovery fields. Completed. | Both memory and stdio capstone cases pass with reviewed schemas. |
 | R3 | P3 | Course maintainer | Match actual citation evidence in API test. Completed. | Test resolves tool-result citations and checks each source appears in SSE answer. |
 | R4 | P2 | Course maintainer | Record observed checks and explicit gaps. | Final checklist matches measured logs and remote CI evidence. |
-| R5 | P1 before customer use | Application owner | Improve policy relevance without changing held-out facts. | All six cases pass, with separate live/human assessment and no ownership regression. |
+| R5 | P1 before customer use | Application owner | Offline correction complete: duration-aware extraction passes all held-out facts; live/human review remains open. | All six cases pass, with separate live/human assessment and no ownership regression. |
 
 ## Follow-up backlog
 

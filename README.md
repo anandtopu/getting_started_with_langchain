@@ -2,7 +2,7 @@
 
 A hands-on course for Python learners building the **Brightwave assistant**, an outdoor-gear support application. Learn how to choose between a model call, chain, retrieval system, agent and graph, then test the choice with synthetic business data.
 
-**Course implementation: all 21 modules, five checkpoints and five capstones.** Includes 139 examples, 63 exercises with solutions, 21 notebooks and five printable cheatsheets. See the [completion checklist](docs/DEFINITION_OF_DONE.md) for measured checks and remaining live-provider evidence. The scripted Support Copilot scores 4/6 complete contracts, so its customer release gate remains closed. Repository publication is not customer deployment readiness.
+**Course implementation: all 21 modules, five checkpoints and five capstones.** Includes 139 examples, 63 exercises with solutions, 21 notebooks and five printable cheatsheets. See the [completion checklist](docs/DEFINITION_OF_DONE.md) for measured checks and remaining live-provider evidence. The scripted Support Copilot now scores 6/6 complete contracts and passes the offline release gate; live-provider/customer readiness still needs separate validation. Repository publication is not customer deployment readiness.
 
 Start with [setup and orientation](modules/00_setup/README.md), continue through [tools](modules/05_tools/README.md), then build the [Smart Ticket Desk](checkpoints/01_ticket_desk/README.md). Continue through [loaders and splitters](modules/06_loaders_splitters/README.md) to [advanced RAG](modules/09_advanced_rag/README.md), and finish [Handbook Q&A](checkpoints/02_handbook_qa/README.md). Install retrieval dependencies with `uv sync --extra rag`. The [agents tier](modules/10_agents/README.md) continues through memory, middleware and MCP, ending with [Guarded Support](checkpoints/03_guarded_support/README.md); install it with `uv sync --extra agents`. Continue through [LangGraph orchestration](modules/14_langgraph/README.md) to the [Operations Desk](checkpoints/04_operations_desk/README.md); the optional SDK example needs `uv sync --extra deep`. Continue through [apps](modules/18_apps/README.md), [evaluation](modules/19_evaluation/README.md) and [production](modules/20_production/README.md) to [Production Release](checkpoints/05_production_release/README.md), using `uv sync --extra deployment`. Each lesson includes examples, a realistic application, three runnable exercises with solutions, a quiz, tests and a notebook.
 
@@ -106,7 +106,7 @@ Everything in [data/](data/README.md) is synthetic. Read-only seed databases are
 
 **Why no automatic fallback to fake output?** A broken credential should not look like a successful model call. Failures show a setup hint and a nonzero exit code.
 
-**Is the course finished?** All eight implementation phases are complete. [The completion checklist](docs/DEFINITION_OF_DONE.md) records measured verification and the remaining live-provider gaps. The Support Copilot still fails two policy-quality cases and is not ready for customers.
+**Is the course finished?** All eight implementation phases are complete. [The completion checklist](docs/DEFINITION_OF_DONE.md) records measured verification and the remaining live-provider gaps. The Support Copilot passes its six offline cases; real-model quality and customer deployment remain unverified.
 
 **Where can I troubleshoot?** Start with `uv run python scripts/check_env.py`, then [troubleshooting](docs/TROUBLESHOOTING.md).
 

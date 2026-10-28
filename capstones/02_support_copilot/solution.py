@@ -1,7 +1,7 @@
 """Evaluate the actual flagship HTTP chat path, including SQL and policy-RAG tool traces.
 
 Run: uv run --extra apps python capstones/02_support_copilot/solution.py --offline
-Expected: 4/6 complete contracts; two known policy misses keep the quality gate closed.
+Expected: 6/6 complete contracts; the offline quality gate passes.
 Cost: up to 30 logical model calls live; HTTP identities are synthetic. Requires: apps
 """
 

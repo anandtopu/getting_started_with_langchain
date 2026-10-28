@@ -37,5 +37,5 @@
     "04_operations_desk",
     "05_production_release"
   ],
-  "status": "All eight implementation phases complete and public repository published. 621 offline tests, all 21 notebooks, all 141 smoke targets and all 14 remote CI jobs passed. Clean-clone and local container checks passed. Explicit live-provider gaps remain; customer release is blocked by the 4/6 scripted support quality baseline. See DEFINITION_OF_DONE.md."
+  "status": "All eight phases complete and public repository published. Policy-answer correction: 629 offline tests passed (two live skips), 141 smoke targets and 21 notebooks passed. All six support cases and all 19 capstone cases pass both strict offline release commands; the rebuilt container verifies the corrected answer. Live-provider and customer deployment validation remain outstanding."
 }

@@ -1,7 +1,7 @@
 """Report failures and demonstrate a release gate that actually rejects them.
 
 Run: uv run --extra agents python modules/19_evaluation/examples/07_local_harness.py --offline
-Expected: 4/6 offline cases pass and the strict release gate is false.
+Expected: 6/6 offline cases pass and the strict release gate is true.
 Cost: Up to thirty logical live calls; retries can add attempts. Zero offline. Requires: agents
 """
 

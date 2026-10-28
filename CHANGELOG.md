@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased - policy-answer correction
+
+- Match grammatical variants and requested durations when selecting offline policy evidence; clarify the corresponding live prompt.
+- Pass the unchanged six-case support and 19-case capstone release contracts. Keep missing-fact and permission denials release-blocking.
+- Add changed-number, paraphrase and abstention regressions; require both strict release commands in full CI.
+
+
 ## 1.0.0 - 2026-10-28
 
 - Complete five capstones, independent evaluation sets, starter contracts and grading rubrics.

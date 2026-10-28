@@ -20,4 +20,4 @@ uv run python scripts/check_coverage.py --require-complete
 uv run python scripts/check_links.py
 ```
 
-All planned files now exist. The strict support answer-quality gate still blocks customer release because two policy cases miss the required facts. Actual Ollama/hosted coverage and a timed first real-model call remain unverified; passing fake-model tests does not satisfy those requirements. Remote CI results are linked from the current checklist.
+All planned files now exist. The corrected support path passes all six offline cases and the strict offline release gate. Actual Ollama/hosted coverage and a timed first real-model call remain unverified; passing fake-model tests does not satisfy those requirements. Remote CI results are linked from the current checklist.

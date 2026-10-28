@@ -22,7 +22,7 @@ Build from the repository root, inject secrets at runtime, run as non-root and k
 
 ## Release decision
 
-The scripted Support Copilot passes 4/6 complete contracts. Return and shipping facts still fail, so customer release stays blocked. Publishing a teaching repository is not customer deployment readiness.
+The corrected scripted Support Copilot passes 6/6 complete contracts; all 19 capstone cases pass. Missing facts still block the strict gate. Offline success does not establish live-model quality or customer deployment readiness.
 
 ## Try it
 

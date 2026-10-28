@@ -1,7 +1,7 @@
-"""Save a transparent local evaluation report, including known answer misses.
+"""Save a transparent local evaluation report, including answer-quality checks.
 
 Run: uv run --extra agents python modules/19_evaluation/use_case/support_eval.py --offline
-Expected: 4/6 scripted cases; strict quality gate blocks release; report under .runtime/.
+Expected: 6/6 scripted cases; offline quality gate passes; report under .runtime/.
 Cost: Up to thirty logical live calls; retries can add attempts. Zero offline. Requires: agents
 """
 

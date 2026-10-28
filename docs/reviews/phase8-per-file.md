@@ -12,7 +12,7 @@ Review against Phase 7 commit a4aaf9a: five capstones, five new shared helpers, 
 | R2 | P2 | common/personal_ops.py | 218 | Discovery initially checked tool names but not their input fields. | A changed server could expose unreviewed arguments. | Fixed: check exact properties and required fields before use. The server still independently checks receipts. |
 | R3 | P3 | capstones/02_support_copilot/tests/test_api.py | 27 | Test assumed every valid citation was a policy Markdown path. | Valid handbook evidence incorrectly failed the API test. | Fixed: inspect actual tool citations and require those exact sources in the response. |
 | R4 | P2 | docs/DEFINITION_OF_DONE.md | 1 | Live model and cross-platform evidence must not be inferred from offline tests. | Overstated readiness. | Keep unchecked evidence explicit and update only from observed runs. |
-| R5 | P1 for customer launch | capstones/02_support_copilot/eval.jsonl | 3 | Returns/shipping miss independently required facts. | Customers could receive an unhelpful policy answer despite valid quotes. | Open: improve retrieval/answer relevance and obtain live/human evidence; strict release remains blocked. |
+| R5 | P1 for customer launch | capstones/02_support_copilot/eval.jsonl | 3 | Returns/shipping miss independently required facts. | Customers could receive an unhelpful policy answer despite valid quotes. | Follow-up: offline duration-aware extraction fixed both cases; 6/6 now pass. Live/human evidence remains outstanding. |
 
 The final documentation pass also removed stale Phase 2 completion wording from the root FAQ and redirected the older completion page to the current evidence checklist. Capstone time estimates now match the learning-path table.
 
@@ -45,4 +45,4 @@ See [verification notes](../VERIFICATION_NOTES.md) and the [completion checklist
 
 ## Open questions
 
-No hosted keys or Ollama runtime are available for actual provider evaluation. Customer release also requires the two policy cases to pass without weakened assertions.
+No hosted keys or Ollama runtime are available for actual provider evaluation. Both policy cases now pass without weakened assertions; live-provider validation remains outstanding.

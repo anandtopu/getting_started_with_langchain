@@ -10,26 +10,38 @@ pytest.importorskip("pypdf")
 from common.config import Settings
 from common.experiments import run_experiment
 from common.release import evaluation_gate
-from common.support_evaluation import load_cases, local_evaluate
+from common.support_evaluation import load_cases, local_evaluate, score_answer
 
 
-def test_known_answer_failures_are_visible_and_block_release():
+def test_all_support_answers_pass_the_unchanged_release_contracts():
     report = local_evaluate(load_cases(), Settings(course_offline=True))
-    assert (report["passed"], report["total"]) == (4, 6)
-    assert {row["id"] for row in report["rows"] if not row["passed"]} == {"returns", "shipping"}
-    assert not evaluation_gate(report)
+    assert (report["passed"], report["total"]) == (6, 6)
+    assert evaluation_gate(report)
     assert all(row["metrics"]["trajectory_exact"] for row in report["rows"])
     assert all(row["metrics"]["ownership_contract"] for row in report["rows"])
 
 
 def test_changed_labels_do_not_change_answers():
-    cases = load_cases()[:1]
+    cases = load_cases()
     changed = copy.deepcopy(cases)
-    changed[0]["must_contain"] = ["impossible-answer-key-marker"]
+    for case in changed:
+        case["must_contain"] = ["impossible-answer-key-marker"]
     first = local_evaluate(cases, Settings(course_offline=True))
     second = local_evaluate(changed, Settings(course_offline=True))
-    assert first["rows"][0]["answer"] == second["rows"][0]["answer"]
-    assert first["passed"] == 1 and second["passed"] == 0
+    assert [row["answer"] for row in first["rows"]] == [row["answer"] for row in second["rows"]]
+    assert first["passed"] == 6 and second["passed"] == 0
+
+
+@pytest.mark.parametrize("identifier", ["returns", "shipping"])
+def test_missing_policy_fact_still_blocks_release(identifier):
+    cases = load_cases()
+    report = local_evaluate(cases, Settings(course_offline=True))
+    row = next(row for row in report["rows"] if row["id"] == identifier)
+    case = next(case for case in cases if case["id"] == identifier)
+    row["answer"]["answer"] = "Please review the policy."
+    row["metrics"] = score_answer(case, row["answer"])
+    assert not row["metrics"]["keyword_correctness_proxy"]
+    assert not evaluation_gate(report)
 
 
 def test_real_langsmith_local_runner_needs_no_network():

@@ -1,5 +1,14 @@
 # Verification notes
 
+## Policy-answer correction (2026-10-28)
+
+The former two support misses are fixed in common/rag.py: small grammatical normalization matches return/returned and take/takes; duration questions require a numeric time unit in relevant evidence. The live prompt also distinguishes the requested timeline from fees or unrelated services. The prompt change is not a measured live-model improvement. No evaluation labels, policy numbers or thresholds changed. Six support contracts and all 19 capstone contracts now pass; both strict release commands succeed offline. Changed-number/paraphrase and missing-evidence tests prevent hard-coded success. Missing facts and denied ownership still block the gate.
+
+The shared RAG benchmark was regenerated: retrieval hit rate and keyword correctness remain unchanged (5/7 and 5/8 for each configuration). A duration question lacking retrieved timing evidence now abstains instead of quoting unrelated text. Older phase sections below retain their original results as historical evidence; they do not describe the corrected release.
+
+Follow-up verification: 629 tests passed (two explicit live skips), all 141 smoke targets and all 21 notebooks passed. Both strict release commands returned success; the rebuilt non-root container returned the corrected 30-day answer through authenticated SSE and persisted its policy tool trace. Ruff, formatting, legacy scan, strict inventory and local links passed. The full CI workflow now requires both strict release commands rather than merely completing an evaluation.
+
+
 ## Phase 8 - final capstones and repository audit (2026-10-28)
 
 All 43 PyPI package records were refreshed before the capstone implementation; verified stable versions remain unchanged. The project version is 1.0.0. [Machine-readable evidence](phase8-verification.json) records results; [the completion checklist](DEFINITION_OF_DONE.md) keeps outstanding evidence visible.

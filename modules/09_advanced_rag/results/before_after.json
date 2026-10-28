@@ -336,21 +336,14 @@
             }
           ],
           "answer": {
-            "answer": "Never include API keys, complete",
-            "abstained": false,
-            "citations": [
-              {
-                "chunk_id": "5d78d679f4a6d2a9b116cf88",
-                "quote": "Never include API keys, complete",
-                "source": "handbook/employee_handbook.pdf",
-                "page": 8
-              }
-            ],
+            "answer": "I do not know from the supplied evidence.",
+            "abstained": true,
+            "citations": [],
             "mode": "extractive-fixture"
           },
           "keyword_correctness_proxy": false,
-          "exact_extract_support": true,
-          "abstained": false
+          "exact_extract_support": null,
+          "abstained": true
         }
       ]
     },
@@ -684,21 +677,14 @@
             }
           ],
           "answer": {
-            "answer": "Every accepted write uses an idempotency key",
-            "abstained": false,
-            "citations": [
-              {
-                "chunk_id": "34fdd16b2fd3fdda97199f79",
-                "quote": "Every accepted write uses an idempotency key",
-                "source": "handbook/employee_handbook.pdf",
-                "page": 8
-              }
-            ],
+            "answer": "I do not know from the supplied evidence.",
+            "abstained": true,
+            "citations": [],
             "mode": "extractive-fixture"
           },
           "keyword_correctness_proxy": false,
-          "exact_extract_support": true,
-          "abstained": false
+          "exact_extract_support": null,
+          "abstained": true
         }
       ]
     }

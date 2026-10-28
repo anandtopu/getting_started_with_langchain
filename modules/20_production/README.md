@@ -65,7 +65,7 @@ Namespaces organize data; they do not authenticate anyone. The host must derive 
 
 ### Pre-launch decision
 
-Run tests, examples and notebooks; inspect evaluation failures; verify cancellation, stale reviews, backup/restore, quotas, identity, TLS and retention for your environment. The local container passes engineering contracts, but two scripted policy answers fail and the strict quality gate blocks release. No live-provider quality, hosted LangSmith result, public app deployment, external payment or email delivery is claimed. Resolve quality failures with live-model and human evidence before serving customers.
+Run tests, examples and notebooks; inspect evaluation failures; verify cancellation, stale reviews, backup/restore, quotas, identity, TLS and retention for your environment. The local container passes engineering contracts, but all six corrected scripted support cases now pass the strict offline quality gate. No live-provider quality, hosted LangSmith result, public app deployment, external payment or email delivery is claimed. Obtain live-model and human evidence before serving customers.
 
 
 ## Key APIs at a glance
@@ -298,12 +298,12 @@ No. It uses SQLite; the Postgres probe is a separate integration example.
 
 </details>
 
-6. Why is release blocked despite a healthy container?
+6. Why does a healthy container and passing offline gate not prove customer readiness?
 
 <details>
 <summary>Answer</summary>
 
-Engineering contracts pass but the baseline has two quality failures, and customer readiness remains unverified.
+Engineering and scripted quality contracts pass; live-model behavior and customer readiness remain unverified.
 
 </details>
 

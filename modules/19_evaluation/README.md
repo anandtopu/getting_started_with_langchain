@@ -32,9 +32,9 @@ The six support cases in `use_case/eval.jsonl` are developer-visible held-out in
 
 ### Read the actual report
 
-The offline baseline passes **4 of 6 complete cases**. All six satisfy exact tool-trajectory and ownership contracts. Return-window and standard-shipping questions fail the keyword correctness proxy because the simple lexical sentence picker selects the wrong sentence. Their exact-quote support checks pass: a faithfully copied sentence can fail to answer a question. Inspect [the saved report](use_case/evaluation_report.json).
+The corrected offline path passes **6 of 6 complete cases**. All six satisfy exact tool-trajectory and ownership contracts. The earlier 4/6 baseline selected fees instead of durations. Grammatical matching and a duration requirement now select the relevant literal evidence; a test changes the policy numbers to verify they are not hard-coded. Inspect [the saved report](use_case/evaluation_report.json).
 
-The default `evaluation_gate` requires all correctness contracts plus ownership, trajectory, tone and applicable exact-evidence-support checks, so this baseline returns **false**. Lesson scripts exit successfully because they demonstrate rejection. The checkpoint's explicit `--release` command exits nonzero. CI tests a good report and deliberately failing reports and confirms that this baseline stays blocked. Do not lower thresholds after inspecting failures to manufacture success. Improve the method, add new held-out cases and obtain live and human evidence.
+The default `evaluation_gate` requires all correctness contracts plus ownership, trajectory, tone and applicable exact-evidence-support checks, so the corrected offline report returns **true**. The checkpoint's explicit `--release` command succeeds. Tests remove required facts and force a gate rejection to prove failures still stop release. Do not lower thresholds after inspecting failures to manufacture success. Improve the method, add new held-out cases and obtain live and human evidence.
 
 ### Metrics and optional judges
 
@@ -172,7 +172,7 @@ flowchart LR
 uv run --extra agents python modules/19_evaluation/examples/06_prompt_regression.py --offline
 ```
 
-Expected: Both offline versions score 4/6; no improvement claim. Read [the source](examples/06_prompt_regression.py) and [the official guide](https://docs.langchain.com/oss/python/langchain/test).
+Expected: Both offline prompt versions score 6/6; no prompt-improvement claim. Read [the source](examples/06_prompt_regression.py) and [the official guide](https://docs.langchain.com/oss/python/langchain/test).
 
 ### 7. Local JSON evaluation; faithfulness, tone, correctness; CI thresholds and reports
 
@@ -189,11 +189,11 @@ flowchart LR
 uv run --extra agents python modules/19_evaluation/examples/07_local_harness.py --offline
 ```
 
-Expected: 4/6 cases, release_allowed false. Read [the source](examples/07_local_harness.py) and [the official guide](https://docs.langchain.com/langsmith/evaluate-llm-application).
+Expected: 6/6 cases, release_allowed true. Read [the source](examples/07_local_harness.py) and [the official guide](https://docs.langchain.com/langsmith/evaluate-llm-application).
 
 ## Real-world use case
 
-Input: six support questions and customers, with separately stored tool and answer expectations. Output: answers, real tool evidence, prompt hashes, per-case proxy metrics and a blocked release decision. The business value is a reproducible regression report that exposes failures before deployment. Its scripted 4/6 score is not a real-model benchmark.
+Input: six support questions and customers, with separately stored tool and answer expectations. Output: answers, real tool evidence, prompt hashes, per-case proxy metrics and an explicit release decision. The business value is a reproducible regression report that exposes failures before deployment. Its scripted 6/6 score is not a real-model benchmark.
 
 ```text
 uv run --extra agents python modules/19_evaluation/use_case/support_eval.py --offline
@@ -205,7 +205,7 @@ uv run --extra agents python modules/19_evaluation/use_case/support_eval.py --of
 |---|---|---|
 | Calling fake outputs a model benchmark | Different prompts get identical scores. | Label fixtures and add live/human evaluation. |
 | Using an empty dataset | local_evaluate raises ValueError. | Require cases including denials and boundary conditions. |
-| Confusing quote support with correctness | Returns/shipping copy evidence but miss expected facts. | Report dimensions separately and keep the quality gate closed. |
+| Confusing quote support with correctness | The earlier returns/shipping failures copied evidence but missed facts. | Report dimensions separately; reject any missing fact. |
 | Cloud upload while offline or without a key | run_experiment raises ValueError. | Use local mode or intentionally configure cloud credentials and synthetic data. |
 
 ## Exercises

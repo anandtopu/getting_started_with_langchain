@@ -29,7 +29,7 @@ uv run --extra apps pytest checkpoints/05_production_release/tests
 uv run --extra apps python checkpoints/05_production_release/solution.py --offline
 ```
 
-The starter target checks intentionally fail until implemented. Reference acceptance tests pass. The rehearsal saves `.runtime/production-release.json`; its two approval/rejection scenarios pass every engineering contract, but answer quality is **4/6** and `release_allowed` is **false**. Inspect [the saved report](evaluation_report.json). Return-window and shipping answers copy actual evidence yet miss the expected facts; source support alone is insufficient.
+The starter target checks intentionally fail until implemented. Reference acceptance tests pass. The rehearsal saves `.runtime/production-release.json`; its two approval/rejection scenarios pass every engineering contract, but answer quality is **6/6** and `release_allowed` is **true**. Inspect [the saved report](evaluation_report.json). The corrected return-window and shipping answers now contain the required durations. Exact source support and answer correctness remain separate requirements.
 
 ## The actual release gate
 
@@ -45,4 +45,4 @@ The container was built and tested locally, and a separate disposable Postgres d
 
 Before a customer deployment, resolve quality misses, implement real identity/TLS, account-wide quotas, shared locking and persistence as needed, retention/deletion, durable redacted logs, backup/restore and environment-specific load/failure tests. See [the rubric](rubric.md) and [module 20](../../modules/20_production/README.md).
 
-You're ready to move on when you can reproduce both review outcomes, explain exactly why the baseline release is blocked, distinguish call budgets from dollar guarantees, demonstrate persistence after reconnecting, and describe the additional work required for real hosting. The capstone projects and final publication arrive in Phase 8 after `continue`.
+You're ready to move on when you can reproduce both review outcomes, explain why a missing fact or denied permission must block release, distinguish call budgets from dollar guarantees, demonstrate persistence after reconnecting, and describe the additional work required for real hosting. Continue with the capstones linked in the learning path.

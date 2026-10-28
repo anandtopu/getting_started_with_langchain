@@ -220,3 +220,45 @@ def test_committed_benchmark_reproduces_without_answer_key_in_index():
     )
     assert actual == saved
     assert all(system["answerable_cases"] == 7 for system in actual["systems"].values())
+
+
+@pytest.mark.parametrize(
+    "question,expected",
+    [
+        ("What is the return window?", "45 calendar days"),
+        ("How long do I have to return unused gear?", "45 calendar days"),
+        ("How long does standard shipping take?", "8 to 12 business days"),
+        ("What is the standard shipping timeframe?", "8 to 12 business days"),
+    ],
+)
+def test_duration_answers_follow_evidence_not_original_policy_numbers(question, expected):
+    documents = [
+        identify(
+            Document(
+                page_content=(
+                    "A prepaid return label costs $9. Standard shipping is free over $90. "
+                    "Expedited shipping normally takes 1 to 2 business days. "
+                    "Unused gear may be returned within 45 calendar days after delivery. "
+                    "Standard shipping normally takes 8 to 12 business days after dispatch."
+                ),
+                metadata={"source": "changed-policy.md"},
+            )
+        )
+    ]
+    result = answer_question(question, documents, Settings(course_offline=True))
+    assert expected in result["answer"]
+    assert result["citations"][0]["quote"] == result["answer"]
+    assert result["citations"][0]["source"] == "changed-policy.md"
+
+
+def test_duration_question_abstains_when_only_fees_or_unrelated_timing_exist():
+    documents = [
+        identify(
+            Document(
+                page_content="A return label costs $9. Shipping takes 8 business days.",
+                metadata={"source": "incomplete-policy.md"},
+            )
+        )
+    ]
+    result = answer_question("What is the return window?", documents, Settings(course_offline=True))
+    assert result["abstained"] and not result["citations"]

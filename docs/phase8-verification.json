@@ -329,5 +329,41 @@
     "jobs_total": 14,
     "matrix": "Ubuntu and Windows: Python 3.12, 3.13, 3.14, minimal and full; macOS 3.12 smoke; external links",
     "note": "The evidence-recording follow-up changes documentation only; executable sources match this validated commit."
+  },
+  "policy_answer_follow_up": {
+    "date": "2026-10-28",
+    "support_passed": 6,
+    "support_total": 6,
+    "capstones_passed": 19,
+    "capstones_total": 19,
+    "strict_capstone_exit_code": 0,
+    "strict_production_exit_code": 0,
+    "tests_passed": 629,
+    "live_skipped": 2,
+    "labels_and_thresholds_changed": false,
+    "live_provider_validation": "not executed",
+    "previous_fields": "Historical Phase 8 baseline before this correction",
+    "smoke_passed": 141,
+    "smoke_total": 141,
+    "notebooks_passed": 21,
+    "notebooks_total": 21,
+    "container": {
+      "health": {
+        "status": "ok",
+        "mode": "offline"
+      },
+      "non_root": true,
+      "authenticated_policy_stream": true,
+      "policy_tool_in_persisted_history": true,
+      "runtime_writable": true,
+      "source_read_only": true,
+      "engine": "Podman Docker-compatible context; host network restricted to VM loopback",
+      "image_id": "sha256:dc4f3c6a567c9f594f52a3ee953ff20160896975b43ade895815bb8ef796bd24"
+    },
+    "lint": "passed",
+    "format": "passed",
+    "strict_inventory": "passed",
+    "local_links": "passed",
+    "legacy_scan": "passed"
   }
 }

@@ -22,6 +22,6 @@ def test_evaluation(case, tmp_path):
     if ROOT.name == "02_support_copilot":
         assert result["metrics"]["http_completed"]
         assert result["metrics"]["trajectory_exact"] and result["metrics"]["ownership_contract"]
-        assert result["passed"] == (case["id"] not in {"returns", "shipping"})
+        assert result["passed"]
     else:
         assert result["passed"]

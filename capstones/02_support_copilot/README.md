@@ -37,7 +37,7 @@ flowchart TD
 
 The API and UI reuse the module 18 boundary. `CopilotService` adds policy RAG to its scoped SQL tools. Both the API and Docker image construct the same service. Persisted history is reconstructed as LangChain messages for subsequent requests. The refund graph is a separate authenticated workflow; a model sentence cannot approve it.
 
-Policy citation validation checks literal support. It cannot prove the answer addresses the question. The six-case suite keeps these metrics separate: the scripted baseline passes four complete contracts, with return-window and shipping correctness still failing. The customer release gate remains closed.
+Policy citation validation checks literal support. It cannot prove the answer addresses the question. The six-case suite keeps these metrics separate: the corrected scripted path passes all six complete contracts. Grammatical matching and duration-aware selection fix the former return-window and shipping misses without changing expected facts. The offline release gate passes; live/human validation remains required.
 
 ## Walkthrough
 
@@ -76,7 +76,7 @@ This is a local educational deployment with synthetic customers, one process and
 
 ## Extend it
 
-1. Improve answer relevance, then pass all six cases without weakening their expected facts.
+1. Expand the six passing cases with new paraphrases and missing-evidence examples; retain the same strict thresholds.
 2. Add a real identity provider and test token rotation and customer isolation.
 3. Replace local admission and SQLite with coordinated storage before adding workers.
 

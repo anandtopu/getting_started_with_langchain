@@ -1,6 +1,6 @@
 # Learning path
 
-**Phase 7 progress:** all 21 modules and five checkpoints, through Production Release, are available. Install `uv sync --extra deployment` for the production tier. The local release rehearsal exposes two answer-quality failures and blocks release. Capstones remain Phase 8. The course is for someone who knows Python functions, classes, dictionaries, pip, virtual environments, a terminal and basic git. You do not need prior knowledge of language models, agents or async programming.
+**Implementation complete:** all 21 modules, five checkpoints and five capstones are available. Install `uv sync --extra deployment` for the production tier. The corrected local release rehearsal passes all six scripted support cases; live-provider readiness remains unverified. The course is for someone who knows Python functions, classes, dictionaries, pip, virtual environments, a terminal and basic git. You do not need prior knowledge of language models, agents or async programming.
 
 Allow **54 hours** for the core course and five checkpoints. This is a planning estimate, not a promise of mastery: the complete feature reference is deliberately broader than a first pass. Optional examples, full exercise sets and capstones can add substantial time. Module 17 contributes two optional hours to the 54-hour route; skip it for a 52-hour core. Capstones add roughly 4–12 hours each.
 

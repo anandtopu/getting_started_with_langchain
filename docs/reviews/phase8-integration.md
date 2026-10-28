@@ -1,5 +1,7 @@
 # Phase 8 cross-file integration review
 
+Follow-up: the duration-aware policy correction passes all 19 capstone contracts and all six support contracts. The original 17/19 observation below is historical. Expected labels and release thresholds are unchanged; live-provider validation remains outstanding.
+
 ## Scope
 
 Trace actual user and data paths across the capstone entry points, shared helpers, persistent state, model factory, evaluation labels and deployment configuration.

@@ -1,8 +1,8 @@
-"""Rehearse release: engineering contracts can pass while quality correctly blocks release.
+"""Rehearse release: require both engineering and answer-quality contracts.
 
 Run: uv run --extra apps python checkpoints/05_production_release/solution.py --offline
-Expected: HTTP contracts pass, quality 4/6, release_allowed false; JSON report saved.
-Add --release to enforce the gate (nonzero exit for this known baseline).
+Expected: HTTP contracts pass, quality 6/6, release_allowed true; JSON report saved.
+Add --release to enforce the gate (nonzero exit if any required contract fails).
 Cost: up to 30 logical live calls; retries may add attempts. HTTP checks use fixtures.
 Requires: apps
 """

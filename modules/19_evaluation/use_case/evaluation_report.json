@@ -1,7 +1,7 @@
 {
   "mode": "scripted-contract",
   "version": "v2",
-  "passed": 4,
+  "passed": 6,
   "total": 6,
   "limits": "Developer-visible held-out inputs excluded from prompts. Proxies are not semantic quality or blind generalization scores.",
   "rows": [
@@ -68,7 +68,7 @@
     {
       "id": "returns",
       "answer": {
-        "answer": "Please review the policy evidence: a return-label fee.",
+        "answer": "Please review the policy evidence: Unused gear may be returned within 30 calendar days after delivery.",
         "trajectory": [
           {
             "name": "search_policy",
@@ -79,14 +79,14 @@
         ],
         "evidence": [
           {
-            "answer": "a return-label fee.",
+            "answer": "Unused gear may be returned within 30 calendar days after delivery.",
             "abstained": false,
             "citations": [
               {
-                "chunk_id": "8443ad9e5e506b14c2b060a3",
-                "quote": "a return-label fee.",
-                "source": "handbook/employee_handbook.pdf",
-                "page": 4
+                "chunk_id": "e2061d677b9815cebc8bcdb8",
+                "quote": "Unused gear may be returned within 30 calendar days after delivery.",
+                "source": "policies/returns.md",
+                "page": null
               }
             ],
             "mode": "extractive-fixture"
@@ -98,16 +98,16 @@
       "metrics": {
         "trajectory_exact": true,
         "ownership_contract": true,
-        "keyword_correctness_proxy": false,
+        "keyword_correctness_proxy": true,
         "exact_evidence_support_proxy": true,
         "tone_rule_proxy": true
       },
-      "passed": false
+      "passed": true
     },
     {
       "id": "shipping",
       "answer": {
-        "answer": "Please review the policy evidence: Orders with a merchandise subtotal over $75 receive free standard shipping; an order of exactly $75 does not.",
+        "answer": "Please review the policy evidence: Standard shipping costs $5.95 and normally takes 3 to 5 business days after dispatch.",
         "trajectory": [
           {
             "name": "search_policy",
@@ -118,12 +118,12 @@
         ],
         "evidence": [
           {
-            "answer": "Orders with a merchandise subtotal over $75 receive free standard shipping; an order of exactly $75 does not.",
+            "answer": "Standard shipping costs $5.95 and normally takes 3 to 5 business days after dispatch.",
             "abstained": false,
             "citations": [
               {
                 "chunk_id": "13445cffe2543784c934b003",
-                "quote": "Orders with a merchandise subtotal over $75 receive free standard shipping; an order of exactly $75 does not.",
+                "quote": "Standard shipping costs $5.95 and normally takes 3 to 5 business days after dispatch.",
                 "source": "policies/shipping.md",
                 "page": null
               }
@@ -137,11 +137,11 @@
       "metrics": {
         "trajectory_exact": true,
         "ownership_contract": true,
-        "keyword_correctness_proxy": false,
+        "keyword_correctness_proxy": true,
         "exact_evidence_support_proxy": true,
         "tone_rule_proxy": true
       },
-      "passed": false
+      "passed": true
     },
     {
       "id": "clarify",
@@ -190,5 +190,6 @@
       },
       "passed": true
     }
-  ]
+  ],
+  "release_allowed": true
 }

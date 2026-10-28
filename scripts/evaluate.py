@@ -1,7 +1,7 @@
 """Run all five capstone evaluation sets; keep behavioral and answer-quality gates distinct.
 
 Run: uv run --extra apps python scripts/evaluate.py --offline
-Expected: 17/19 contracts pass; two policy misses block --release.
+Expected: 19/19 contracts pass; the offline --release gate succeeds.
 Cost: free offline; live calls across all five capstones incur provider costs.
 """
 
