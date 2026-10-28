@@ -50,4 +50,4 @@ The offline answer fixture selects an excerpt using literal word overlap. It exe
 
 ## Ready for the next tier
 
-You can trace every returned citation to a source page, explain an abstention, test an invalid quote, and distinguish retrieval failure from generation failure. Continue to [agents](../../modules/10_agents/README.md) when that tier is available in Phase 5.
+You can trace every returned citation to a source page, explain an abstention, test an invalid quote, and distinguish retrieval failure from generation failure. Continue to [agents](../../modules/10_agents/README.md) with `uv sync --extra agents`; the tier is now available.

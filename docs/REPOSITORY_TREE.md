@@ -1,6 +1,6 @@
 # Planned final repository tree
 
-Updated during Phase 4. This inventory includes implemented files and future teaching files; see [progress](progress.json). Runtime data, credentials, caches and the virtual environment are excluded.
+Updated during Phase 5. Includes implemented and future files; see [progress](progress.json). Runtime data, credentials, caches and the virtual environment are excluded.
 
 ```text
 getting_started_with_langchain/
@@ -106,6 +106,7 @@ getting_started_with_langchain/
 │   ├── 03_guarded_support/
 │   │   ├── README.md
 │   │   ├── eval.jsonl
+│   │   ├── evaluation_report.json
 │   │   ├── rubric.md
 │   │   ├── solution.py
 │   │   ├── starter.py
@@ -150,6 +151,7 @@ getting_started_with_langchain/
 │   ├── rag.py
 │   ├── resilience.py
 │   ├── retrieval.py
+│   ├── returns.py
 │   ├── schemas.py
 │   ├── security.py
 │   ├── testing.py
@@ -206,6 +208,7 @@ getting_started_with_langchain/
 │   ├── dependency-resolution.txt
 │   ├── phase3-verification.json
 │   ├── phase4-verification.json
+│   ├── phase5-verification.json
 │   ├── progress.json
 │   ├── pypi-verification-phase2.json
 │   └── pypi-verification.json
@@ -777,6 +780,7 @@ getting_started_with_langchain/
 │   └── run_all_examples.py
 ├── tests/
 │   ├── conftest.py
+│   ├── test_agent_contracts.py
 │   ├── test_banned_apis.py
 │   ├── test_budget.py
 │   ├── test_cli.py

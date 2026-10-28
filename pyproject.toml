@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "getting-started-with-langchain"
-version = "0.4.0"
+version = "0.5.0"
 description = "A hands-on LangChain and LangGraph course built around Brightwave Outfitters"
 readme = "README.md"
 requires-python = ">=3.12,<3.15"
@@ -31,7 +31,7 @@ dependencies = [
 foundations = []
 rag = [
   "langchain-chroma>=1.1.0,<1.2.0",
-  "pypdf>=6.21.3,<6.22.0",
+  "pypdf>=6.21.4,<6.22.0",
   "rank-bm25>=0.2.2,<0.3.0",
   "numpy>=2.5.4,<2.6.0",
   "matplotlib>=3.11.2,<3.12.0",
@@ -42,6 +42,7 @@ agents = [
   "langchain[mcp]>=1.4.7,<1.5.0",
   "fastmcp>=4.1.4,<4.2.0",
   "mcp>=2.3.0,<2.4.0",
+  "httpx2>=2.16.0,<2.17.0",
 ]
 apps = [
   "getting-started-with-langchain[agents]",
@@ -65,7 +66,7 @@ authoring = [
   "nbstripout>=0.9.1,<0.10.0",
   "jupyter>=1.1.1,<1.2.0",
   "reportlab>=5.1.0,<5.2.0",
-  "pypdf>=6.21.3,<6.22.0",
+  "pypdf>=6.21.4,<6.22.0",
   "matplotlib>=3.11.2,<3.12.0",
 ]
 

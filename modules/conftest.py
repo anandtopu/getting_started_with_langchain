@@ -7,6 +7,15 @@ import pytest
 
 @pytest.fixture(autouse=True)
 def retrieval_dependencies(request, tmp_path, monkeypatch):
+    agent_modules = {"10_agents", "11_memory", "12_middleware", "13_mcp"}
+    if agent_modules.intersection(request.node.path.parts):
+        if any(
+            find_spec(name) is None
+            for name in ("fastmcp", "mcp", "langgraph.checkpoint.sqlite", "rank_bm25", "pypdf")
+        ):
+            pytest.skip("Install agent lessons with uv sync --extra agents.")
+        monkeypatch.setenv("RUNTIME_DIR", str(tmp_path))
+        return
     retrieval_modules = {
         "06_loaders_splitters",
         "07_embeddings_retrievers",

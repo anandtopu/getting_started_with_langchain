@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.0 — 2026-10-28
+
+- Added modules 10–13: 28 examples, four applications plus a local inventory server, 12 exercise starters and solutions, quizzes and four mirrored notebooks.
+- Added transactional synthetic returns with ownership, warehouse eligibility, exact approval thresholds, idempotency and quantity checks.
+- Added Guarded Support with eight scripted contract cases and a measured pause/write report; reviewer decisions are explicitly simulated.
+- Added SQLite checkpoints, durable customer preferences and current middleware demonstrations.
+- Verified official-SDK MCP exchanges over memory, stdio and in-process Streamable HTTP handlers with the current beta adapter.
+- Updated pypdf to verified patch 6.21.4 and extended optional-tier checks.
+- Seven modules remain planned. Live model quality, remote MCP deployment and remote CI remain unverified.
+
 ## 0.4.0 — 2026-10-28
 
 - Added modules 06–09: 27 retrieval examples, four applications, 12 exercise starters and solutions, quizzes and four source-matched notebooks.

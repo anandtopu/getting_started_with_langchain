@@ -1,6 +1,6 @@
 # Course glossary
 
-This glossary grows with the course. These terms cover modules 00–09; later phases add agents, orchestration and production terminology.
+This glossary grows with the course. These terms cover modules 00–13; later phases add orchestration and production terminology.
 
 | Term | Plain-English meaning | First lesson |
 |---|---|---|
@@ -90,5 +90,31 @@ This glossary grows with the course. These terms cover modules 00–09; later ph
 | Evaluation proxy | An easily measured signal that approximates, but does not prove, a target quality | 09 |
 | Held-out set | Examples kept separate from tuning so they can test generalisation | 09 |
 | LLM judge | A model asked to assess another answer using an explicit rubric | 09 |
+| Transaction | A set of database operations that commit together or roll back together | 10 |
+| Idempotency key | An identifier used to recognize retries of the same logical operation | 10 |
+| Dataclass | A Python record type that declares named fields | 10 |
+| Structured response | Parsed agent output that conforms to a declared schema | 10 |
+| Recursion limit | A cap on graph execution steps, not a direct count of model calls | 10 |
+| Checkpointer | A component that saves workflow state between steps and turns | 11 |
+| Thread ID | A storage address selecting one conversation's saved state | 11 |
+| Short-term memory | State retained within one conversation thread | 11 |
+| Long-term memory | Scoped records reusable across separate conversations | 11 |
+| Namespace | An application-defined grouping of records, often by customer or tenant | 11 |
+| Message reducer | Logic that combines new messages with existing state using their identities | 11 |
+| Summarization | Replacing older text with a shorter model-written account that may lose details | 11 |
+| Middleware | Code attached around agent, model or tool lifecycle operations | 12 |
+| Hook | A function called at a defined lifecycle boundary | 12 |
+| Handler | The callable a wrapper invokes to continue the underlying operation | 12 |
+| Interrupt | A saved workflow pause that requires a later input before continuing | 12 |
+| Resume command | A graph input carrying a decision for paused work | 12 |
+| PII | Personally identifying information, whose detection depends on the chosen rules | 12 |
+| Tool selector | A component that narrows available tool schemas based on a request | 12 |
+| MCP | Model Context Protocol: a standard for discovering and calling service capabilities | 13 |
+| Transport | The channel carrying protocol messages, such as pipes or HTTP | 13 |
+| Stdio | A process's standard input/output streams, used here for protocol communication | 13 |
+| Streamable HTTP | MCP's HTTP transport for requests and optionally streamed server events | 13 |
+| ASGI | The Python interface between an asynchronous web application and its server | 13 |
+| Discovery | Asking a service which capabilities and schemas it advertises | 13 |
+| Allowlist | An explicit set of accepted names, values or endpoints | 13 |
 
 Return to the [learning path](../LEARNING_PATH.md).

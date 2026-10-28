@@ -22,6 +22,22 @@ The CLI intentionally suppresses raw SDK exception bodies because they can conta
 
 Use the repository-root commands exactly as shown. Python uses `pathlib` for data paths, so spaces in your checkout path work. The pip fallback invokes `.venv\Scripts\python.exe` directly and does not require PowerShell activation. If your user cache is not writable, set `UV_CACHE_DIR` to a writable folder for that terminal session. This is a machine permission issue, not a reason to change provider code.
 
+## Agent, memory and MCP errors
+
+| Symptom | Meaning | Fix |
+|---|---|---|
+| `Refund over $100 requires manager approval` | The ordinary writer rejected a large refund before insertion | Use the guarded review path; model-provided approval text is not authorization |
+| `Purchased quantity already has a return record` | The item has already been returned, even if the new request has another key | Inspect existing returns; never bypass the quantity check |
+| `Warehouse eligibility checks have not passed` | Trusted inspection/proof fields are absent | Supply actual host-verified evidence, or explicitly simulated evidence for this course |
+| Checkpointer requires configurable thread fields | A saved conversation has no address | Supply host-authorized `thread_id` through `thread_config` |
+| `GraphRecursionError` | The graph ran out of steps; middleware also consumes steps | Inspect the loop and retain model/tool limits; do not treat more graph steps as a cost control |
+| Reusing a scripted AIMessage corrupts a repeated loop | The state reducer merges messages by identity | Generate a fresh message and tool-call ID for each simulated model turn |
+| `LangChainBetaWarning` for MCP | The verified current adapter is explicitly beta | Keep the warning and pinned integration boundary visible; do not substitute an archived adapter silently |
+| MCP hangs or emits malformed messages | Protocol stdout may contain ordinary prose, or the session lifetime is wrong | Keep stdout for protocol data, await the run inside the adapter context, and use finite transport timeouts |
+| `No module named fastmcp` or SQLite saver import fails | The agents extra is absent | Run commands with `uv run --extra agents ...` |
+
+The HTTP MCP example uses actual handlers through an in-process ASGI transport. It needs no listening port and does not verify remote authentication, TLS or proxies. An interrupt similarly proves a workflow pause, not reviewer identity; authentication belongs in the application that accepts resume decisions.
+
 ## Retrieval lesson errors
 
 | Error or symptom | Why it happens | Fix |

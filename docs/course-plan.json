@@ -1,5 +1,5 @@
 {
-  "status": "Phase 4 complete: modules 00-09 and two checkpoints; 11 modules remain planned",
+  "status": "Phase 5 complete: modules 00-13 and three checkpoints; seven modules remain planned",
   "verified_date": "2026-10-28",
   "timezone": "America/Chicago",
   "python": ">=3.12,<3.15",
@@ -574,7 +574,7 @@
       "examples": [
         {
           "file": "01_official_server.py",
-          "features": "Official mcp SDK server; inventory tool schemas; stdio lifecycle",
+          "features": "Official mcp SDK MCPServer; typed inventory tools; memory and stdio lifecycle",
           "source": "https://github.com/modelcontextprotocol/python-sdk"
         },
         {
@@ -584,7 +584,7 @@
         },
         {
           "file": "03_http_client.py",
-          "features": "Streamable HTTP; endpoint validation and session lifetime",
+          "features": "Streamable HTTP through actual in-process ASGI handlers; endpoint validation and session lifetime",
           "source": "https://docs.langchain.com/oss/python/langchain/mcp"
         },
         {
@@ -992,6 +992,7 @@
     "checkpoints/02_handbook_qa/tests/test_acceptance.py",
     "checkpoints/03_guarded_support/README.md",
     "checkpoints/03_guarded_support/eval.jsonl",
+    "checkpoints/03_guarded_support/evaluation_report.json",
     "checkpoints/03_guarded_support/rubric.md",
     "checkpoints/03_guarded_support/solution.py",
     "checkpoints/03_guarded_support/starter.py",
@@ -1030,6 +1031,7 @@
     "common/rag.py",
     "common/resilience.py",
     "common/retrieval.py",
+    "common/returns.py",
     "common/schemas.py",
     "common/security.py",
     "common/testing.py",
@@ -1078,6 +1080,7 @@
     "docs/dependency-resolution.txt",
     "docs/phase3-verification.json",
     "docs/phase4-verification.json",
+    "docs/phase5-verification.json",
     "docs/progress.json",
     "docs/pypi-verification-phase2.json",
     "docs/pypi-verification.json",
@@ -1518,6 +1521,7 @@
     "scripts/first_call.py",
     "scripts/run_all_examples.py",
     "tests/conftest.py",
+    "tests/test_agent_contracts.py",
     "tests/test_banned_apis.py",
     "tests/test_budget.py",
     "tests/test_cli.py",

@@ -326,4 +326,4 @@ Report the tie, other measured tradeoffs and per-case failures. Do not claim an 
 
 Complete the [Handbook Q&A checkpoint](../../checkpoints/02_handbook_qa/README.md). You are ready when you can trace an answer to a real page, explain a failed retrieval case and distinguish quote validity from factual correctness.
 
-Continue to [Agents with create_agent](../10_agents/README.md). This next tier is planned for Phase 5.
+Continue to [Agents with create_agent](../10_agents/README.md). The agents tier is available; install it with `uv sync --extra agents`.

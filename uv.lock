@@ -1346,7 +1346,7 @@ wheels = [
 
 [[package]]
 name = "getting-started-with-langchain"
-version = "0.4.0"
+version = "0.5.0"
 source = { editable = "." }
 dependencies = [
     { name = "httpx" },
@@ -1369,6 +1369,7 @@ dependencies = [
 [package.optional-dependencies]
 agents = [
     { name = "fastmcp" },
+    { name = "httpx2" },
     { name = "langchain", extra = ["mcp"] },
     { name = "langchain-chroma" },
     { name = "langgraph-checkpoint-sqlite" },
@@ -1381,6 +1382,7 @@ agents = [
 apps = [
     { name = "fastapi" },
     { name = "fastmcp" },
+    { name = "httpx2" },
     { name = "langchain", extra = ["mcp"] },
     { name = "langchain-chroma" },
     { name = "langgraph-checkpoint-sqlite" },
@@ -1395,6 +1397,7 @@ apps = [
 deep = [
     { name = "deepagents" },
     { name = "fastmcp" },
+    { name = "httpx2" },
     { name = "langchain", extra = ["mcp"] },
     { name = "langchain-chroma" },
     { name = "langgraph-checkpoint-sqlite" },
@@ -1407,6 +1410,7 @@ deep = [
 deployment = [
     { name = "fastapi" },
     { name = "fastmcp" },
+    { name = "httpx2" },
     { name = "langchain", extra = ["mcp"] },
     { name = "langchain-chroma" },
     { name = "langgraph-checkpoint-postgres" },
@@ -1457,6 +1461,7 @@ requires-dist = [
     { name = "getting-started-with-langchain", extras = ["apps"], marker = "extra == 'deployment'" },
     { name = "getting-started-with-langchain", extras = ["rag"], marker = "extra == 'agents'" },
     { name = "httpx", specifier = ">=0.28.1,<0.29.0" },
+    { name = "httpx2", marker = "extra == 'agents'", specifier = ">=2.16.0,<2.17.0" },
     { name = "langchain", specifier = ">=1.4.7,<1.5.0" },
     { name = "langchain", extras = ["mcp"], marker = "extra == 'agents'", specifier = ">=1.4.7,<1.5.0" },
     { name = "langchain-anthropic", specifier = ">=1.7.7,<1.8.0" },
@@ -1479,7 +1484,7 @@ requires-dist = [
     { name = "psycopg", extras = ["binary"], marker = "extra == 'deployment'", specifier = ">=3.3.6,<3.4.0" },
     { name = "pydantic", specifier = ">=2.14.1,<2.15.0" },
     { name = "pydantic-settings", specifier = ">=2.16.2,<2.17.0" },
-    { name = "pypdf", marker = "extra == 'rag'", specifier = ">=6.21.3,<6.22.0" },
+    { name = "pypdf", marker = "extra == 'rag'", specifier = ">=6.21.4,<6.22.0" },
     { name = "python-dotenv", specifier = ">=1.2.4,<1.3.0" },
     { name = "rank-bm25", marker = "extra == 'rag'", specifier = ">=0.2.2,<0.3.0" },
     { name = "rich", specifier = ">=15.0.0,<15.1.0" },
@@ -1494,7 +1499,7 @@ authoring = [
     { name = "matplotlib", specifier = ">=3.11.2,<3.12.0" },
     { name = "nbstripout", specifier = ">=0.9.1,<0.10.0" },
     { name = "pre-commit", specifier = ">=4.7.0,<4.8.0" },
-    { name = "pypdf", specifier = ">=6.21.3,<6.22.0" },
+    { name = "pypdf", specifier = ">=6.21.4,<6.22.0" },
     { name = "reportlab", specifier = ">=5.1.0,<5.2.0" },
 ]
 dev = [
@@ -4518,11 +4523,11 @@ wheels = [
 
 [[package]]
 name = "pypdf"
-version = "6.21.3"
+version = "6.21.4"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/03/29/5c99ad4d9c3d942d3cf0439d633b98e2723757ec863d6f287ffd85465368/pypdf-6.21.3.tar.gz", hash = "sha256:11e1ca6d6cc8ca322558a3a974078d5ebc0f3a2104b8e673eee25621ee97abd8", size = 7106770, upload-time = "2026-10-27T12:16:53.179Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/1e/e1/ec8f4d155c997c45917153a5521e60d6ee6389d68abdcbc8e44e564caffc/pypdf-6.21.4.tar.gz", hash = "sha256:c8817e3f888d47a087872ded69812c1ef30cacb871d6e053e0c00bbaf0bc2163", size = 7109255, upload-time = "2026-10-28T17:00:54.81Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/50/e2/84ba4c41a3ceb69de4f4066a784eb34ecbf97e3a315152e17d7ea17ef499/pypdf-6.21.3-py3-none-any.whl", hash = "sha256:c8ca4d9a360dbd5d4b9bb7a8389e2a9ae6a106bee722b496f918040ba2daa17e", size = 409554, upload-time = "2026-10-27T12:16:50.585Z" },
+    { url = "https://files.pythonhosted.org/packages/3f/4b/77e8ad4ac42c9d93600f40541a50e9feb3a61d2bbee2d76f659346072051/pypdf-6.21.4-py3-none-any.whl", hash = "sha256:33e4fb41ca352810eb4e9838aa0d82d6888a5f8bf682f43e99cce5faa666255c", size = 410430, upload-time = "2026-10-28T17:00:53.146Z" },
 ]
 
 [[package]]

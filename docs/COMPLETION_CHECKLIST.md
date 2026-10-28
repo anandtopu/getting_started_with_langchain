@@ -1,6 +1,17 @@
 # Completion evidence
 
-This checklist distinguishes the implemented foundations and retrieval tiers from the complete course. Final acceptance requires the entire original scope; phased checks do not waive it.
+This checklist distinguishes the implemented foundations, retrieval and agents tiers from the complete course. Final acceptance requires the entire original scope; phased checks do not waive it.
+
+## Phase 5 scope
+
+- [x] Modules 10–13: 28 examples, four applications and an inventory server, 12 runnable exercises and complete solutions.
+- [x] Full guides, per-example diagrams, six-question quizzes and notebooks mirroring source.
+- [x] Guarded Support starter, solution, rubric, eight acceptance cases and committed report.
+- [x] Transactional returns, ownership and quantity checks, exact $100 boundary and concurrent idempotency checks.
+- [x] Actual approve/reject interrupts, durable paused-state reopening and unchanged seed data.
+- [x] Scoped persistent preferences, trimming, summarization and current middleware interfaces.
+- [x] Actual official-SDK MCP exchanges over memory, child-process pipes and in-process HTTP.
+- [ ] Live model decisions, real manager authentication UI, remote MCP deployment and remote CI remain unverified.
 
 ## Phase 4 scope
 

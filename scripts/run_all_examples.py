@@ -44,6 +44,19 @@ def main() -> None:
         if not Path(temporary).resolve().is_relative_to(runtime.resolve()):
             raise ValueError("Smoke directory escaped .runtime/.")
         for index, (path, arguments) in enumerate(selected):
+            if "Requires: agents" in path.read_text(encoding="utf-8") and any(
+                find_spec(package) is None
+                for package in (
+                    "fastmcp",
+                    "mcp",
+                    "langgraph.checkpoint.sqlite",
+                    "rank_bm25",
+                    "pypdf",
+                )
+            ):
+                skipped.append(path)
+                print_text(f"SKIP: {path.relative_to(ROOT)}; install with uv sync --extra agents.")
+                continue
             if "Requires: rag" in path.read_text(encoding="utf-8") and any(
                 find_spec(package) is None
                 for package in ("pypdf", "langchain_chroma", "rank_bm25", "matplotlib")

@@ -1,5 +1,45 @@
 # Verification notes
 
+## Phase 5 execution record — 2026-10-28
+
+Modules **10–13** and **Guarded Support** add 28 examples, four applications plus an inventory server, 12 exercise starters and solutions, four quizzes and four notebooks. Fourteen modules and three checkpoints are now implemented. Windows/Python 3.12 checks remain local; actual hosted/Ollama model decisions and remote CI are not claimed.
+
+| Local check | Result |
+|---|---|
+| Full agents/authoring installation | 366 tests passed; one opt-in live test skipped |
+| Basic `uv sync` installation | 195 tests passed; 167 optional-extra/live checks skipped |
+| Standalone examples | Full: 93/93 passed; basic: 38/38 passed, 55 optional-extra skips |
+| Executed notebooks | 14/14 passed, including the repaired MCP notebook |
+| Ruff lint and formatting | Passed; 369 Python/notebook files formatted |
+| Legacy API and feature checks | Zero violations; seven future modules remain deferred |
+| Local and external links | Zero failures; 160 explicitly planned links deferred |
+
+The 57 new teaching scripts have typed functions and are at most 84 lines each. Supporting shared modules and tests are longer where the control logic requires it.
+
+The initial 42-package refresh found **pypdf 6.21.4**, replacing 6.21.3 in the lower bound and lock. The current MCP stack uses `httpx2`; its **2.16.0** release was checked separately and added as an explicit agents-extra dependency because the HTTP example imports it directly. Other top-level versions remain unchanged. See the [43-package record](phase5-verification.json), installed ranges and lockfile.
+
+### Current agent and memory interfaces
+
+Official references checked: [agents](https://docs.langchain.com/oss/python/langchain/agents), [structured output](https://docs.langchain.com/oss/python/langchain/structured-output), [short-term memory](https://docs.langchain.com/oss/python/langchain/short-term-memory), [long-term memory](https://docs.langchain.com/oss/python/langchain/long-term-memory), [custom middleware](https://docs.langchain.com/oss/python/langchain/middleware/custom) and [built-in middleware](https://docs.langchain.com/oss/python/langchain/middleware/built-in). Installed signatures and real offline execution verified create_agent, ToolStrategy/ProviderStrategy, context_schema/ToolRuntime, AgentState, message trimming, InMemorySaver/SqliteSaver, InMemoryStore and every middleware named in the feature map.
+
+The fake native-schema example parses an explicitly supplied JSON response through the actual agent parser; it does not emulate provider-side enforcement. Tool selection, planning and summaries likewise use declared fixtures. The durable preference repository is an application-specific SQLite table, not an implementation of LangGraph BaseStore. The remembering application persists under `.runtime/remembering-agent`; checkpoint reopening is also checked in a fresh Python process.
+
+The tested guard factory combines input bounds, email/card-fixture redaction, human review, fallback and logical model/tool limits. Both model instances use the same configured profile for portability, so fallback proves control flow rather than independent-provider availability. Fallback and SDK retries can add physical calls beyond the logical model counter. Middleware adds graph steps; the host's 60-step backstop is intentionally separate from the five-model/six-tool limits. The repeated-message demonstration now creates fresh message/call identities because reusing the same AIMessage object caused reducer/routing errors during implementation.
+
+### MCP verification and substitution
+
+The [current MCP guide](https://docs.langchain.com/oss/python/langchain/mcp) documents `langchain.mcp.MCPAdapter` and `list_tools`; the namespace remains beta and its warning is preserved. The [official Python SDK](https://github.com/modelcontextprotocol/python-sdk) 2.3.0 supplies `mcp.server.mcpserver.MCPServer`, including typed tool registration and asynchronous stdio/HTTP serving. The separate FastMCP 4.1.4 client transport accepts this high-level official server; attempting to infer transport directly from the low-level Server failed, so the lesson uses the verified high-level class. No retired adapter package was installed.
+
+Real protocol handshake, discovery and calls passed over in-process memory, managed stdio subprocesses, and Streamable HTTP through the SDK's ASGI app and `httpx2.ASGITransport`. HTTP is exercised without a listening socket; this is not evidence of deployed authentication, TLS or proxy behaviour. Client endpoints, tool names, request fields, response bounds and returned SKU are checked. Descriptions and read-only annotations are not treated as permission grants.
+
+The first MCP notebook run exposed Jupyter stderr's missing file descriptor. The adapter now gives the child a real managed temporary diagnostic file. A regression test replaces stderr with a stream lacking fileno, and the affected notebook was re-executed successfully. All other notebooks passed on the initial run; the 14th passed after this repair. The Windows notebook runtime also emits its upstream event-loop/kernel-transport notices; these are not silently suppressed or presented as a remote deployment check.
+
+### Measured controls and remaining limits
+
+The [eight-case report](../checkpoints/03_guarded_support/evaluation_report.json) records ordinary success, approved/rejected high-value requests, wrong-customer denial, repeated requests, missing warehouse checks, hostile approval text and ordinary-writer bypass attempts. Its model trajectories and reviewer decisions are explicitly scripted. It measures controls and write counts, not autonomous-agent accuracy or general injection resistance.
+
+Tests also verify exact 10,000-cent boundaries, concurrent retries, key/payload conflicts, already-returned quantity, source-database protection, trusted exception verification, hidden context fields, invalid review decisions and reopening a paused SQLite workflow. Eligibility runs again after approval. These are synthetic ledger records; no payment API or manager-authentication UI is implemented. Final execution counts, basic-installation skips and link checks are in [Phase 5 metadata](phase5-verification.json). Seven modules and later projects remain planned.
+
 ## Phase 4 execution record — 2026-10-28
 
 Modules **06–09** and **Handbook Q&A** add 27 examples, four applications, 12 runnable exercise starters and solutions, four quizzes and four notebooks. The implemented course now contains ten modules and two checkpoints. Local validation uses Windows and Python 3.12; remote CI and actual hosted/Ollama generation remain unverified.

@@ -1,5 +1,5 @@
 {
-  "completed_phase": 4,
+  "completed_phase": 5,
   "implemented_modules": [
     "00_setup",
     "01_chat_models",
@@ -10,12 +10,17 @@
     "06_loaders_splitters",
     "07_embeddings_retrievers",
     "08_rag_fundamentals",
-    "09_advanced_rag"
+    "09_advanced_rag",
+    "10_agents",
+    "11_memory",
+    "12_middleware",
+    "13_mcp"
   ],
   "implemented_capstones": [],
   "implemented_checkpoints": [
     "01_ticket_desk",
-    "02_handbook_qa"
+    "02_handbook_qa",
+    "03_guarded_support"
   ],
-  "status": "Foundations and retrieval tiers complete; Phase 5 awaits continue. See VERIFICATION_NOTES.md for checks and live-provider limits."
+  "status": "Foundations, retrieval and agents tiers complete; Phase 6 awaits continue. See VERIFICATION_NOTES.md for checks and live-provider limits."
 }
