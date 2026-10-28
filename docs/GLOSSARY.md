@@ -144,4 +144,15 @@ This glossary covers modules 00-17; the production tier will add further terms.
 | StateBackend | The Deep Agents backend that stores files in graph state | 17 |
 | Agent harness | Supporting control and context-management code around model and tool calls | 17 |
 
+| Coroutine | Pausable work produced by an async function and run by awaiting it | 18 |
+| Semaphore | A counter that limits simultaneous entry into a section | 18 |
+| Server-sent events (SSE) | Labelled UTF-8 records streamed over one HTTP response | 18 |
+| Correlation ID | A safe identifier linking related operational events | 19 |
+| Held-out evaluation | Cases separated from target inputs and training; developer visibility still limits blindness | 19 |
+| Proxy metric | An imperfect measurable stand-in for a broader quality property | 19 |
+| Release gate | A rule that prevents release when required evidence fails | 20 |
+| Least privilege | Giving a component only the authority required for its job | 20 |
+| Admission control | Rejecting work when concurrency or request-rate limits are reached | 20 |
+| PostgresSaver / PostgresStore | Thread checkpoint persistence versus cross-thread namespaced storage | 20 |
+
 Return to the [learning path](../LEARNING_PATH.md).

@@ -17,3 +17,9 @@ def test_scanner_rejects_old_factory_and_methods():
 def test_scanner_allows_standard_library_execution():
     assert check_source("import asyncio\nasyncio." + "r" + "un(main())", python=True) == []
     assert check_source("import subprocess as sp\nsp." + "r" + "un(['python'])", python=True) == []
+
+
+def test_current_streamlit_runner_is_distinct_from_legacy_model_invocation():
+    source = "from streamlit.testing.v1 import AppTest\nAppTest." + "run(app)"
+    assert not check_source(source, python=True)
+    assert check_source("model." + "run(prompt)", python=True)

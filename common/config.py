@@ -62,6 +62,11 @@ class Settings(BaseSettings):
     cost_input_per_million: float = Field(default=0, ge=0)
     cost_output_per_million: float = Field(default=0, ge=0)
     max_run_cost_usd: float = Field(default=0.05, gt=0)
+    api_customer_token: SecretStr = Field(default=SecretStr(""), repr=False)
+    api_manager_token: SecretStr = Field(default=SecretStr(""), repr=False)
+    api_customer_id: str = "C001"
+    api_base_url: str = "http://127.0.0.1:8000"
+    api_request_timeout: float = Field(default=45, gt=0, le=120)
 
     @property
     def chat_model(self) -> str:

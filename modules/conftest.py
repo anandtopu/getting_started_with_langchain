@@ -7,7 +7,16 @@ import pytest
 
 @pytest.fixture(autouse=True)
 def retrieval_dependencies(request, tmp_path, monkeypatch):
+    if {"18_apps", "20_production"}.intersection(request.node.path.parts):
+        if any(
+            find_spec(name) is None
+            for name in ("fastapi", "streamlit", "rank_bm25", "langgraph.checkpoint.sqlite")
+        ):
+            pytest.skip("Install app lessons with uv sync --extra apps.")
+        monkeypatch.setenv("RUNTIME_DIR", str(tmp_path))
+        return
     agent_modules = {
+        "19_evaluation",
         "10_agents",
         "11_memory",
         "12_middleware",

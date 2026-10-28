@@ -55,6 +55,7 @@ jobs:
           python-version: ${{ matrix.python }}
           enable-cache: true
       - run: uv sync --locked --all-extras --group authoring
+      - run: uv run --no-sync pytest tests/test_evaluation_contracts.py checkpoints/05_production_release/tests
       - run: uv run --no-sync pytest
       - run: uv run --no-sync python scripts/check_notebooks.py
       - run: uv run --no-sync python scripts/run_all_examples.py

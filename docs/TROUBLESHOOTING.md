@@ -87,3 +87,15 @@ For local multimodal input, pull the vision profile and check capabilities. A mo
 ## Old tutorials and future lessons
 
 Do not copy imports from older framework tutorials without checking the current official reference. Use the model factory and `invoke` interface shown in this checkout. Chroma persistence diagnostics and graph recursion-limit examples are available in the current tiers. The complete migration guide and release audit arrive in Phase 8.
+
+
+## App and production checks
+
+- **API startup ValueError:** set two distinct random tokens of at least 32 characters and an alphanumeric synthetic customer ID. Demo tokens only exist in explicit test factories.
+- **401 / 403 / 409 / 429:** respectively authenticate, use an owned thread or reviewer role, refresh the current pending review, or wait before retrying. Do not blindly repeat a business write.
+- **Return denied despite review:** configured apps require host warehouse attestations. Approval cannot override missing inspection, changed amounts or other policy failures. Finite examples explicitly seed synthetic facts.
+- **Stream ends with error:** retain its correlation ID, check the local sanitized event, and retry only read-only chat as appropriate. Partial text is not done or a recorded refund. Cancellation cleanup is tested separately.
+- **Quality 4/6 and --release fails:** expected for the current lexical/extractive fixture. Inspect return/shipping misses; fix the answer method and gather fresh live/human evidence, not a lower post-hoc threshold.
+- **LangSmith upload_results beta / ast.Str warning:** upstream runner warnings in the pinned SDK; local evaluation still executes with network denied. Cloud evaluation remains optional and unverified.
+- **Container engine not reachable:** start the chosen Docker-compatible engine. Do not change global contexts blindly. This host's Podman bridge failed; verification used direct building and VM-loopback host networking. Standard bridge launch needs a working bridge on your machine.
+- **Postgres tables/connection error:** use a disposable reachable database, install deployment extras and explicitly opt out of offline mode. setup() creates SDK tables; credentials remain runtime-only. Offline namespaces do not prove durable persistence.

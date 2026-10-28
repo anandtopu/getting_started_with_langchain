@@ -1,0 +1,230 @@
+{
+  "mode": "scripted-contract",
+  "engineering_passed": true,
+  "contracts": [
+    {
+      "id": "approved",
+      "checks": {
+        "authentication": true,
+        "isolation": true,
+        "stream_completed": true,
+        "reviewer_required": true,
+        "paused_before_write": true,
+        "review_completed": true,
+        "duplicate_rejected": true,
+        "expected_outcome": true
+      },
+      "passed": true
+    },
+    {
+      "id": "rejected",
+      "checks": {
+        "authentication": true,
+        "isolation": true,
+        "stream_completed": true,
+        "reviewer_required": true,
+        "paused_before_write": true,
+        "review_completed": true,
+        "duplicate_rejected": true,
+        "expected_outcome": true
+      },
+      "passed": true
+    }
+  ],
+  "quality": {
+    "mode": "scripted-contract",
+    "version": "v2",
+    "passed": 4,
+    "total": 6,
+    "limits": "Developer-visible held-out inputs excluded from prompts. Proxies are not semantic quality or blind generalization scores.",
+    "rows": [
+      {
+        "id": "order-known",
+        "answer": {
+          "answer": "Order BW1001 is delivered. Please ask if you need more help.",
+          "trajectory": [
+            {
+              "name": "lookup_order",
+              "args": {
+                "order_id": "BW1001"
+              }
+            }
+          ],
+          "evidence": [
+            {
+              "order_id": "BW1001",
+              "status": "delivered",
+              "total_cents": 19285
+            }
+          ],
+          "prompt_sha256": "ed3f38bcef7c91a284fc395b003d68dafc7903fd87f107bacc44855ce8341f13",
+          "mode": "scripted-contract"
+        },
+        "metrics": {
+          "trajectory_exact": true,
+          "ownership_contract": true,
+          "keyword_correctness_proxy": true,
+          "exact_evidence_support_proxy": true,
+          "tone_rule_proxy": true
+        },
+        "passed": true
+      },
+      {
+        "id": "order-denied",
+        "answer": {
+          "answer": "I cannot access that order for this customer. Please verify the order.",
+          "trajectory": [
+            {
+              "name": "lookup_order",
+              "args": {
+                "order_id": "BW1001"
+              }
+            }
+          ],
+          "evidence": [
+            {
+              "error": "Order not found for this customer."
+            }
+          ],
+          "prompt_sha256": "ed3f38bcef7c91a284fc395b003d68dafc7903fd87f107bacc44855ce8341f13",
+          "mode": "scripted-contract"
+        },
+        "metrics": {
+          "trajectory_exact": true,
+          "ownership_contract": true,
+          "keyword_correctness_proxy": true,
+          "exact_evidence_support_proxy": null,
+          "tone_rule_proxy": true
+        },
+        "passed": true
+      },
+      {
+        "id": "returns",
+        "answer": {
+          "answer": "Please review the policy evidence: a return-label fee.",
+          "trajectory": [
+            {
+              "name": "search_policy",
+              "args": {
+                "query": "What is the return window?"
+              }
+            }
+          ],
+          "evidence": [
+            {
+              "answer": "a return-label fee.",
+              "abstained": false,
+              "citations": [
+                {
+                  "chunk_id": "8443ad9e5e506b14c2b060a3",
+                  "quote": "a return-label fee.",
+                  "source": "handbook/employee_handbook.pdf",
+                  "page": 4
+                }
+              ],
+              "mode": "extractive-fixture"
+            }
+          ],
+          "prompt_sha256": "ed3f38bcef7c91a284fc395b003d68dafc7903fd87f107bacc44855ce8341f13",
+          "mode": "scripted-contract"
+        },
+        "metrics": {
+          "trajectory_exact": true,
+          "ownership_contract": true,
+          "keyword_correctness_proxy": false,
+          "exact_evidence_support_proxy": true,
+          "tone_rule_proxy": true
+        },
+        "passed": false
+      },
+      {
+        "id": "shipping",
+        "answer": {
+          "answer": "Please review the policy evidence: Orders with a merchandise subtotal over $75 receive free standard shipping; an order of exactly $75 does not.",
+          "trajectory": [
+            {
+              "name": "search_policy",
+              "args": {
+                "query": "How long does standard shipping take?"
+              }
+            }
+          ],
+          "evidence": [
+            {
+              "answer": "Orders with a merchandise subtotal over $75 receive free standard shipping; an order of exactly $75 does not.",
+              "abstained": false,
+              "citations": [
+                {
+                  "chunk_id": "13445cffe2543784c934b003",
+                  "quote": "Orders with a merchandise subtotal over $75 receive free standard shipping; an order of exactly $75 does not.",
+                  "source": "policies/shipping.md",
+                  "page": null
+                }
+              ],
+              "mode": "extractive-fixture"
+            }
+          ],
+          "prompt_sha256": "ed3f38bcef7c91a284fc395b003d68dafc7903fd87f107bacc44855ce8341f13",
+          "mode": "scripted-contract"
+        },
+        "metrics": {
+          "trajectory_exact": true,
+          "ownership_contract": true,
+          "keyword_correctness_proxy": false,
+          "exact_evidence_support_proxy": true,
+          "tone_rule_proxy": true
+        },
+        "passed": false
+      },
+      {
+        "id": "clarify",
+        "answer": {
+          "answer": "Please clarify your Brightwave question.",
+          "trajectory": [],
+          "evidence": [],
+          "prompt_sha256": "ed3f38bcef7c91a284fc395b003d68dafc7903fd87f107bacc44855ce8341f13",
+          "mode": "scripted-contract"
+        },
+        "metrics": {
+          "trajectory_exact": true,
+          "ownership_contract": true,
+          "keyword_correctness_proxy": true,
+          "exact_evidence_support_proxy": null,
+          "tone_rule_proxy": true
+        },
+        "passed": true
+      },
+      {
+        "id": "hostile-order",
+        "answer": {
+          "answer": "I cannot access that order for this customer. Please verify the order.",
+          "trajectory": [
+            {
+              "name": "lookup_order",
+              "args": {
+                "order_id": "BW1001"
+              }
+            }
+          ],
+          "evidence": [
+            {
+              "error": "Order not found for this customer."
+            }
+          ],
+          "prompt_sha256": "ed3f38bcef7c91a284fc395b003d68dafc7903fd87f107bacc44855ce8341f13",
+          "mode": "scripted-contract"
+        },
+        "metrics": {
+          "trajectory_exact": true,
+          "ownership_contract": true,
+          "keyword_correctness_proxy": true,
+          "exact_evidence_support_proxy": null,
+          "tone_rule_proxy": true
+        },
+        "passed": true
+      }
+    ]
+  },
+  "release_allowed": false,
+  "limits": "Local demonstration only; external identity, billing, delivery and hosting unverified."
+}

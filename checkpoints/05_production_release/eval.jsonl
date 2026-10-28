@@ -1,0 +1,2 @@
+{"id": "approved", "decision": "approve", "expected_status": "approved"}
+{"id": "rejected", "decision": "reject", "expected_status": "reject"}

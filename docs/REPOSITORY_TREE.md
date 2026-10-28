@@ -1,9 +1,10 @@
 # Planned final repository tree
 
-Updated during Phase 6. Includes implemented and future files; see [progress](progress.json). Runtime data, credentials, caches and the virtual environment are excluded.
+Updated in Phase 7; includes future capstones and final-release files. See [progress](progress.json). Credentials, caches and runtime files are excluded.
 
 ```text
 getting_started_with_langchain/
+├── .dockerignore
 ├── .env.example
 ├── .gitattributes
 ├── .github/
@@ -125,6 +126,7 @@ getting_started_with_langchain/
 │   └── 05_production_release/
 │       ├── README.md
 │       ├── eval.jsonl
+│       ├── evaluation_report.json
 │       ├── rubric.md
 │       ├── solution.py
 │       ├── starter.py
@@ -137,9 +139,11 @@ getting_started_with_langchain/
 │   ├── budget.py
 │   ├── config.py
 │   ├── data.py
+│   ├── deployment.py
 │   ├── desk.py
 │   ├── errors.py
 │   ├── evaluation.py
+│   ├── experiments.py
 │   ├── fixtures.py
 │   ├── graphs.py
 │   ├── guardrails.py
@@ -152,16 +156,20 @@ getting_started_with_langchain/
 │   ├── operations.py
 │   ├── pretty.py
 │   ├── rag.py
+│   ├── release.py
 │   ├── research.py
 │   ├── resilience.py
 │   ├── retrieval.py
 │   ├── returns.py
 │   ├── schemas.py
 │   ├── security.py
+│   ├── service.py
+│   ├── support_evaluation.py
 │   ├── testing.py
 │   ├── tools.py
 │   ├── tracing.py
 │   ├── triage.py
+│   ├── ui.py
 │   ├── vector_index.py
 │   ├── web.py
 │   └── workflows.py
@@ -215,6 +223,7 @@ getting_started_with_langchain/
 │   ├── phase4-verification.json
 │   ├── phase5-verification.json
 │   ├── phase6-verification.json
+│   ├── phase7-verification.json
 │   ├── progress.json
 │   ├── pypi-verification-phase2.json
 │   └── pypi-verification.json
@@ -729,6 +738,9 @@ getting_started_with_langchain/
 │   │   │   ├── 02_apply.py
 │   │   │   └── 03_stretch.py
 │   │   ├── notebook.ipynb
+│   │   ├── prompts/
+│   │   │   ├── support_v1.txt
+│   │   │   └── support_v2.txt
 │   │   ├── quiz.md
 │   │   ├── solutions/
 │   │   │   ├── 01_practice.py
@@ -737,8 +749,11 @@ getting_started_with_langchain/
 │   │   ├── tests/
 │   │   │   ├── test_examples.py
 │   │   │   ├── test_exercises.py
+│   │   │   ├── test_live.py
 │   │   │   └── test_use_case.py
 │   │   └── use_case/
+│   │       ├── eval.jsonl
+│   │       ├── evaluation_report.json
 │   │       └── support_eval.py
 │   ├── 20_production/
 │   │   ├── README.md
@@ -768,6 +783,7 @@ getting_started_with_langchain/
 │   │   └── use_case/
 │   │       ├── .dockerignore
 │   │       ├── Dockerfile
+│   │       ├── Dockerfile.dockerignore
 │   │       ├── langgraph.json
 │   │       └── production_assistant.py
 │   └── conftest.py
@@ -795,6 +811,7 @@ getting_started_with_langchain/
 │   ├── test_course_structure.py
 │   ├── test_data.py
 │   ├── test_evaluation.py
+│   ├── test_evaluation_contracts.py
 │   ├── test_examples.py
 │   ├── test_foundation_contracts.py
 │   ├── test_links.py
@@ -803,8 +820,10 @@ getting_started_with_langchain/
 │   ├── test_notebooks.py
 │   ├── test_orchestration_contracts.py
 │   ├── test_pretty.py
+│   ├── test_production_contracts.py
 │   ├── test_rag_contracts.py
 │   ├── test_security.py
-│   └── test_tools.py
+│   ├── test_tools.py
+│   └── test_web_contracts.py
 └── uv.lock
 ```

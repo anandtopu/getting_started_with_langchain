@@ -3,9 +3,24 @@
 from collections.abc import Iterator
 from contextlib import contextmanager
 
-from langsmith import Client, tracing_context
+from langsmith import Client, traceable, tracing_context
 
 from common.config import ConfigurationError, Settings
+from common.security import scrub
+
+
+def sanitized_trace(value: dict, settings: Settings) -> dict:
+    """Sanitize before the traceable boundary; disable nested raw-model tracing separately."""
+    safe = scrub(value, settings)
+
+    @traceable(name="brightwave_redacted_event", run_type="chain")
+    def record(payload: dict) -> dict:
+        return {"recorded": payload}
+
+    with tracing_scope(settings):
+        return record(
+            safe, langsmith_extra={"tags": ["course", "redacted"], "metadata": {"schema": "v1"}}
+        )
 
 
 @contextmanager

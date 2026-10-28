@@ -1,0 +1,12 @@
+**
+!pyproject.toml
+!uv.lock
+!README.md
+!LICENSE
+!.env.example
+!common/
+!common/**
+!data/
+!data/**
+**/__pycache__
+**/*.pyc

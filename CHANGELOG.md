@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.7.0 — 2026-10-28
+
+- Added modules 18–20: 20 examples, five application entry points, nine exercises with solutions, quizzes and three source-matched notebooks.
+- Added authenticated FastAPI SSE and Streamlit chat with owner-scoped history, reviewed returns, disconnect cleanup and persistent call reservations.
+- Added actual local LangSmith evaluation, versioned prompts and six held-out contract cases. Four pass; two answer misses remain visible and block the strict release gate.
+- Added non-root container packaging, least-privilege SQL, scrub-before-trace/log boundaries and real Postgres saver/store reconnect checks.
+- Added the Production Release checkpoint and a release command that exits nonzero for the known quality failures.
+- All course modules are implemented; capstones and final publication remain Phase 8. Live providers, cloud LangSmith, public app hosting and remote CI remain unverified.
+
 ## 0.6.0 — 2026-10-28
 
 - Added modules 14–17: 28 orchestration examples, four applications, 12 exercise starters and solutions, quizzes and four mirrored notebooks.

@@ -1,5 +1,5 @@
 {
-  "completed_phase": 6,
+  "completed_phase": 7,
   "implemented_modules": [
     "00_setup",
     "01_chat_models",
@@ -18,14 +18,18 @@
     "14_langgraph",
     "15_workflows",
     "16_multi_agent",
-    "17_deep_agents"
+    "17_deep_agents",
+    "18_apps",
+    "19_evaluation",
+    "20_production"
   ],
   "implemented_capstones": [],
   "implemented_checkpoints": [
     "01_ticket_desk",
     "02_handbook_qa",
     "03_guarded_support",
-    "04_operations_desk"
+    "04_operations_desk",
+    "05_production_release"
   ],
-  "status": "Foundations, retrieval, agents and orchestration tiers complete; Phase 7 awaits continue. See VERIFICATION_NOTES.md for actual checks and live-provider limits."
+  "status": "Phase 7 complete: all 21 modules and five checkpoints. Awaiting continue for Phase 8 capstones and publication. The strict scripted answer-quality gate correctly blocks the 4/6 baseline; no customer deployment readiness is claimed."
 }

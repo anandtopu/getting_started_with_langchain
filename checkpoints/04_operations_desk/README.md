@@ -58,4 +58,4 @@ Low-confidence routing ends with clarification. Unknown or duplicate specialist 
 
 You can draw the running graph, distinguish parallel workers from conversational handoffs, prove an ownership denial, explain the call ceiling, and show exactly which context each worker receives. Grade with the [rubric](rubric.md).
 
-Next: [Streaming, APIs and user interfaces](../../modules/18_apps/README.md), planned for Phase 7.
+Next: [Streaming, APIs and user interfaces](../../modules/18_apps/README.md), available with `uv sync --extra apps`.

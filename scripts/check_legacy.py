@@ -45,6 +45,13 @@ def check_source(text: str, *, python: bool) -> list[str]:
         except SyntaxError:
             return findings + ["Invalid Python syntax"]
         standard = {"asyncio", "subprocess"}
+        ui_test_classes = {
+            alias.asname or alias.name
+            for node in ast.walk(tree)
+            if isinstance(node, ast.ImportFrom) and node.module == "streamlit.testing.v1"
+            for alias in node.names
+            if alias.name == "AppTest"
+        }
         for node in ast.walk(tree):
             if isinstance(node, ast.Import):
                 standard.update(a.asname or a.name for a in node.names if a.name in standard)
@@ -61,7 +68,8 @@ def check_source(text: str, *, python: bool) -> list[str]:
                 name = node.func.attr
                 owner = node.func.value
                 if name in {"r" + "un", "pre" + "dict"} and not (
-                    isinstance(owner, ast.Name) and owner.id in standard
+                    isinstance(owner, ast.Name)
+                    and (owner.id in standard or (name == "run" and owner.id in ui_test_classes))
                 ):
                     findings.append(f"Legacy invocation on line {node.lineno}")
     else:

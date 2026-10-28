@@ -1,5 +1,43 @@
 # Verification notes
 
+## Phase 7 — apps, evaluation and production (2026-10-28)
+
+Refreshed all 43 package records on PyPI before implementation; stable versions match Phase 6. Project version advances to 0.7.0 without dependency upgrades. [Machine-readable evidence](phase7-verification.json) records actual results and explicitly untested paths.
+
+Official sources and installed signatures checked: [FastAPI StreamingResponse](https://fastapi.tiangolo.com/advanced/custom-response/), [Streamlit chat](https://docs.streamlit.io/develop/api-reference/chat), [AppTest](https://docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest), [LangSmith evaluate](https://docs.langchain.com/langsmith/evaluate-llm-application), [tracing](https://docs.langchain.com/langsmith/observability-quickstart), [LangGraph persistence](https://docs.langchain.com/oss/python/langgraph/persistence), [streaming](https://docs.langchain.com/oss/python/langchain/streaming), [uv Docker](https://docs.astral.sh/uv/guides/integration/docker/) and [current deployment naming](https://docs.langchain.com/langsmith/deployment). The globals API-reference page failed in the web reader; current installed `get_llm_cache`, `set_llm_cache`, `InMemoryCache` and `InMemoryRateLimiter` signatures were inspected and executable examples tested instead. No unconfirmed import was substituted from a tutorial.
+
+### Implementation adjustments discovered by execution
+
+The installed GenericFakeChatModel's stream implementation does not retain modern empty-content `AIMessage.tool_calls`. The common scripted subclass now emits real AIMessageChunk tool_call_chunks, tested in synchronous and asynchronous streams; ordinary replies retain the upstream implementation. This is a visible fixture adapter, not a production model implementation. The UI stream filters ToolMessage bodies so internal SQL payloads are not rendered as assistant text.
+
+Direct standalone ToolNode invocation in this pinned release requires runtime config supplied by a graph. The injection lesson therefore executes ToolNode inside a real compiled MessagesState graph. It deliberately assumes a compromised model and proves that an unregistered export tool is denied; no model injection resistance is claimed.
+
+The real LangSmith evaluate runner passes with in-memory Examples and `upload_results=False` under network denial. The SDK labels this flag beta and emits upstream AST deprecation warnings on Python 3.12. Cloud dataset creation uses verified Client.create_dataset/create_examples signatures and is guarded by an explicit cloud argument plus live credentials; that service path was not executed. The optional structured judge fixture explicitly says no semantic assessment occurred.
+
+### Environment and tooling corrections
+
+Direct execution revealed that the generic Jupyter dispatcher selected an unrelated system installation on this Windows host. The notebook checker now invokes nbconvert with the current Python and writes a temporary kernel spec naming that exact interpreter. All 21 notebooks then passed against the locked environment. The legacy scanner now recognizes only an explicitly imported current Streamlit AppTest runner; ordinary model legacy invocations remain prohibited and regression-tested. Cost notes count up to 30 logical calls for six live cases (three agent calls plus two nested retrieval calls per case); provider retries can add attempts.
+
+### Application contracts
+
+Tests exercise actual FastAPI handlers and Streamlit AppTest controls: credential prompts, chat, reset, identity changes, approve and reject. Ownership is enforced server-side; customer fields cannot be injected into requests; stale or duplicate interrupt IDs fail. Trusted warehouse changes and changed refund quotes are rejected after review without a write. A direct ASGI disconnect test closes the source and releases admission; timeouts and failures expose only a generic SSE error and safe correlation ID. Modern tool-call streaming and no-tool-body leakage have regression tests.
+
+Calls are conservatively reserved in SQLite before each chat and survive process reopen. Concurrent reservations cannot exceed the ceiling. Admission is explicitly one-process-only; the image uses one worker. Input/history limits and model/tool call limits are separate from the illustrative post-call dollar accounting, which treats unknown usage as unknown. Public-only SQL uses a read-only connection, authorizer, instruction limit and output cap. Configured secrets, synthetic emails and card-like patterns are scrubbed before local storage/log export; this narrow filter is not general DLP.
+
+### Container and database evidence
+
+Built the locked image and ran it as UID 10001 with read-only source and writable disposable runtime. Actual health, authenticated thread creation and SSE completion passed. The local Podman 6.0.2 Docker-compatible engine's bridge networking failed with netavark/nftables; the successful check used the explicit context, direct builder and host networking limited to VM loopback. Normal bridge networking is not claimed verified on this host. The inspection records the image ID. No registry push occurred.
+
+A separate PostgreSQL 16-alpine container passed PostgresSaver checkpoint recovery after reconnect, PostgresStore recovery after reconnect and namespace isolation. Probe credentials were generated in memory, never logged; containers were stopped in finally blocks. The installed checkpoint/store packages were used directly. The FastAPI app remains SQLite; the probe does not imply that the entire application has migrated to Postgres or supports horizontal scaling.
+
+### Quality and release semantics
+
+The independent six-case support set yields 4/6 complete offline contracts. All tool-trajectory and ownership contracts pass. Returns and shipping fail keyword correctness despite literal citation support, demonstrating that faithful quotation alone does not answer the question. The answer-producing function receives no expected labels; a regression test changes labels without changing answers. Both prompt versions receive identical fixture scores, so no prompt-quality improvement is claimed.
+
+The default strict quality gate is false. Tone and applicable exact-evidence support are mandatory alongside correctness, ownership and tool trajectories; regressions in either independently block release. The checkpoint's ordinary rehearsal can pass engineering checks while reporting this block; `--release` exits nonzero, and CI tests that exit code. [The saved report](../checkpoints/05_production_release/evaluation_report.json) retains failures. Hosted models, Ollama inference, cloud LangSmith, Studio browser, public app deployment, payment/email services and remote CI remain unverified. Final checks: 558 tests passed, two opted-in live tests skipped; all 141 smoke targets and 21 notebooks passed. Minimal install: 230 tests passed with 305 explicit skips, 38 smoke targets passed with 103 missing-extra skips. All nine runnable exercise baselines intentionally fail their completion targets. Ruff, legacy scan and coverage passed. Internal and external links had zero failures; five future-capstone links remain deferred. No remote CI run is claimed.
+
+
+
 ## Phase 6 execution record — 2026-10-28
 
 Modules **14–17** add 28 examples, four applications, twelve exercise starters and solutions, four quizzes and four notebooks. **Operations Desk** adds eight contract cases, a committed evaluation report, a graph export and a written design rationale. Eighteen modules and four checkpoints are implemented; three modules and the capstones remain planned.

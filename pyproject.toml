@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "getting-started-with-langchain"
-version = "0.6.0"
+version = "0.7.0"
 description = "A hands-on LangChain and LangGraph course built around Brightwave Outfitters"
 readme = "README.md"
 requires-python = ">=3.12,<3.15"

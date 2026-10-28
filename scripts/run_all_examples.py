@@ -44,6 +44,13 @@ def main() -> None:
         if not Path(temporary).resolve().is_relative_to(runtime.resolve()):
             raise ValueError("Smoke directory escaped .runtime/.")
         for index, (path, arguments) in enumerate(selected):
+            if "Requires: apps" in path.read_text(encoding="utf-8") and any(
+                find_spec(package) is None
+                for package in ("fastapi", "streamlit", "langgraph.checkpoint.sqlite", "rank_bm25")
+            ):
+                skipped.append(path)
+                print_text(f"SKIP: {path.relative_to(ROOT)}; install with uv sync --extra apps.")
+                continue
             if (
                 "Requires: deep" in path.read_text(encoding="utf-8")
                 and find_spec("deepagents") is None
@@ -111,9 +118,10 @@ def main() -> None:
         f"{attempted - len(failures)}/{attempted} targets passed; "
         f"{len(skipped)} missing-extra skips."
     )
-    print_text(
-        f"Course examples implemented: {implemented}/{expected}; remaining lessons are deferred."
+    status = (
+        "remaining lessons are deferred" if implemented < expected else "all lesson examples exist"
     )
+    print_text(f"Course examples implemented: {implemented}/{expected}; {status}.")
     raise SystemExit(bool(failures))
 
 
